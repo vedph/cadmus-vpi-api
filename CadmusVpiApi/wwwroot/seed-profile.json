@@ -1,0 +1,3650 @@
+{
+  "facets": [
+    {
+      "id": "print-edition",
+      "label": "print edition",
+      "description": "Printed book edition.",
+      "colorKey": "ADACAD",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "B3D9FF",
+          "groupKey": "identity",
+          "sortKey": "01"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Inner/outer links.",
+          "colorKey": "5CA8FF",
+          "groupKey": "identity",
+          "sortKey": "02"
+        },
+        {
+          "typeId": "it.vedph.chronotopes",
+          "roleId": "prn",
+          "name": "chronotopes",
+          "description": "Print date/time.",
+          "colorKey": "F887C8",
+          "groupKey": "history",
+          "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.chronotopes",
+          "roleId": "pub",
+          "name": "chronotopes",
+          "description": "Publish date/time.",
+          "colorKey": "F887C8",
+          "groupKey": "history",
+          "sortKey": "04"
+        },
+        {
+          "typeId": "it.vedph.ndp.print-fonts",
+          "name": "fonts",
+          "description": "Print fonts.",
+          "colorKey": "85C1FF",
+          "groupKey": "content",
+          "sortKey": "05"
+        },
+        {
+          "typeId": "it.vedph.codicology.layouts",
+          "roleId": "prn",
+          "name": "layout",
+          "description": "Print layout.",
+          "colorKey": "85C1FF",
+          "groupKey": "content",
+          "sortKey": "06"
+        },
+        {
+          "typeId": "it.vedph.codicology.watermarks",
+          "name": "watermarks",
+          "description": "Watermarks.",
+          "colorKey": "8FD18F",
+          "groupKey": "content",
+          "sortKey": "07"
+        },
+        {
+          "typeId": "it.vedph.ndp.print-fig-plan",
+          "name": "fig.plan",
+          "description": "Figurative plan.",
+          "colorKey": "FFB366",
+          "groupKey": "content",
+          "sortKey": "08"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "roleId": "inc",
+          "name": "incipit",
+          "description": "The incipit's text'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "09"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "roleId": "col",
+          "name": "colophon",
+          "description": "The colophon's text'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "10"
+        },
+        {
+          "typeId": "it.vedph.ndp.text-passages",
+          "name": "text passages",
+          "description": "List of notable text passages.",
+          "colorKey": "5DF94D",
+          "groupKey": "content",
+          "sortKey": "11"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A generic text note'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "12"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "13"
+        }
+      ]
+    },
+    {
+      "id": "print-instance",
+      "label": "print instance",
+      "description": "Printed book instance.",
+      "colorKey": "ADBCBD",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "B3D9FF",
+          "groupKey": "identity",
+          "sortKey": "01"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Inner/outer links.",
+          "colorKey": "5CA8FF",
+          "groupKey": "identity",
+          "sortKey": "02"
+        },
+        {
+          "typeId": "it.vedph.codicology.shelfmarks",
+          "name": "shelfmarks",
+          "description": "Current and historical shelfmarks.",
+          "colorKey": "85C1FF",
+          "groupKey": "identity",
+          "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "roleId": "hist",
+          "name": "history",
+          "description": "Manuscript's history.",
+          "colorKey": "A856FF",
+          "groupKey": "history",
+          "sortKey": "05"
+        },
+        {
+          "typeId": "it.vedph.codicology.bindings",
+          "name": "bindings",
+          "description": "Current and historical bindings.",
+          "colorKey": "AF6465",
+          "groupKey": "material",
+          "sortKey": "06"
+        },
+        {
+          "typeId": "it.vedph.codicology.sheet-labels",
+          "name": "sheet labels",
+          "description": "Quires and sheets labels.",
+          "colorKey": "DAA520",
+          "groupKey": "material",
+          "sortKey": "07"
+        },
+        {
+          "typeId": "it.vedph.physical-measurements",
+          "roleId": "pri",
+          "name": "measurements",
+          "description": "Physical measurements.",
+          "colorKey": "C180EA",
+          "groupKey": "material",
+          "sortKey": "08"
+        },
+        {
+          "typeId": "it.vedph.physical-states",
+          "name": "states",
+          "description": "Physical preservation states.",
+          "colorKey": "C880E4",
+          "groupKey": "material",
+          "sortKey": "09"
+        },
+        {
+          "typeId": "it.vedph.codicology.layouts",
+          "roleId": "prn",
+          "name": "layouts",
+          "description": "Text layouts.",
+          "colorKey": "7DD17D",
+          "groupKey": "content",
+          "sortKey": "10"
+        },
+        {
+          "typeId": "it.vedph.ndp.print-fig-plan-impl",
+          "name": "fig.plan impl.",
+          "description": "Implementation of figurative plan.",
+          "colorKey": "FEB346",
+          "groupKey": "content",
+          "sortKey": "11"
+        },
+        {
+          "typeId": "it.vedph.codicology.edits",
+          "name": "edits",
+          "description": "Supplementary edits on text.",
+          "colorKey": "E72A8E",
+          "groupKey": "history",
+          "sortKey": "13"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A generic text note'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "14"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "15"
+        }
+      ]
+    },
+    {
+      "id": "illustration",
+      "label": "illustration",
+      "description": "Illustration in a print instance.",
+      "colorKey": "ADCCBD",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "B3D9FF",
+          "groupKey": "identity",
+          "sortKey": "01"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Inner/outer links.",
+          "colorKey": "5CA8FF",
+          "groupKey": "identity",
+          "sortKey": "02"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "roleId": "ill",
+          "name": "types",
+          "description": "Illustration types.",
+          "colorKey": "0CC8F7",
+          "groupKey": "content",
+          "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "roleId": "ico",
+          "name": "iconographies",
+          "description": "Iconographies.",
+          "colorKey": "0BC8F7",
+          "groupKey": "content",
+          "sortKey": "04"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "roleId": "thm",
+          "name": "themes",
+          "description": "Narrative themes.",
+          "colorKey": "0AC8F7",
+          "groupKey": "content",
+          "sortKey": "05"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A generic text note'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "06"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "07"
+        }
+      ]
+    },
+    {
+      "id": "woodblock",
+      "label": "woodblock",
+      "description": "Woodblock.",
+      "colorKey": "854817",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "B3D9FF",
+          "groupKey": "identity",
+          "sortKey": "01"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Inner/outer links.",
+          "colorKey": "5CA8FF",
+          "groupKey": "identity",
+          "sortKey": "02"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "roleId": "wblk",
+          "name": "types",
+          "description": "Woodblock types.",
+          "colorKey": "0CC8F7",
+          "groupKey": "identity",
+          "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.physical-measurements",
+          "roleId": "wblk",
+          "name": "measurements",
+          "description": "Physical measurements.",
+          "colorKey": "FF9933",
+          "groupKey": "material",
+          "sortKey": "04"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A generic text note'.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "05"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "06"
+        }
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": 1,
+      "label": "draft",
+      "description": "The item is a draft.",
+      "colorKey": "D4A5A5"
+    },
+    {
+      "id": 2,
+      "label": "complete",
+      "description": "The item is complete.",
+      "colorKey": "F0B880"
+    },
+    {
+      "id": 4,
+      "label": "revised",
+      "description": "The item has been revised.",
+      "colorKey": "60CF60"
+    },
+    {
+      "id": 8,
+      "label": "template",
+      "description": "The item is a template.",
+      "colorKey": "C0C0C0"
+    }
+  ],
+  "index": {
+    "writer": {
+      "id": "item-index-writer.ef-pg"
+    },
+    "reader": {
+      "id": "item-index-reader.ef-pg"
+    }
+  },
+  "graph": {
+    "repository": {
+      "id": "graph-repository.ef-pg"
+    }
+  },
+  "browsers": [
+    {
+      "id": "it.vedph.item-browser.mongo.hierarchy"
+    }
+  ],
+  "thesauri": [
+    {
+      "id": "model-types@en",
+      "entries": [
+        {
+          "id": "it.vedph.categories",
+          "value": "categories"
+        },
+        {
+          "id": "it.vedph.categories:ico",
+          "value": "iconographies"
+        },
+        {
+          "id": "it.vedph.categories:ill",
+          "value": "illustration types"
+        },
+        {
+          "id": "it.vedph.categories:thm",
+          "value": "themes"
+        },
+        {
+          "id": "it.vedph.categories:wblk",
+          "value": "woodblock types"
+        },
+        {
+          "id": "it.vedph.codicology.bindings",
+          "value": "bindings"
+        },
+        {
+          "id": "it.vedph.codicology.decorations",
+          "value": "decorations"
+        },
+        {
+          "id": "it.vedph.codicology.edits",
+          "value": "edits"
+        },
+        {
+          "id": "it.vedph.codicology.layouts",
+          "value": "layouts"
+        },
+        {
+          "id": "it.vedph.codicology.layouts:prn",
+          "value": "layouts"
+        },
+        {
+          "id": "it.vedph.codicology.sheet-labels",
+          "value": "sheet labels"
+        },
+        {
+          "id": "it.vedph.codicology.shelfmarks",
+          "value": "shelfmarks"
+        },
+        {
+          "id": "it.vedph.codicology.watermarks",
+          "value": "watermarks"
+        },
+        {
+          "id": "it.vedph.chronotopes",
+          "value": "chronotopes"
+        },
+        {
+          "id": "it.vedph.chronotopes:prn",
+          "value": "print date/place"
+        },
+        {
+          "id": "it.vedph.chronotopes:pub",
+          "value": "publication date/place"
+        },
+        {
+          "id": "it.vedph.comment",
+          "value": "comment"
+        },
+        {
+          "id": "it.vedph.doc-references",
+          "value": "references"
+        },
+        {
+          "id": "it.vedph.metadata",
+          "value": "metadata"
+        },
+        {
+          "id": "it.vedph.ndp.print-fig-plan",
+          "value": "fig.plan"
+        },
+        {
+          "id": "it.vedph.ndp.print-fig-plan-impl",
+          "value": "fig.plan impl."
+        },
+        {
+          "id": "it.vedph.ndp.print-fonts",
+          "value": "fonts"
+        },
+        {
+          "id": "it.vedph.ndp.text-passages",
+          "value": "text passages"
+        },
+        {
+          "id": "it.vedph.note",
+          "value": "note"
+        },
+        {
+          "id": "it.vedph.note:col",
+          "value": "colophon"
+        },
+        {
+          "id": "it.vedph.note:hist",
+          "value": "history"
+        },
+        {
+          "id": "it.vedph.note:inc",
+          "value": "incipit"
+        },
+        {
+          "id": "it.vedph.physical-measurements:wblk",
+          "value": "measurements"
+        },
+        {
+          "id": "it.vedph.pin-links",
+          "value": "links"
+        }
+      ]
+    },
+    {
+      "id": "categories_ico@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "categories_ill@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "categories_thm@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "categories_wblk@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "cod-binding-board-materials@en",
+      "entries": [
+        {
+          "id": "-",
+          "value": "---"
+        },
+        {
+          "id": "wood",
+          "value": "legno"
+        },
+        {
+          "id": "card",
+          "value": "cartone"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-binding-cover-materials@en",
+      "entries": [
+        {
+          "id": "-",
+          "value": "---"
+        },
+        {
+          "id": "skin",
+          "value": "pelle"
+        },
+        {
+          "id": "tanned-skin",
+          "value": "cuoio"
+        },
+        {
+          "id": "parchment",
+          "value": "membrana"
+        },
+        {
+          "id": "velvet",
+          "value": "velluto"
+        },
+        {
+          "id": "textile",
+          "value": "tessuto"
+        },
+        {
+          "id": "paper",
+          "value": "carta"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-binding-tags@en",
+      "entries": [
+        {
+          "id": "current",
+          "value": "attuale"
+        },
+        {
+          "id": "former",
+          "value": "precedente"
+        },
+        {
+          "id": "none",
+          "value": "assente"
+        }
+      ]
+    },
+    {
+      "id": "cod-catchwords-positions@en",
+      "entries": [
+        {
+          "id": "mie",
+          "value": "marg.inf.est."
+        },
+        {
+          "id": "mic",
+          "value": "marg.inf.cen."
+        },
+        {
+          "id": "mii",
+          "value": "marg.inf.int"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-colors@en",
+      "entries": [
+        {
+          "id": "blue",
+          "value": "blu"
+        },
+        {
+          "id": "red",
+          "value": "rosso"
+        },
+        {
+          "id": "green",
+          "value": "verde"
+        },
+        {
+          "id": "yellow",
+          "value": "giallo"
+        },
+        {
+          "id": "white",
+          "value": "bianco"
+        },
+        {
+          "id": "purple",
+          "value": "viola"
+        },
+        {
+          "id": "lightblue",
+          "value": "turchese"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-flags@en",
+      "entries": [
+        {
+          "id": "ill.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "orn.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "dia.dante-if",
+          "value": "Inferno"
+        },
+        {
+          "id": "dia.dante-purg",
+          "value": "Purgatorio"
+        },
+        {
+          "id": "dia.dante-par",
+          "value": "Paradiso"
+        },
+        {
+          "id": "dia.other",
+          "value": "altro"
+        },
+        {
+          "id": "ini.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "ini.guideletter",
+          "value": "lettere guida"
+        },
+        {
+          "id": "ini-wat.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "ini-wat.guideletter",
+          "value": "lettere guida"
+        },
+        {
+          "id": "ini-orn.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "ini-orn.guideletter",
+          "value": "lettere guida"
+        },
+        {
+          "id": "ini-fig.sketch",
+          "value": "disegno preparatorio"
+        },
+        {
+          "id": "ini-fig.guideletter",
+          "value": "lettere guida"
+        },
+        {
+          "id": "par.sketch",
+          "value": "disegno preparatorio"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-gildings@en",
+      "entries": [
+        {
+          "id": "leaf-gold",
+          "value": "oro in lamina"
+        },
+        {
+          "id": "shell-gold",
+          "value": "oro in conchiglia"
+        },
+        {
+          "id": "leaf-silver",
+          "value": "argento in lamina"
+        },
+        {
+          "id": "leaf-metal",
+          "value": "lamina metallica"
+        },
+        {
+          "id": "punchmarks",
+          "value": "punzoni"
+        },
+        {
+          "id": "freehand-indentation",
+          "value": "incisioni"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-positions@en",
+      "entries": [
+        {
+          "id": "ill.full-page",
+          "value": "a piena pagina"
+        },
+        {
+          "id": "ill.interpol",
+          "value": "intercalata"
+        },
+        {
+          "id": "ill.intercol",
+          "value": "intercolumnio"
+        },
+        {
+          "id": "ill.margin-o",
+          "value": "margine est."
+        },
+        {
+          "id": "ill.margin-i",
+          "value": "margine int."
+        },
+        {
+          "id": "ill.margin-t",
+          "value": "margine sup."
+        },
+        {
+          "id": "ill.margin-b",
+          "value": "margine inf."
+        },
+        {
+          "id": "ill.other",
+          "value": "altro"
+        },
+        {
+          "id": "dia.full-page",
+          "value": "a piena pagina"
+        },
+        {
+          "id": "dia.interpol",
+          "value": "intercalata"
+        },
+        {
+          "id": "dia.intercol",
+          "value": "intercolumnio"
+        },
+        {
+          "id": "dia.margin-o",
+          "value": "margine est."
+        },
+        {
+          "id": "dia.margin-i",
+          "value": "margine int."
+        },
+        {
+          "id": "dia.margin-t",
+          "value": "margine sup."
+        },
+        {
+          "id": "dia.margin-b",
+          "value": "margine inf."
+        },
+        {
+          "id": "dia.other",
+          "value": "altro"
+        },
+        {
+          "id": "ini.aligned",
+          "value": "allineata"
+        },
+        {
+          "id": "ini.secondary",
+          "value": "annegata"
+        },
+        {
+          "id": "ini.protruding",
+          "value": "sporgente"
+        },
+        {
+          "id": "ini-wat.aligned",
+          "value": "allineata"
+        },
+        {
+          "id": "ini-wat.protruding",
+          "value": "sporgente"
+        },
+        {
+          "id": "ini-wat.secondary",
+          "value": "annegata"
+        },
+        {
+          "id": "ini-orn.aligned",
+          "value": "allineata"
+        },
+        {
+          "id": "ini-orn.protruding",
+          "value": "sporgente"
+        },
+        {
+          "id": "ini-orn.secondary",
+          "value": "annegata"
+        },
+        {
+          "id": "ini-fig.aligned",
+          "value": "allineata"
+        },
+        {
+          "id": "ini-fig.protruding",
+          "value": "sporgente"
+        },
+        {
+          "id": "ini-fig.secondary",
+          "value": "annegata"
+        },
+        {
+          "id": "orn.-",
+          "value": ""
+        },
+        {
+          "id": "par.-",
+          "value": ""
+        },
+        {
+          "id": "wsp.full-page",
+          "value": "a piena pagina"
+        },
+        {
+          "id": "wsp.interpol",
+          "value": "intercalata"
+        },
+        {
+          "id": "wsp.intercol",
+          "value": "intercolumnio"
+        },
+        {
+          "id": "wsp.margin-o",
+          "value": "margine est."
+        },
+        {
+          "id": "wsp.margin-i",
+          "value": "margine int."
+        },
+        {
+          "id": "wsp.margin-t",
+          "value": "margine sup."
+        },
+        {
+          "id": "wsp.margin-b",
+          "value": "margine inf."
+        },
+        {
+          "id": "wsp.initial",
+          "value": "in luogo di iniziale"
+        },
+        {
+          "id": "wsp.para",
+          "value": "in luogo di segno paragrafematico"
+        },
+        {
+          "id": "wsp.other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-techniques@en",
+      "entries": [
+        {
+          "id": "watercolor",
+          "value": "acquerellature"
+        },
+        {
+          "id": "tempera",
+          "value": "tempera"
+        },
+        {
+          "id": "ink",
+          "value": "inchiostro"
+        },
+        {
+          "id": "lead",
+          "value": "mina"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-tools@en",
+      "entries": [
+        {
+          "id": "pen",
+          "value": "penna"
+        },
+        {
+          "id": "brush",
+          "value": "pennello"
+        },
+        {
+          "id": "stylus",
+          "value": "stilo"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-types@en",
+      "entries": [
+        {
+          "id": "ill",
+          "value": "miniatura"
+        },
+        {
+          "id": "orn",
+          "value": "ornamentazione"
+        },
+        {
+          "id": "dia",
+          "value": "diagramma"
+        },
+        {
+          "id": "ini",
+          "value": "iniziali semplici"
+        },
+        {
+          "id": "ini-wat",
+          "value": "iniziali filigranate"
+        },
+        {
+          "id": "ini-orn",
+          "value": "iniziali ornate"
+        },
+        {
+          "id": "ini-fig",
+          "value": "iniziali istoriate"
+        },
+        {
+          "id": "par",
+          "value": "segni paragrafematici"
+        },
+        {
+          "id": "lbl",
+          "value": "epigrafi"
+        },
+        {
+          "id": "wsp",
+          "value": "spazi bianchi"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-element-typologies@en",
+      "entries": [
+        {
+          "id": "dia.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "dia.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "dia.drawing",
+          "value": "disegno"
+        },
+        {
+          "id": "dia.vignette",
+          "value": "tabellare"
+        },
+        {
+          "id": "dia.unframed",
+          "value": "non incorniciata"
+        },
+        {
+          "id": "ill.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "ill.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "ill.drawing",
+          "value": "disegno"
+        },
+        {
+          "id": "ill.vignette",
+          "value": "tabellare"
+        },
+        {
+          "id": "ill.unframed",
+          "value": "non incorniciata"
+        },
+        {
+          "id": "ini.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "ini.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "ini-wat.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "ini-wat.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "ini-orn.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "ini-orn.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "ini-fig.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "ini-fig.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "ini-fig.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "par.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "par.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "lbl.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "lbl.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "wsp.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "wsp.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "orn.frontpage",
+          "value": "pagina incipitaria"
+        },
+        {
+          "id": "orn.antiporta",
+          "value": "antiporta"
+        },
+        {
+          "id": "orn.border-fig",
+          "value": "fregio istoriato"
+        },
+        {
+          "id": "orn.border-inhabited",
+          "value": "fregio abitato"
+        },
+        {
+          "id": "orn.border-drolerie",
+          "value": "fregio abitato con drôlerie"
+        },
+        {
+          "id": "orn.border-foliated",
+          "value": "fregio foliato"
+        },
+        {
+          "id": "orn.border-white-vine",
+          "value": "fregio a bianchi girari"
+        },
+        {
+          "id": "orn.border-other",
+          "value": "fregio (altro)"
+        },
+        {
+          "id": "orn.coat-of-arms",
+          "value": "stemma"
+        },
+        {
+          "id": "orn.emblem",
+          "value": "emblema"
+        },
+        {
+          "id": "orn.tabula-ansata",
+          "value": "tabula ansata"
+        },
+        {
+          "id": "orn.other",
+          "value": "altro"
+        },
+        {
+          "id": "ini-wat.simple",
+          "value": "semplice"
+        },
+        {
+          "id": "ini-wat.cutline",
+          "value": "fessa"
+        },
+        {
+          "id": "ini-wat.puzzle",
+          "value": "rifessa"
+        },
+        {
+          "id": "ini-orn.fig",
+          "value": "figurata"
+        },
+        {
+          "id": "ini-orn.inhabited",
+          "value": "abitata"
+        },
+        {
+          "id": "ini-orn.foliated",
+          "value": "foliata"
+        },
+        {
+          "id": "ini-orn.white-vine",
+          "value": "bianchi girari"
+        },
+        {
+          "id": "ini-orn.geometric",
+          "value": "geometrica"
+        },
+        {
+          "id": "ini-orn.interlace-knotwork",
+          "value": "a cappio intrecciato"
+        },
+        {
+          "id": "ini-orn.other",
+          "value": "altro"
+        },
+        {
+          "id": "par.running-heads",
+          "value": "titoli correnti"
+        },
+        {
+          "id": "par.rubrication",
+          "value": "rubriche"
+        },
+        {
+          "id": "par.pilcrow",
+          "value": "segni di paragrafo"
+        },
+        {
+          "id": "par.decorated-catchword",
+          "value": "richiami figurati"
+        },
+        {
+          "id": "par.cartulation",
+          "value": "cartulazione"
+        },
+        {
+          "id": "par.other",
+          "value": "altro"
+        },
+        {
+          "id": "wsp.framed",
+          "value": "incorniciato"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-flags@en",
+      "entries": [
+        {
+          "id": "later-additions",
+          "value": "aggiunge seriori"
+        },
+        {
+          "id": "unitary",
+          "value": "unitaria"
+        },
+        {
+          "id": "unfinished",
+          "value": "incompleta"
+        }
+      ]
+    },
+    {
+      "id": "cod-decoration-type-hidden@en",
+      "entries": [
+        {
+          "id": "ill",
+          "value": "lineHeight"
+        },
+        {
+          "id": "dia",
+          "value": "lineHeight"
+        },
+        {
+          "id": "orn",
+          "value": "subject textRelation lineHeight"
+        },
+        {
+          "id": "ant",
+          "value": "subject textRelation lineHeight"
+        },
+        {
+          "id": "ini",
+          "value": "typologies subject textRelation"
+        },
+        {
+          "id": "ini-wat",
+          "value": "subject textRelation"
+        },
+        {
+          "id": "ini-orn",
+          "value": "textRelation"
+        },
+        {
+          "id": "ini-fig",
+          "value": "typologies"
+        },
+        {
+          "id": "par",
+          "value": "subject textRelation lineHeight"
+        },
+        {
+          "id": "lbl",
+          "value": "subject textRelation"
+        },
+        {
+          "id": "wsp",
+          "value": "colors gildings techniques subject textRelation tools lineHeight"
+        }
+      ]
+    },
+    {
+      "id": "cod-edit-colors@en",
+      "targetId": "cod-hand-colors"
+    },
+    {
+      "id": "cod-edit-languages@en",
+      "entries": [
+        {
+          "id": "-",
+          "value": "---"
+        },
+        {
+          "id": "en",
+          "value": "inglese"
+        },
+        {
+          "id": "fr",
+          "value": "francese"
+        },
+        {
+          "id": "de",
+          "value": "tedesco"
+        },
+        {
+          "id": "grc",
+          "value": "greco"
+        },
+        {
+          "id": "el",
+          "value": "neogreco"
+        },
+        {
+          "id": "it-x-vulg",
+          "value": "italiano volgare"
+        },
+        {
+          "id": "it",
+          "value": "italiano"
+        },
+        {
+          "id": "la",
+          "value": "latino"
+        },
+        {
+          "id": "la-x-it-vulg",
+          "value": "latino+volgare"
+        },
+        {
+          "id": "sp",
+          "value": "spagnolo"
+        }
+      ]
+    },
+    {
+      "id": "cod-edit-positions@en",
+      "targetId": "cod-numbering-positions"
+    },
+    {
+      "id": "cod-edit-techniques@en",
+      "entries": [
+        {
+          "id": "ink",
+          "value": "inchiostro"
+        },
+        {
+          "id": "lapis",
+          "value": "lapis"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-edit-types@en",
+      "entries": [
+        {
+          "id": "text",
+          "value": "testo avventizio"
+        },
+        {
+          "id": "notes",
+          "value": "postilla/annotazione"
+        },
+        {
+          "id": "comment",
+          "value": "commento"
+        },
+        {
+          "id": "correction",
+          "value": "correzione"
+        },
+        {
+          "id": "integration",
+          "value": "integrazione"
+        },
+        {
+          "id": "rubric",
+          "value": "rubrica"
+        },
+        {
+          "id": "para",
+          "value": "segno paragrafematico"
+        },
+        {
+          "id": "title",
+          "value": "titolo corrente"
+        },
+        {
+          "id": "attention",
+          "value": "segno di attenzione"
+        },
+        {
+          "id": "ownership",
+          "value": "nota di possesso"
+        },
+        {
+          "id": "index",
+          "value": "indice"
+        },
+        {
+          "id": "drawing",
+          "value": "disegno"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-endleaf-materials@en",
+      "entries": [
+        {
+          "id": "parchment",
+          "value": "membranaceo"
+        },
+        {
+          "id": "paper",
+          "value": "cartaceo"
+        },
+        {
+          "id": "parchment-reuse",
+          "value": "membranaceo di riuso"
+        },
+        {
+          "id": "paper-reuse",
+          "value": "cartaceo di riuso"
+        }
+      ]
+    },
+    {
+      "id": "cod-endleaf-types@en",
+      "entries": [
+        {
+          "id": "front",
+          "value": "ant."
+        },
+        {
+          "id": "back",
+          "value": "post."
+        }
+      ]
+    },
+    {
+      "id": "cod-labels-col-q-features@en",
+      "entries": [
+        {
+          "id": "quire-break",
+          "value": "cesura fasc."
+        }
+      ]
+    },
+    {
+      "id": "cod-layout-counts@en",
+      "entries": [
+        {
+          "id": "rows",
+          "value": "righe"
+        },
+        {
+          "id": "lines",
+          "value": "linee"
+        }
+      ]
+    },
+    {
+      "id": "cod-layout-ruling-techniques@en",
+      "entries": [
+        {
+          "id": "-",
+          "value": "---"
+        },
+        {
+          "id": "drypoint",
+          "value": "a secco"
+        },
+        {
+          "id": "mine",
+          "value": "colore: mina di piombo"
+        },
+        {
+          "id": "ink",
+          "value": "colore: inchiostro"
+        },
+        {
+          "id": "folding",
+          "value": "piegatura"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        },
+        {
+          "id": "none",
+          "value": "nessuna"
+        }
+      ]
+    },
+    {
+      "id": "cod-numbering-colors@en",
+      "targetId": "cod-hand-colors"
+    },
+    {
+      "id": "cod-numbering-positions@en",
+      "entries": [
+        {
+          "id": "mse",
+          "value": "marg.sup.est."
+        },
+        {
+          "id": "msc",
+          "value": "marg.sup.cen."
+        },
+        {
+          "id": "msi",
+          "value": "marg.sup.int."
+        },
+        {
+          "id": "mie",
+          "value": "marg.inf.est."
+        },
+        {
+          "id": "mic",
+          "value": "marg.inf.cen."
+        },
+        {
+          "id": "mii",
+          "value": "marg.inf.int."
+        },
+        {
+          "id": "is",
+          "value": "intercol.sup."
+        },
+        {
+          "id": "ii",
+          "value": "intercol.inf."
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        },
+        {
+          "id": "-",
+          "value": "---"
+        }
+      ]
+    },
+    {
+      "id": "cod-numbering-systems@en",
+      "entries": [
+        {
+          "id": "arabic",
+          "value": "arabo"
+        },
+        {
+          "id": "roman",
+          "value": "romano"
+        },
+        {
+          "id": "roman-arabic",
+          "value": "romano+arabo"
+        },
+        {
+          "id": "mix",
+          "value": "misto"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        },
+        {
+          "id": "-",
+          "value": "---"
+        }
+      ]
+    },
+    {
+      "id": "cod-numbering-techniques@en",
+      "entries": [
+        {
+          "id": "ink",
+          "value": "inchiostro"
+        },
+        {
+          "id": "lapis",
+          "value": "lapis"
+        },
+        {
+          "id": "mechanic",
+          "value": "n. meccanico"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        },
+        {
+          "id": "-",
+          "value": "---"
+        }
+      ]
+    },
+    {
+      "id": "cod-quiresig-positions@en",
+      "entries": [
+        {
+          "id": "mse",
+          "value": "marg.sup.est."
+        },
+        {
+          "id": "msc",
+          "value": "marg.sup.cen."
+        },
+        {
+          "id": "msi",
+          "value": "marg.sup.int."
+        },
+        {
+          "id": "mie",
+          "value": "marg.inf.est."
+        },
+        {
+          "id": "mic",
+          "value": "marg.inf.cen."
+        },
+        {
+          "id": "mii",
+          "value": "marg.inf.int."
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-quiresig-systems@en",
+      "entries": [
+        {
+          "id": "arabic",
+          "value": "arabo"
+        },
+        {
+          "id": "roman",
+          "value": "romano"
+        },
+        {
+          "id": "alpha",
+          "value": "alfabetico"
+        },
+        {
+          "id": "other",
+          "value": "altro"
+        }
+      ]
+    },
+    {
+      "id": "cod-shelfmark-libraries@en",
+      "entries": [
+        {
+          "id": "albertina-museum-wien",
+          "value": "Albertina Museum (Vienna)"
+        },
+        {
+          "id": "archivio-capitolare-del-duomo-pistoia",
+          "value": "Archivio Capitolare del Duomo (Pistoia)"
+        },
+        {
+          "id": "archivio-capitolare-di-san-lorenzo",
+          "value": "Archivio Capitolare di San Lorenzo (Genova)"
+        },
+        {
+          "id": "archivio-comunale-cagli",
+          "value": "Archivio Comunale (Cagli)"
+        },
+        {
+          "id": "archivio-degli-innocenti",
+          "value": "Archivio degli Innocenti (Firenze)"
+        },
+        {
+          "id": "archivio-di-stato-rieti",
+          "value": "Archivio di Stato (Rieti)"
+        },
+        {
+          "id": "archivio-di-stato-bologna",
+          "value": "Archivio di Stato (Bologna)"
+        },
+        {
+          "id": "archivio-di-stato-catania",
+          "value": "Archivio di Stato (Catania)"
+        },
+        {
+          "id": "archivio-di-stato-cremona",
+          "value": "Archivio di Stato (Cremona)"
+        },
+        {
+          "id": "archivio-di-stato-firenze",
+          "value": "Archivio di Stato (Firenze)"
+        },
+        {
+          "id": "archivio-di-stato-genova",
+          "value": "Archivio di Stato (Genova)"
+        },
+        {
+          "id": "archivio-di-stato-laquila",
+          "value": "Archivio di Stato (L'Aquila)"
+        },
+        {
+          "id": "archivio-di-stato-lucca",
+          "value": "Archivio di Stato (Lucca)"
+        },
+        {
+          "id": "archivio-di-stato-macerata",
+          "value": "Archivio di Stato (Macerata)"
+        },
+        {
+          "id": "archivio-di-stato-modena",
+          "value": "Archivio di Stato (Modena)"
+        },
+        {
+          "id": "archivio-di-stato-perugia",
+          "value": "Archivio di Stato (Perugia)"
+        },
+        {
+          "id": "archivio-di-stato-pistoia",
+          "value": "Archivio di Stato (Pistoia)"
+        },
+        {
+          "id": "archivio-di-stato-reggio-emilia",
+          "value": "Archivio di Stato (Reggio Emilia)"
+        },
+        {
+          "id": "archivio-di-stato-savona",
+          "value": "Archivio di Stato (Savona)"
+        },
+        {
+          "id": "archivio-di-stato-siena",
+          "value": "Archivio di Stato (Siena)"
+        },
+        {
+          "id": "archivio-di-stato-trapani",
+          "value": "Archivio di Stato (Trapani)"
+        },
+        {
+          "id": "archivio-di-stato-venezia",
+          "value": "Archivio di Stato (Venezia)"
+        },
+        {
+          "id": "archivio-di-stato-della-repubblica-di-san-marino",
+          "value": "Archivio di Stato della Repubblica di San Marino (San Marino)"
+        },
+        {
+          "id": "archivio-e-biblioteca-dellalmo-collegio-borromeo",
+          "value": "Archivio e Biblioteca dell'Almo Collegio Borromeo (Pavia)"
+        },
+        {
+          "id": "archivio-notarile-chiavari",
+          "value": "Archivio Notarile (Chiavari)"
+        },
+        {
+          "id": "archivio-notarile-distrettuale-la-spezia",
+          "value": "Archivio Notarile Distrettuale (La Spezia)"
+        },
+        {
+          "id": "archivio-notarile-distrettuale-siena",
+          "value": "Archivio Notarile Distrettuale (Siena)"
+        },
+        {
+          "id": "archivio-privato-borromeo-isola-bella",
+          "value": "Archivio privato Borromeo (Isola Bella)"
+        },
+        {
+          "id": "archivio-storico-fossato-di-vico",
+          "value": "Archivio Storico (Fossato di Vico)"
+        },
+        {
+          "id": "archivio-storico-capitolino",
+          "value": "Archivio Storico Capitolino (Roma)"
+        },
+        {
+          "id": "archivio-storico-civico-e-biblioteca-trivulziana",
+          "value": "Archivio Storico Civico e Biblioteca Trivulziana (Milano)"
+        },
+        {
+          "id": "archivio-storico-comunale-montalcino",
+          "value": "Archivio Storico Comunale (Montalcino)"
+        },
+        {
+          "id": "archivio-storico-comunale-nonantola",
+          "value": "Archivio Storico Comunale (Nonantola)"
+        },
+        {
+          "id": "archivio-storico-comunale-verzuolo",
+          "value": "Archivio Storico Comunale (Verzuolo)"
+        },
+        {
+          "id": "archivio-storico-del-capitolo-di-san-pietro",
+          "value": "Archivio Storico del Capitolo di San Pietro (Perugia)"
+        },
+        {
+          "id": "archivo-historico",
+          "value": "Archivo Històrico (Cervera)"
+        },
+        {
+          "id": "banco-di-chiavari-e-della-riviera-ligure",
+          "value": "Banco di Chiavari e della Riviera Ligure (Chiavari)"
+        },
+        {
+          "id": "bayerische-staatsbibliothek-munchen",
+          "value": "Bayerische Staatsbibliothek (Monaco di Baviena)"
+        },
+        {
+          "id": "beinecke-rare-book-and-manuscript-library",
+          "value": "Beinecke Rare Book & Manuscript Library (New Haven (Connecticut))"
+        },
+        {
+          "id": "biblioteca-academiei-romane",
+          "value": "Biblioteca Academiei Române (Cluj-Napoca)"
+        },
+        {
+          "id": "biblioteca-albani-roma",
+          "value": "Biblioteca Albani (Roma)"
+        },
+        {
+          "id": "biblioteca-angelica",
+          "value": "Biblioteca Angelica (Roma)"
+        },
+        {
+          "id": "biblioteca-antoniana-padova",
+          "value": "Biblioteca Antoniana (Padova)"
+        },
+        {
+          "id": "biblioteca-apostolica-vaticana",
+          "value": "Biblioteca Apostolica Vaticana (Città del Vaticano)"
+        },
+        {
+          "id": "biblioteca-arcivescovile",
+          "value": "Biblioteca Arcivescovile (Bologna)"
+        },
+        {
+          "id": "biblioteca-arcivescovile-udine",
+          "value": "Biblioteca Arcivescovile (Udine)"
+        },
+        {
+          "id": "biblioteca-arcivescovile-e-bartoliniana",
+          "value": "Biblioteca Arcivescovile e Bartoliniana (Udine)"
+        },
+        {
+          "id": "biblioteca-boccolini",
+          "value": "Biblioteca Boccolini (Foligno)"
+        },
+        {
+          "id": "biblioteca-capitolare-treviso",
+          "value": "Biblioteca Capitolare (Treviso)"
+        },
+        {
+          "id": "biblioteca-capitolare-verona",
+          "value": "Biblioteca Capitolare (Verona)"
+        },
+        {
+          "id": "biblioteca-capitular-y-colombina",
+          "value": "Biblioteca Capitular y Colombina (Siviglia)"
+        },
+        {
+          "id": "biblioteca-casanatense",
+          "value": "Biblioteca Casanatense (Roma)"
+        },
+        {
+          "id": "biblioteca-centrale-della-regione-siciliana",
+          "value": "Biblioteca Centrale della Regione Siciliana (Palermo)"
+        },
+        {
+          "id": "biblioteca-civica-vincenzo-joppi",
+          "value": "Biblioteca civica \"Vincenzo Joppi\" (Udine)"
+        },
+        {
+          "id": "biblioteca-civica-padova",
+          "value": "Biblioteca civica (Padova)"
+        },
+        {
+          "id": "biblioteca-civica-verona",
+          "value": "Biblioteca civica (Verona)"
+        },
+        {
+          "id": "biblioteca-civica-angelo-mai",
+          "value": "Biblioteca civica Angelo Mai (Bergamo)"
+        },
+        {
+          "id": "biblioteca-civica-anton-giulio-barrili",
+          "value": "Biblioteca civica Anton Giulio Barrili (Savona)"
+        },
+        {
+          "id": "biblioteca-civica-attilio-hortis",
+          "value": "Biblioteca civica Attilio Hortis (Trieste)"
+        },
+        {
+          "id": "biblioteca-civica-berio",
+          "value": "Biblioteca civica Berio (Genova)"
+        },
+        {
+          "id": "biblioteca-civica-bertoliana",
+          "value": "Biblioteca civica Bertoliana (Vicenza)"
+        },
+        {
+          "id": "biblioteca-civica-carlo-negroni",
+          "value": "Biblioteca civica Carlo Negroni (Novara)"
+        },
+        {
+          "id": "biblioteca-civica-gambalunga",
+          "value": "Biblioteca civica Gambalunga (Rimini)"
+        },
+        {
+          "id": "biblioteca-civica-queriniana",
+          "value": "Biblioteca civica Queriniana (Brescia)"
+        },
+        {
+          "id": "biblioteca-civica-romolo-spezioli",
+          "value": "Biblioteca civica Romolo Spezioli (Fermo)"
+        },
+        {
+          "id": "biblioteca-civica-tartarotti-rovereto",
+          "value": "Biblioteca civica \"Tartarotti\" (Rovereto)"
+        },
+        {
+          "id": "biblioteca-classense",
+          "value": "Biblioteca Classense (Ravenna)"
+        },
+        {
+          "id": "biblioteca-comunale-tommaso-branchini",
+          "value": "Biblioteca Comunale \"Tommaso Branchini\" (Sant'Agata Bolognese)"
+        },
+        {
+          "id": "biblioteca-comunale-ascoli-piceno",
+          "value": "Biblioteca Comunale (Ascoli Piceno)"
+        },
+        {
+          "id": "biblioteca-comunale-corinaldo",
+          "value": "Biblioteca Comunale (Corinaldo)"
+        },
+        {
+          "id": "biblioteca-comunale-crema",
+          "value": "Biblioteca Comunale (Crema)"
+        },
+        {
+          "id": "biblioteca-comunale-fabriano",
+          "value": "Biblioteca Comunale (Fabriano)"
+        },
+        {
+          "id": "biblioteca-comunale-imola",
+          "value": "Biblioteca Comunale (Imola)"
+        },
+        {
+          "id": "biblioteca-comunale-palermo",
+          "value": "Biblioteca Comunale (Palermo)"
+        },
+        {
+          "id": "biblioteca-comunale-treviso",
+          "value": "Biblioteca Comunale (Treviso)"
+        },
+        {
+          "id": "biblioteca-comunale-antonelliana-e-archivio-storico",
+          "value": "Biblioteca Comunale Antonelliana e Archivio Storico (Senigallia)"
+        },
+        {
+          "id": "biblioteca-comunale-ariostea",
+          "value": "Biblioteca Comunale Ariostea (Ferrara)"
+        },
+        {
+          "id": "biblioteca-comunale-augusta-perugia",
+          "value": "Biblioteca Comunale Augusta (Perugia)"
+        },
+        {
+          "id": "biblioteca-comunale-aurelio-saffi",
+          "value": "Biblioteca Comunale Aurelio Saffi (Forlì)"
+        },
+        {
+          "id": "biblioteca-comunale-carducci",
+          "value": "Biblioteca Comunale Carducci (Bologna)"
+        },
+        {
+          "id": "biblioteca-comunale-degli-intronati",
+          "value": "Biblioteca Comunale degli Intronati (Siena)"
+        },
+        {
+          "id": "biblioteca-comunale-dellarchiginnasio",
+          "value": "Biblioteca Comunale dell'Archiginnasio (Bologna)"
+        },
+        {
+          "id": "biblioteca-comunale-e-dellaccademia-etrusca",
+          "value": "Biblioteca Comunale e dell'Accademia Etrusca (Cortona)"
+        },
+        {
+          "id": "biblioteca-comunale-laudense",
+          "value": "Biblioteca Comunale Laudense (Lodi)"
+        },
+        {
+          "id": "biblioteca-comunale-rilli-vettori",
+          "value": "Biblioteca Comunale Rilli-Vettori (Poppi)"
+        },
+        {
+          "id": "biblioteca-comunale-teresiana",
+          "value": "Biblioteca Comunale Teresiana (Mantova)"
+        },
+        {
+          "id": "biblioteca-comunale-valentiniana",
+          "value": "Biblioteca Comunale Valentiniana (Camerino)"
+        },
+        {
+          "id": "biblioteca-corsiniana-dellaccademia-nazionale-dei-lincei",
+          "value": "Biblioteca Corsiniana dell'Accademia Nazionale dei Lincei (Roma)"
+        },
+        {
+          "id": "biblioteca-crasso",
+          "value": "Biblioteca Crasso (Venezia)"
+        },
+        {
+          "id": "biblioteca-de-catalunya",
+          "value": "Biblioteca de Catalunya (Barcellona)"
+        },
+        {
+          "id": "biblioteca-dei-canonici-di-s-martino",
+          "value": "Biblioteca dei Canonici di S. Martino (Lucca)"
+        },
+        {
+          "id": "biblioteca-dei-conti-castiglioni",
+          "value": "Biblioteca dei Conti Castiglioni (Mantova)"
+        },
+        {
+          "id": "biblioteca-dei-girolamini",
+          "value": "Biblioteca dei Girolamini (Napoli)"
+        },
+        {
+          "id": "biblioteca-del-cabildo-primado-de-toledo",
+          "value": "Biblioteca del Cabildo Primado de Toledo (Toledo)"
+        },
+        {
+          "id": "biblioteca-del-centro-dantesco-dei-frati-minori-conventuali",
+          "value": "Biblioteca del Centro Dantesco dei Frati Minori Conventuali (Ravenna)"
+        },
+        {
+          "id": "biblioteca-del-conte-gaetano-perusini",
+          "value": "Biblioteca del conte Gaetano Perusini (Udine)"
+        },
+        {
+          "id": "biblioteca-del-museo-correr",
+          "value": "Biblioteca del Museo Correr (Venezia)"
+        },
+        {
+          "id": "biblioteca-del-prof-domenico-maffei",
+          "value": "Biblioteca del prof. Domenico Maffei (Siena)"
+        },
+        {
+          "id": "biblioteca-del-seminario-belluno",
+          "value": "Biblioteca del Seminario (Belluno)"
+        },
+        {
+          "id": "biblioteca-del-seminario-arcivescovile-udine",
+          "value": "Biblioteca del Seminario Arcivescovile (Udine)"
+        },
+        {
+          "id": "biblioteca-del-seminario-vescovile-padova",
+          "value": "Biblioteca del Seminario Vescovile (Padova)"
+        },
+        {
+          "id": "biblioteca-del-seminario-vescovile-verona",
+          "value": "Biblioteca del Seminario Vescovile (Verona)"
+        },
+        {
+          "id": "biblioteca-dellaccademia-dei-concordi",
+          "value": "Biblioteca dell'Accademia dei Concordi (Rovigo)"
+        },
+        {
+          "id": "biblioteca-dellaccademia-della-crusca",
+          "value": "Biblioteca dell'Accademia della Crusca (Firenze)"
+        },
+        {
+          "id": "biblioteca-dellistituto-biblico-pontificio",
+          "value": "Biblioteca dell'Istituto Biblico Pontificio (Roma)"
+        },
+        {
+          "id": "biblioteca-della-fondazione-centro-studi-campostrini",
+          "value": "Biblioteca della Fondazione Centro Studi Campostrini (Verona)"
+        },
+        {
+          "id": "biblioteca-della-fondazione-palazzo-strozzi",
+          "value": "Biblioteca della Fondazione Palazzo Strozzi (Firenze)"
+        },
+        {
+          "id": "biblioteca-della-scuola-normale-superiore-pisa",
+          "value": "Biblioteca della Scuola Normale Superiore (Pisa)"
+        },
+        {
+          "id": "biblioteca-della-societa-dantesca-italiana",
+          "value": "Biblioteca della Società Dantesca Italiana (Firenze)"
+        },
+        {
+          "id": "biblioteca-della-societa-economica",
+          "value": "Biblioteca della Società economica (Chiavari)"
+        },
+        {
+          "id": "biblioteca-della-societa-napoletana-di-storia-patria",
+          "value": "Biblioteca della Società Napoletana di Storia Patria (Napoli)"
+        },
+        {
+          "id": "biblioteca-di-casa-carducci",
+          "value": "Biblioteca di Casa Carducci (Bologna)"
+        },
+        {
+          "id": "biblioteca-di-sfrancesco-nella-biblioteca-comunale",
+          "value": "Biblioteca di S.Francesco nella Biblioteca Comunale (Assisi)"
+        },
+        {
+          "id": "biblioteca-diocesana-vigilianum",
+          "value": "Biblioteca Diocesana Vigilianum (Trento)"
+        },
+        {
+          "id": "biblioteca-durazzo-pallavicini-di-proprieta-della-marchesa-carlotta-cattaneo-adorno-giustiniani",
+          "value": "Biblioteca Durazzo-Pallavicini, di proprietà della Marchesa Carlotta Cattaneo Adorno Giustiniani (Genova)"
+        },
+        {
+          "id": "biblioteca-e-archivio-del-collegio-ghislieri",
+          "value": "Biblioteca e Archivio del Collegio Ghislieri (Pavia)"
+        },
+        {
+          "id": "biblioteca-estense-universitaria",
+          "value": "Biblioteca Estense Universitaria (Modena)"
+        },
+        {
+          "id": "biblioteca-florio",
+          "value": "Biblioteca Florio (Udine)"
+        },
+        {
+          "id": "biblioteca-forteguerriana",
+          "value": "Biblioteca Forteguerriana (Pistoia)"
+        },
+        {
+          "id": "biblioteca-giovardiana",
+          "value": "Biblioteca Giovardiana (Veroli)"
+        },
+        {
+          "id": "biblioteca-guarnacci",
+          "value": "Biblioteca Guarnacci (Volterra)"
+        },
+        {
+          "id": "biblioteca-historica-de-santa-cruz",
+          "value": "Biblioteca Histórica de Santa Cruz (Valladolid)"
+        },
+        {
+          "id": "biblioteca-historica-marques-de-valdecilla",
+          "value": "Biblioteca Histórica Marqués de Valdecilla (Madrid)"
+        },
+        {
+          "id": "biblioteca-mangaroni-brancuti",
+          "value": "Biblioteca Mangaroni-Brancuti (Cagli)"
+        },
+        {
+          "id": "biblioteca-marucelliana",
+          "value": "Biblioteca Marucelliana (Firenze)"
+        },
+        {
+          "id": "biblioteca-medicea-laurenziana",
+          "value": "Biblioteca Medicea Laurenziana (Firenze)"
+        },
+        {
+          "id": "biblioteca-monastero-santa-maria-dei-miracoli",
+          "value": "Biblioteca Monastero Santa Maria dei miracoli (Casalbordino)"
+        },
+        {
+          "id": "biblioteca-mordini",
+          "value": "Biblioteca Mordini (Barga)"
+        },
+        {
+          "id": "biblioteca-moreniana",
+          "value": "Biblioteca Moreniana (Firenze)"
+        },
+        {
+          "id": "biblioteca-nacional-de-espana",
+          "value": "Biblioteca Nacional de España (Madrid)"
+        },
+        {
+          "id": "biblioteca-nacional-de-portugal",
+          "value": "Biblioteca Nacional de Portugal (Lisbona)"
+        },
+        {
+          "id": "biblioteca-nazionale-braidense",
+          "value": "Biblioteca Nazionale Braidense (Milano)"
+        },
+        {
+          "id": "biblioteca-nazionale-centrale-firenze",
+          "value": "Biblioteca nazionale centrale (Firenze)"
+        },
+        {
+          "id": "biblioteca-nazionale-centrale-roma",
+          "value": "Biblioteca Nazionale Centrale (Roma)"
+        },
+        {
+          "id": "biblioteca-nazionale-marciana",
+          "value": "Biblioteca Nazionale Marciana (Venezia)"
+        },
+        {
+          "id": "biblioteca-nazionale-universitaria-di-torino",
+          "value": "Biblioteca Nazionale Universitaria di Torino (Torino)"
+        },
+        {
+          "id": "biblioteca-nazionale-vittorio-emanuele-iii",
+          "value": "Biblioteca Nazionale Vittorio Emanuele III (Napoli)"
+        },
+        {
+          "id": "biblioteca-oliveriana",
+          "value": "Biblioteca Oliveriana (Pesaro)"
+        },
+        {
+          "id": "biblioteca-pagliarini",
+          "value": "Biblioteca Pagliarini (Foligno)"
+        },
+        {
+          "id": "biblioteca-palatina-parma",
+          "value": "Biblioteca Palatina (Parma)"
+        },
+        {
+          "id": "biblioteca-panizzi",
+          "value": "Biblioteca Panizzi (Reggio Emilia)"
+        },
+        {
+          "id": "biblioteca-paroiana",
+          "value": "Biblioteca Paroiana (Rieti)"
+        },
+        {
+          "id": "biblioteca-passerini-landi",
+          "value": "Biblioteca Passerini-Landi (Piacenza)"
+        },
+        {
+          "id": "biblioteca-pier-catterino-zeno",
+          "value": "Biblioteca Pier Catterino Zeno (Venezia)"
+        },
+        {
+          "id": "biblioteca-privata-v-capialbi",
+          "value": "Biblioteca privata V. Capialbi (Vibo Valentia Marina)"
+        },
+        {
+          "id": "biblioteca-reale-torino",
+          "value": "Biblioteca Reale (Torino)"
+        },
+        {
+          "id": "biblioteca-ricasoli-firidolfi",
+          "value": "Biblioteca Ricasoli Firidolfi (Firenze)"
+        },
+        {
+          "id": "biblioteca-riccardiana",
+          "value": "Biblioteca Riccardiana (Firenze)"
+        },
+        {
+          "id": "biblioteca-roncioniana",
+          "value": "Biblioteca Roncioniana (Prato)"
+        },
+        {
+          "id": "biblioteca-slusiana",
+          "value": "Biblioteca Slusiana (Roma)"
+        },
+        {
+          "id": "biblioteca-statale-cremona",
+          "value": "Biblioteca Statale (Cremona)"
+        },
+        {
+          "id": "biblioteca-statale-lucca",
+          "value": "Biblioteca Statale (Lucca)"
+        },
+        {
+          "id": "biblioteca-statale-del-monumento-nazionale-di-montecassino",
+          "value": "Biblioteca Statale del Monumento Nazionale di Montecassino (Montecassino)"
+        },
+        {
+          "id": "biblioteca-torriani",
+          "value": "Biblioteca Torriani (Udine)"
+        },
+        {
+          "id": "biblioteca-universitaria-barcellona",
+          "value": "Biblioteca Universitaria (Barcellona)"
+        },
+        {
+          "id": "biblioteca-universitaria-bologna",
+          "value": "Biblioteca Universitaria (Bologna)"
+        },
+        {
+          "id": "biblioteca-universitaria-cagliari",
+          "value": "Biblioteca Universitaria (Cagliari)"
+        },
+        {
+          "id": "biblioteca-universitaria-padova",
+          "value": "Biblioteca Universitaria (Padova)"
+        },
+        {
+          "id": "biblioteca-universitaria-pavia",
+          "value": "Biblioteca Universitaria (Pavia)"
+        },
+        {
+          "id": "biblioteca-universitaria-alessandrina",
+          "value": "Biblioteca Universitaria Alessandrina (Roma)"
+        },
+        {
+          "id": "biblioteca-vallicelliana",
+          "value": "Biblioteca Vallicelliana (Roma)"
+        },
+        {
+          "id": "biblioteche-riunite-civica-e-a-ursino-recupero",
+          "value": "Biblioteche riunite Civica e A. Ursino Recupero (Catania)"
+        },
+        {
+          "id": "biblioteka-kornicka-polskiej-akademii-nauk",
+          "value": "Biblioteka Kórnicka Polskiej Akademii Nauk (Kórnik)"
+        },
+        {
+          "id": "biblioteka-ksiazat-czartoryskich-cracovia",
+          "value": "Biblioteka Książąt Czartoryskich (Cracovia)"
+        },
+        {
+          "id": "biblioteka-rossijskoj-akademii-nauk",
+          "value": "Biblioteka Rossijskoj Akademii Nauk (San Pietroburgo)"
+        },
+        {
+          "id": "biblioteka-uniwersytecka-breslavia",
+          "value": "Biblioteka Uniwersytecka (Breslavia)"
+        },
+        {
+          "id": "biblioteque-du-chateau",
+          "value": "Bibliotèque du château (Chantilly)"
+        },
+        {
+          "id": "bibliothek-des-christianeum-amburgo",
+          "value": "Bibliothek des Christianeum (Amburgo)"
+        },
+        {
+          "id": "bibliotheque-de-larsenal-bnf-parigi",
+          "value": "Bibliothèque de l'Arsenal (BnF) (Parigi)"
+        },
+        {
+          "id": "bibliotheque-de-luniversite-ginevra",
+          "value": "Bibliothèque de l'Université (Ginevra)"
+        },
+        {
+          "id": "bibliotheque-historique-de-la-faculte-de-medecine-montpellier",
+          "value": "Bibliothèque Historique de la Faculté de Médecine (Montpellier)"
+        },
+        {
+          "id": "bibliotheque-la-valliere-parigi",
+          "value": "Bibliothèque La Vallière (Parigi)"
+        },
+        {
+          "id": "bibliotheque-mazarine-parigi",
+          "value": "Bibliothèque Mazarine (Parigi)"
+        },
+        {
+          "id": "bibliotheque-municipale-lyon",
+          "value": "Bibliothèque municipale (Lyon)"
+        },
+        {
+          "id": "bibliotheque-municipale-grenoble",
+          "value": "Bibliothèque Municipale (Grenoble)"
+        },
+        {
+          "id": "bibliotheque-municipale-linguibertine",
+          "value": "Bibliothèque municipale L'Inguibertine (Carpentras)"
+        },
+        {
+          "id": "bibliotheque-nationale-de-france",
+          "value": "Bibliothèque nationale de France (Parigi)"
+        },
+        {
+          "id": "bibliotheque-nationale-et-universitaire-de-strasbourg",
+          "value": "Bibliothèque nationale et universitaire de Strasbourg (Strasbourg)"
+        },
+        {
+          "id": "bibliotheque-royale-de-belgique",
+          "value": "Bibliothèque Royale de Belgique (Bruxelles)"
+        },
+        {
+          "id": "bibliotheque-sainte-genevieve",
+          "value": "Bibliothèque Sainte-Genevieve (Parigi)"
+        },
+        {
+          "id": "bodleian-libraries",
+          "value": "Bodleian Libraries (Oxford)"
+        },
+        {
+          "id": "carolina-rediviva-bibliotek",
+          "value": "Carolina Rediviva - Bibliotek (Uppsala)"
+        },
+        {
+          "id": "casa-di-dante-in-roma",
+          "value": "Casa di Dante in Roma (Roma)"
+        },
+        {
+          "id": "christ-church-library-oxford",
+          "value": "Christ Church Library (Oxford)"
+        },
+        {
+          "id": "christies-italy",
+          "value": "Christie's Italy (Roma)"
+        },
+        {
+          "id": "civica-biblioteca-guarneriana",
+          "value": "Civica Biblioteca Guarneriana (San Daniele del Friuli)"
+        },
+        {
+          "id": "collezione-aldo-olschki",
+          "value": "Collezione Aldo Olschki (Firenze)"
+        },
+        {
+          "id": "collezione-dei-marchesi-guidi-di-bagno",
+          "value": "Collezione dei marchesi Guidi di Bagno (Roma)"
+        },
+        {
+          "id": "collezione-privata-collezione-privata",
+          "value": "Collezione privata (Collezione privata)"
+        },
+        {
+          "id": "collezione-privata-milano",
+          "value": "Collezione privata (Milano)"
+        },
+        {
+          "id": "collezione-privata-new-york",
+          "value": "Collezione privata (New York)"
+        },
+        {
+          "id": "collezione-privata-roma",
+          "value": "Collezione privata (Roma)"
+        },
+        {
+          "id": "collezione-privata-scolari-genova",
+          "value": "Collezione privata (Scolari) (Genova)"
+        },
+        {
+          "id": "collezione-privata-della-famiglia-villa-milano",
+          "value": "Collezione privata della famiglia Villa (Milano)"
+        },
+        {
+          "id": "collezione-privata-livio-ambrogio-torino",
+          "value": "Collezione privata Livio Ambrogio (Torino)"
+        },
+        {
+          "id": "collezione-privata-pica-alfieri-laquila",
+          "value": "Collezione privata Pica Alfieri (L'Aquila)"
+        },
+        {
+          "id": "comune-di-san-gimignano",
+          "value": "Comune di San Gimignano (San Gimignano)"
+        },
+        {
+          "id": "cornell-university-library-ithaca-ny",
+          "value": "Cornell University Library (Ithaca (NY))"
+        },
+        {
+          "id": "copper-hewitt-smithsonian-design-ny",
+          "value": "Cooper Hewitt, Smithsonian Design Museum (New York)"
+        },
+        {
+          "id": "det-kongelige-bibliotek",
+          "value": "Det Kongelige Bibliotek (Copenaghen)"
+        },
+        {
+          "id": "eotvos-lorand-tudomanyegyetem-egyetemi-konyvtar",
+          "value": "Eötvös Loránd Tudományegyetem Egyetemi Könyvtár (Budapest)"
+        },
+        {
+          "id": "eton-college-library-windsor",
+          "value": "Eton College Library (Windsor)"
+        },
+        {
+          "id": "foegyhazmegyei-konyvtar",
+          "value": "Foegyházmegyei Könyvtár (Eger)"
+        },
+        {
+          "id": "fitzwilliam-museum-cambridge",
+          "value": "The Fitzwilliam Museum (Cambridge)"
+        },
+        {
+          "id": "fondation-martin-bodmer",
+          "value": "Fondation Martin Bodmer (Cologny)"
+        },
+        {
+          "id": "fondazione-camillo-caetani",
+          "value": "Fondazione Camillo Caetani (Roma)"
+        },
+        {
+          "id": "gallerie-degli-uffizi-gabinetto-dei-disegni-e-delle-stampe",
+          "value": "Gallerie degli Uffizi-Gabinetto dei Disegni e delle Stampe (Firenze)"
+        },
+        {
+          "id": "glasgow-university-library",
+          "value": "Glasgow University Library (Glasgow)"
+        },
+        {
+          "id": "herzog-august-bibliothek",
+          "value": "Herzog August Bibliothek (Wolfenbuttel)"
+        },
+        {
+          "id": "holkham-hall-library-of-the-earl-of-leicester",
+          "value": "Holkham Hall, Library of the Earl of Leicester (Holkham)"
+        },
+        {
+          "id": "houghton-library-cambridge-ma",
+          "value": "Houghton Library (Cambridge (MA))"
+        },
+        {
+          "id": "isabella-stewart-gardner-museum",
+          "value": "Isabella Stewart Gardner Museum (Boston)"
+        },
+        {
+          "id": "istituto-arti-e-mestieri-roncalli",
+          "value": "Istituto Arti e Mestieri Roncalli (Vigevano)"
+        },
+        {
+          "id": "john-rylands-research-institute-and-library",
+          "value": "John Rylands Research Institute and Library (Manchester)"
+        },
+        {
+          "id": "koniglichen-archiv-berlino",
+          "value": "Königlichen Archiv (Berlino)"
+        },
+        {
+          "id": "kupferstichkabinett-berlino",
+          "value": "Kupferstichkabinett (Berlino)"
+        },
+        {
+          "id": "librairie-nepveu",
+          "value": "Librairie Nepveu (Parigi)"
+        },
+        {
+          "id": "library-of-acton-griscom-high-point-nj",
+          "value": "Library of Acton Griscom (High Point (New Jersey))"
+        },
+        {
+          "id": "libreria-clara-querzola-dott-piero-pellizani",
+          "value": "Libreria Clara Querzola, Dott. Piero Pellizani (Roma)"
+        },
+        {
+          "id": "mediatheque-simone-veil",
+          "value": "Médiathèque Simone Veil (Valenciennes)"
+        },
+        {
+          "id": "miejska-biblioteka-publiczna-breslavia",
+          "value": "Miejska Biblioteka Publiczna (Breslavia)"
+        },
+        {
+          "id": "monastero-carmelitano-di-s-maria-degli-angeli",
+          "value": "Monastero Carmelitano di S. Maria degli Angeli (Firenze)"
+        },
+        {
+          "id": "musee-du-louvre-arts-graphiques",
+          "value": "Musée du Louvre, Département des Arts graphiques (Paris)"
+        },
+        {
+          "id": "museo-della-stampa-jacopo-da-fivizzano",
+          "value": "Museo della stampa Jacopo da Fivizzano (Fivizzano)"
+        },
+        {
+          "id": "museo-moesano",
+          "value": "Museo Moesano (San Vittore)"
+        },
+        {
+          "id": "narodni-knihovna-ceske-republiky",
+          "value": "Národní knihovna České republiky (Praga)"
+        },
+        {
+          "id": "national-library-of-south-africa",
+          "value": "National Library of South Africa (Città del Capo)"
+        },
+        {
+          "id": "orszagos-szechenyi-konyvtar",
+          "value": "Országos Széchényi Könyvtár (Budapest)"
+        },
+        {
+          "id": "osterreichische-nationalbibliothek",
+          "value": "Österreichische Nationalbibliothek (Vienna)"
+        },
+        {
+          "id": "pfalzische-landesbibliothek",
+          "value": "Pfalzische Landesbibliothek (Speyer)"
+        },
+        {
+          "id": "real-biblioteca-del-monasterio-de-san-lorenzo",
+          "value": "Real Biblioteca del Monasterio de San Lorenzo (El Escorial)"
+        },
+        {
+          "id": "real-biblioteca-del-monasterio-de-san-lorenzo-el-escorial",
+          "value": "Real Biblioteca del Monasterio de San Lorenzo (San Lorenzo de el Escorial)"
+        },
+        {
+          "id": "sachsische-landesbibliothek-staats-und-universitatsbibliothek-dresden",
+          "value": "Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (Dresda)"
+        },
+        {
+          "id": "santantonio-venezia",
+          "value": "Sant'Antonio (Venezia)"
+        },
+        {
+          "id": "societa-dantesca-italiana",
+          "value": "Società Dantesca Italiana (Firenze)"
+        },
+        {
+          "id": "staats-und-stadtbibliothek",
+          "value": "Staats- und Stadtbibliothek (Augusta)"
+        },
+        {
+          "id": "staatsbibliothek-prussischer-kulturbesitz-berlino",
+          "value": "Staatsbibliothek-Preußischer Kulturbesitz (Berlino)"
+        },
+        {
+          "id": "stadt-und-universitatsbibliothek-francoforte-sul-meno",
+          "value": "Stadt- und Universitätsbibliothek (Francoforte sul Meno)"
+        },
+        {
+          "id": "stadtbibliothek-treviri",
+          "value": "Stadtbibliothek (Treviri)"
+        },
+        {
+          "id": "statni-okresni-archiv-znojmo",
+          "value": "Státní okresní archiv (Znojmo)"
+        },
+        {
+          "id": "stiftsbibliothek",
+          "value": "Stiftsbibliothek (Einsiedeln)"
+        },
+        {
+          "id": "taylor-institution-library-oxford",
+          "value": "Taylor Institution Library (Oxford)"
+        },
+        {
+          "id": "the-asiatic-society-mumbai",
+          "value": "The Asiatic Society (Mumbai)"
+        },
+        {
+          "id": "the-british-library-londra",
+          "value": "The British Library (Londra)"
+        },
+        {
+          "id": "the-joseph-regenstein-library",
+          "value": "The Joseph Regenstein Library (Chicago)"
+        },
+        {
+          "id": "the-library-and-muniment-room-of-westminster-abbey",
+          "value": "The Library and Muniment Room of Westminster Abbey (Londra)"
+        },
+        {
+          "id": "the-morgan-library-and-museum",
+          "value": "The Morgan Library & Museum (New York)"
+        },
+        {
+          "id": "universitats-und-landesbibliothek-sachsen-anhalt-halle-saale",
+          "value": "Universitäts- und Landesbibliothek Sachsen-Anhalt (Halle (Saale))"
+        },
+        {
+          "id": "universitatsbibliothek",
+          "value": "Universitätsbibliothek (Basilea)"
+        },
+        {
+          "id": "university-library-cambridge",
+          "value": "University Library (Cambridge)"
+        },
+        {
+          "id": "university-library-gerusalemme",
+          "value": "University Library (Gerusalemme)"
+        },
+        {
+          "id": "university-of-texas-libraries",
+          "value": "University of Texas Libraries (Austin)"
+        },
+        {
+          "id": "veneranda-biblioteca-ambrosiana",
+          "value": "Veneranda Biblioteca Ambrosiana (Milano)"
+        },
+        {
+          "id": "wellesley-college-library-wellesley-ma",
+          "value": "Wellesley College Library (Wellesley (Massachusetts))"
+        },
+        {
+          "id": "williams-college-chapin-library-of-rare-books-williamstown-ma",
+          "value": "Williams College – Chapin Library of Rare Books (Williamstown (Massachussetts))"
+        },
+        {
+          "id": "wurttembergische-landesbibliothek-stuttgart",
+          "value": "Württembergische Landesbibliothek (Stuttgart (Stoccarda))"
+        },
+        {
+          "id": "zamecka-knihovna-lazne-kynzvart",
+          "value": "Zámecká knihovna (Lázně Kynžvart)"
+        },
+        {
+          "id": "zisterzienserabtei-wilhering",
+          "value": "Zisterzienserabtei (Wilhering)"
+        }
+      ]
+    },
+    {
+      "id": "cod-shelfmark-tags@en",
+      "entries": [
+        {
+          "id": "-",
+          "value": "---"
+        },
+        {
+          "id": "previous",
+          "value": "precedente"
+        }
+      ]
+    },
+    {
+      "id": "fig-plan-features@en",
+      "entries": [
+        {
+          "id": "burin",
+          "value": "bulino"
+        }
+      ]
+    },
+    {
+      "id": "fig-plan-impl-matrix-types@en",
+      "entries": [
+        {
+          "id": "woodblock",
+          "value": "matrice lignea"
+        },
+        {
+          "id": "metal-plate",
+          "value": "lastra metallica"
+        },
+        {
+          "id": "lithographic-stone",
+          "value": "pietra litografica"
+        }
+      ]
+    },
+    {
+      "id": "fig-plan-impl-positions@en",
+      "entries": [
+        {
+          "id": "in-text",
+          "value": "nel testo"
+        },
+        {
+          "id": "margin-top",
+          "value": "margine sup."
+        },
+        {
+          "id": "margin-bottom",
+          "value": "margine inf."
+        },
+        {
+          "id": "full-page",
+          "value": "pagina intera"
+        },
+        {
+          "id": "anteport",
+          "value": "antiporta"
+        },
+        {
+          "id": "frontispiece",
+          "value": "frontespizio"
+        },
+        {
+          "id": "single-sheet",
+          "value": "carta di tavola"
+        }
+      ]
+    },
+    {
+      "id": "fig-plan-techniques@en",
+      "entries": [
+        {
+          "id": "engraving",
+          "value": "incisione"
+        },
+        {
+          "id": "woodcut",
+          "value": "xilografia"
+        },
+        {
+          "id": "lithography",
+          "value": "litografia"
+        },
+        {
+          "id": "etching",
+          "value": "acquaforte"
+        }
+      ]
+    },
+    {
+      "id": "metadata-types@en",
+      "entries": [
+        {
+          "id": "boolean",
+          "value": "boolean"
+        },
+        {
+          "id": "number",
+          "value": "number"
+        },
+        {
+          "id": "string",
+          "value": "string"
+        }
+      ]
+    },
+    {
+      "id": "metadata-names@en",
+      "entries": [
+        {
+          "id": "eid",
+          "value": "EID"
+        }
+      ]
+    },
+    {
+      "id": "physical-size-set-names_pri@en",
+      "entries": [
+        {
+          "id": "height",
+          "value": "altezza"
+        },
+        {
+          "id": "width",
+          "value": "larghezza"
+        }
+      ]
+    },
+    {
+      "id": "physical-size-units@en",
+      "entries": [
+        {
+          "id": "mm",
+          "value": "mm"
+        },
+        {
+          "id": "cm",
+          "value": "cm"
+        },
+        {
+          "id": "mt",
+          "value": "mt"
+        }
+      ]
+    },
+    {
+      "id": "print-font-families@en",
+      "entries": [
+        {
+          "id": "r2",
+          "value": "R2"
+        },
+        {
+          "id": "r3",
+          "value": "R3"
+        },
+        {
+          "id": "r4",
+          "value": "R4"
+        },
+        {
+          "id": "r5",
+          "value": "R5"
+        }
+      ]
+    },
+    {
+      "id": "print-layout-sections@en",
+      "entries": [
+        {
+          "id": "title",
+          "value": "title"
+        },
+        {
+          "id": "body",
+          "value": "body"
+        },
+        {
+          "id": "comment",
+          "value": "comment"
+        },
+        {
+          "id": "proem",
+          "value": "proem"
+        },
+        {
+          "id": "other",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "id": "print-font-features@en",
+      "entries": [
+        {
+          "id": "upper",
+          "value": "uppercase"
+        },
+        {
+          "id": "lower",
+          "value": "lowercase"
+        }
+      ]
+    },
+    {
+      "id": "text-passage-features@en",
+      "entries": [
+        {
+          "id": "msf",
+          "value": "mss.+frr."
+        },
+        {
+          "id": "msf.punct",
+          "value": "mss.+frr.: punteggiatura"
+        },
+        {
+          "id": "msf.punct.single",
+          "value": "mss.+frr.: punteggiatura: punti singoli"
+        },
+        {
+          "id": "msf.punct.double",
+          "value": "mss.+frr.: punteggiatura: punti doppi"
+        },
+        {
+          "id": "msf.punct.comma",
+          "value": "mss.+frr.: punteggiatura: virgole"
+        },
+        {
+          "id": "msf.punct.semicolon",
+          "value": "mss.+frr.: punteggiatura: punti e virgole"
+        },
+        {
+          "id": "msf.punct.diastole",
+          "value": "mss.+frr.: punteggiatura: diastole (/)"
+        },
+        {
+          "id": "msf.punct.question",
+          "value": "mss.+frr.: punteggiatura: punti interrogativi"
+        },
+        {
+          "id": "msf.punct.exclam",
+          "value": "mss.+frr.: punteggiatura: punti esclamativi"
+        },
+        {
+          "id": "msf.punct.section",
+          "value": "mss.+frr.: punteggiatura: segni di sezione (¶)"
+        },
+        {
+          "id": "msf.att",
+          "value": "mss.+frr.: segni di attenzione"
+        },
+        {
+          "id": "msf.att.underline",
+          "value": "mss.+frr.: segni di attenzione: testo sottolineato"
+        },
+        {
+          "id": "msf.att.manicula",
+          "value": "mss.+frr.: segni di attenzione: presenza di maniculae/nota bene"
+        },
+        {
+          "id": "msf.corr",
+          "value": "mss.+frr.: correzioni"
+        },
+        {
+          "id": "msf.corr.expunged",
+          "value": "mss.+frr.: correzioni: testo espunto"
+        },
+        {
+          "id": "msf.corr.strike",
+          "value": "mss.+frr.: correzioni: testo biffato/barrato"
+        },
+        {
+          "id": "msf.corr.deleted",
+          "value": "mss.+frr.: correzioni: testo cancellato"
+        },
+        {
+          "id": "msf.corr.rasura",
+          "value": "mss.+frr.: correzioni: rasura"
+        },
+        {
+          "id": "msf.corr.replaced",
+          "value": "mss.+frr.: correzioni: testo sostituito"
+        },
+        {
+          "id": "msf.corr.inserted",
+          "value": "mss.+frr.: correzioni: testo integrato"
+        },
+        {
+          "id": "msf.corr.inserted.verse",
+          "value": "mss.+frr.: correzioni: testo integrato: sul verso"
+        },
+        {
+          "id": "msf.corr.inserted.interlinear",
+          "value": "mss.+frr.: correzioni: testo integrato: in interlinea"
+        },
+        {
+          "id": "msf.corr.inserted.marginal",
+          "value": "mss.+frr.: correzioni: testo integrato: in margine"
+        },
+        {
+          "id": "msf.var",
+          "value": "mss.+frr.: varianti e lezioni alternative"
+        },
+        {
+          "id": "msf.var.word",
+          "value": "mss.+frr.: varianti e lezioni alternative: presenza di varianti in corrispondenza di parola"
+        },
+        {
+          "id": "msf.var.margin",
+          "value": "mss.+frr.: varianti e lezioni alternative: presenza di varianti in margine"
+        },
+        {
+          "id": "msf.var.hint",
+          "value": "mss.+frr.: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative"
+        },
+        {
+          "id": "msf.var.hint.al",
+          "value": "mss.+frr.: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative: del tipo “al.” (=alias / aliter)"
+        },
+        {
+          "id": "msf.var.hint.other",
+          "value": "mss.+frr.: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative: di altro tipo"
+        },
+        {
+          "id": "msf.paratxt",
+          "value": "mss.+frr.: paratesto"
+        },
+        {
+          "id": "msf.paratxt.rubr",
+          "value": "mss.+frr.: paratesto: presenza di rubriche"
+        },
+        {
+          "id": "msf.paratxt.rubr.la",
+          "value": "mss.+frr.: paratesto: presenza di rubriche: in latino"
+        },
+        {
+          "id": "msf.paratxt.rubr.it-vulg",
+          "value": "mss.+frr.: paratesto: presenza di rubriche: in volgare"
+        },
+        {
+          "id": "msf.paratxt.rubr.long",
+          "value": "mss.+frr.: paratesto: presenza di rubriche: lunghe"
+        },
+        {
+          "id": "msf.paratxt.rubr.short",
+          "value": "mss.+frr.: paratesto: presenza di rubriche: brevi"
+        },
+        {
+          "id": "msf.paratxt.comment",
+          "value": "mss.+frr.: paratesto: presenza di commento"
+        },
+        {
+          "id": "msf.paratxt.gloss",
+          "value": "mss.+frr.: paratesto: presenza di glosse"
+        },
+        {
+          "id": "msf.paratxt.note",
+          "value": "mss.+frr.: paratesto: presenza di note sporadiche"
+        },
+        {
+          "id": "msf.other",
+          "value": "mss.+frr.: altri segni con valenza testuale"
+        },
+        {
+          "id": "msf.other.caption",
+          "value": "mss.+frr.: altri segni con valenza testuale: didascalie"
+        },
+        {
+          "id": "msf.other.istruction",
+          "value": "mss.+frr.: altri segni con valenza testuale: istruzioni al miniatore"
+        },
+        {
+          "id": "msf.other.link",
+          "value": "mss.+frr.: altri segni con valenza testuale: elementi di raccordo fra testo e immagini"
+        },
+        {
+          "id": "prn",
+          "value": "edizioni a stampa"
+        },
+        {
+          "id": "prn.ed",
+          "value": "edizioni a stampa: tipo di edizione"
+        },
+        {
+          "id": "prn.ed.text",
+          "value": "edizioni a stampa: tipo di edizione: solo testo"
+        },
+        {
+          "id": "prn.ed.comment",
+          "value": "edizioni a stampa: tipo di edizione: edizione con commento"
+        },
+        {
+          "id": "prn.ed.illustrated",
+          "value": "edizioni a stampa: tipo di edizione: edizione illustrata"
+        },
+        {
+          "id": "prn.ed.annotated",
+          "value": "edizioni a stampa: tipo di edizione: edizione postillata"
+        },
+        {
+          "id": "prn.paratxt",
+          "value": "edizioni a stampa: paratesto"
+        },
+        {
+          "id": "prn.paratxt.rubric",
+          "value": "edizioni a stampa: paratesto: presenza di rubriche"
+        },
+        {
+          "id": "prn.paratxt.rubric.la",
+          "value": "edizioni a stampa: paratesto: presenza di rubriche: in latino"
+        },
+        {
+          "id": "prn.paratxt.rubric.it-vulg",
+          "value": "edizioni a stampa: paratesto: presenza di rubriche: in volgare"
+        },
+        {
+          "id": "prn.paratxt.rubric.long",
+          "value": "edizioni a stampa: paratesto: presenza di rubriche: lunghe"
+        },
+        {
+          "id": "prn.paratxt.rubric.short",
+          "value": "edizioni a stampa: paratesto: presenza di rubriche: brevi"
+        },
+        {
+          "id": "prn.paratxt.comment",
+          "value": "edizioni a stampa: paratesto: presenza di commento"
+        },
+        {
+          "id": "prn.paratxt.gloss",
+          "value": "edizioni a stampa: paratesto: presenza di glosse"
+        },
+        {
+          "id": "prn.paratxt.note",
+          "value": "edizioni a stampa: paratesto: presenza di note di carattere generale"
+        },
+        {
+          "id": "prn.punct",
+          "value": "edizioni a stampa: punteggiatura"
+        },
+        {
+          "id": "prn.punct.single",
+          "value": "edizioni a stampa: punteggiatura: punti singoli"
+        },
+        {
+          "id": "prn.punct.double",
+          "value": "edizioni a stampa: punteggiatura: punti doppi"
+        },
+        {
+          "id": "prn.punct.comma",
+          "value": "edizioni a stampa: punteggiatura: virgole"
+        },
+        {
+          "id": "prn.punct.semicolon",
+          "value": "edizioni a stampa: punteggiatura: punti e virgole"
+        },
+        {
+          "id": "prn.punct.diastole",
+          "value": "edizioni a stampa: punteggiatura: diastole (/)"
+        },
+        {
+          "id": "prn.punct.question",
+          "value": "edizioni a stampa: punteggiatura: punti interrogativi"
+        },
+        {
+          "id": "prn.punct.exclam",
+          "value": "edizioni a stampa: punteggiatura: punti esclamativi"
+        },
+        {
+          "id": "prn.punct.section",
+          "value": "edizioni a stampa: punteggiatura: segni di sezione (¶)"
+        },
+        {
+          "id": "prn.annotator",
+          "value": "edizioni a stampa: postillatore"
+        },
+        {
+          "id": "prn.annotator.contemporary",
+          "value": "edizioni a stampa: postillatore: mano coeva"
+        },
+        {
+          "id": "prn.annotator.later",
+          "value": "edizioni a stampa: postillatore: mano successiva"
+        },
+        {
+          "id": "prn.att",
+          "value": "edizioni a stampa: segni di attenzione"
+        },
+        {
+          "id": "prn.att.underline",
+          "value": "edizioni a stampa: segni di attenzione: testo sottolineato"
+        },
+        {
+          "id": "prn.att.manicula",
+          "value": "edizioni a stampa: segni di attenzione: presenza di maniculae/nota bene"
+        },
+        {
+          "id": "prn.corr",
+          "value": "edizioni a stampa: correzioni del postillatore"
+        },
+        {
+          "id": "prn.corr.expunged",
+          "value": "edizioni a stampa: correzioni del postillatore: testo espunto"
+        },
+        {
+          "id": "prn.corr.strike",
+          "value": "edizioni a stampa: correzioni del postillatore: testo biffato/barrato"
+        },
+        {
+          "id": "prn.corr.deleted",
+          "value": "edizioni a stampa: correzioni del postillatore: testo cancellato"
+        },
+        {
+          "id": "prn.corr.rasura",
+          "value": "edizioni a stampa: correzioni del postillatore: rasura"
+        },
+        {
+          "id": "prn.corr.inserted",
+          "value": "edizioni a stampa: correzioni del postillatore: testo integrato"
+        },
+        {
+          "id": "prn.corr.inserted.verse",
+          "value": "edizioni a stampa: correzioni del postillatore: testo integrato: sul verso"
+        },
+        {
+          "id": "prn.corr.inserted.interlinear",
+          "value": "edizioni a stampa: correzioni del postillatore: testo integrato: in interlinea"
+        },
+        {
+          "id": "prn.corr.inserted.marginal",
+          "value": "edizioni a stampa: correzioni del postillatore: testo integrato: in margine"
+        },
+        {
+          "id": "prn.var",
+          "value": "edizioni a stampa: varianti e lezioni alternative"
+        },
+        {
+          "id": "prn.var.word",
+          "value": "edizioni a stampa: varianti e lezioni alternative: presenza di varianti in corrispondenza del parola"
+        },
+        {
+          "id": "prn.var.margin",
+          "value": "edizioni a stampa: varianti e lezioni alternative: presenza di varianti in margine"
+        },
+        {
+          "id": "prn.var.hint",
+          "value": "edizioni a stampa: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative"
+        },
+        {
+          "id": "prn.var.hint.al",
+          "value": "edizioni a stampa: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative: del tipo “al.” (=alias/aliter)"
+        },
+        {
+          "id": "prn.var.hint.other",
+          "value": "edizioni a stampa: varianti e lezioni alternative: presenza di indicazioni di varianti o letture alternative: di altro tipo"
+        },
+        {
+          "id": "prn.other",
+          "value": "edizioni a stampa: altri segni con valenza testuale"
+        },
+        {
+          "id": "prn.other.caption",
+          "value": "edizioni a stampa: altri segni con valenza testuale: didascalie"
+        },
+        {
+          "id": "prn.other.instruction",
+          "value": "edizioni a stampa: altri segni con valenza testuale: istruzioni al miniatore"
+        },
+        {
+          "id": "prn.other.link",
+          "value": "edizioni a stampa: altri segni con valenza testuale: elementi di raccordo fra testo e immagini"
+        }
+      ]
+    }
+  ],
+  "seed": {
+    "options": {
+      "seed": 1,
+      "users": ["zeus"],
+      "partRoles": [],
+      "fragmentRoles": []
+    },
+    "partSeeders": [
+      {
+        "id": "seed.it.vedph.categories:wblk",
+        "options": {
+          "maxCategoriesPerItem": 1,
+          "categories": ["a", "b"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.chronotopes"
+      },
+      {
+        "id": "seed.it.vedph.codicology.bindings",
+        "options": {
+          "tags": ["current", "former", "none"],
+          "coverMaterials": ["skin", "parchment", "velvet", "paper"],
+          "boardMaterials": ["wood", "card", "other"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.decorations",
+        "options": {
+          "flags": [
+            "ill.blank",
+            "ill.sketch",
+            "orn.blank",
+            "orn.sketch",
+            "ini.blank",
+            "ini.guideletter",
+            "ini-wat.blank",
+            "ini-wat.guideletter",
+            "ini-orn.blank",
+            "ini-orn.sketch",
+            "ini-fig.blank",
+            "ini-fig.sketch",
+            "par.blank",
+            "par.sketch"
+          ],
+          "colors": ["blue", "red", "green"],
+          "elementTypes": [
+            "ill",
+            "orn",
+            "ant",
+            "dia",
+            "ini",
+            "ini-wat",
+            "ini-orn",
+            "ini-fig",
+            "par",
+            "wsp"
+          ],
+          "elementGildings": ["leaf", "powder"],
+          "elementPositions": [
+            "ill.full-page",
+            "ill.interpol",
+            "ill.foot",
+            "ini.aligned",
+            "ini.secondary",
+            "ini-wat.aligned",
+            "ini-wat.secondary",
+            "ini-orn.aligned",
+            "ini-orn.protruding",
+            "ini-fig.aligned",
+            "ini-fig.protruding",
+            "orn.-",
+            "par.-"
+          ],
+          "elementTechniques": ["watercolor", "gouache", "ink"],
+          "elementTypologies": [
+            "ill.miniature",
+            "ill.drawing",
+            "orn.border-fig",
+            "orn.coat",
+            "ini-orn.zoomrp",
+            "ini-orn.prism",
+            "par.run-heads",
+            "par.rubrication"
+          ],
+          "elementTools": ["pen", "brush"],
+          "artistTypes": ["illuminator", "workshop"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.edits",
+        "options": {
+          "types": ["text", "notes", "comment", "correction"],
+          "techniques": ["ink", "lapis"],
+          "languages": ["en", "fr", "de", "grc", "la"],
+          "colors": ["black", "brown", "gray", "red"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.layouts",
+        "options": {
+          "rulingTechniques": ["drypoint", "mine", "ink", "folding"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.sheet-labels",
+        "options": {
+          "system": ["arabic", "roman", "mix"],
+          "techniques": ["ink", "lapis", "mechanic"],
+          "positions": ["mse", "msc", "msi", "mie", "mic"],
+          "colors": ["black", "brown", "gray", "red"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.shelfmarks",
+        "options": {
+          "cities": ["Roma"],
+          "libraries": [
+            "biblioteca-apostolica-vaticana",
+            "biblioteca-nazionale-centrale",
+            "biblioteca-universitaria-alessandrina"
+          ]
+        }
+      },
+      {
+        "id": "seed.it.vedph.codicology.watermarks"
+      },
+      {
+        "id": "seed.it.vedph.doc-references"
+      },
+      {
+        "id": "seed.it.vedph.metadata"
+      },
+      {
+        "id": "seed.it.vedph.ndp.print-fig-plan"
+      },
+      {
+        "id": "seed.it.vedph.ndp.print-fig-plan-impl"
+      },
+      {
+        "id": "seed.it.vedph.note"
+      },
+      {
+        "id": "seed.it.vedph.physical-measurements"
+      },
+      {
+        "id": "seed.it.vedph.pin-links"
+      },
+      {
+        "id": "seed.it.vedph.ndp.print-fonts"
+      },
+      {
+        "id": "seed.it.vedph.ndp.text-passages",
+        "options ": {
+          "features": [
+            "msf.punct.single",
+            "msf.punct.double",
+            "msf.punct.comma"
+          ]
+        }
+      }
+    ],
+    "fragmentSeeders": []
+  },
+  "settings": {
+    "models": {
+      "parts": {
+        "it.vedph.categories": {
+          "thesauriIds": ["categories"]
+        },
+        "it.vedph.chronotopes": {
+          "thesauriIds": [
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        },
+        "it.vedph.doc-references": {
+          "thesauriIds": ["doc-reference-types", "doc-reference-tags"]
+        },
+        "it.vedph.metadata": {
+          "thesauriIds": ["metadata-names", "metadata-types"]
+        },
+        "it.vedph.note": {
+          "thesauriIds": ["note-tags"]
+        },
+        "it.vedph.physical-measurements": {
+          "thesauriIds": [
+            "physical-size-set-names",
+            "physical-size-dim-tags",
+            "physical-size-units"
+          ]
+        },
+        "it.vedph.pin-links": {
+          "thesauriIds": [
+            "pin-link-scopes",
+            "pin-link-tags",
+            "asserted-id-features",
+            "pin-link-assertion-tags",
+            "pin-link-docref-types",
+            "pin-link-docref-tags"
+          ]
+        },
+        "it.vedph.codicology.bindings": {
+          "thesauriIds": [
+            "cod-binding-tags",
+            "cod-binding-cover-materials",
+            "cod-binding-board-materials",
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags",
+            "physical-size-tags",
+            "physical-size-units",
+            "physical-size-dim-tags"
+          ]
+        },
+        "it.vedph.codicology.decorations": {
+          "thesauriIds": [
+            "cod-decoration-flags",
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags",
+            "cod-decoration-artist-types",
+            "asserted-id-scopes",
+            "asserted-id-tags",
+            "cod-decoration-artist-style-names",
+            "*cod-decoration-element-types",
+            "cod-decoration-element-flags",
+            "cod-decoration-element-typologies",
+            "cod-decoration-element-colors",
+            "cod-decoration-element-gildings",
+            "cod-decoration-element-techniques",
+            "cod-decoration-element-tools",
+            "cod-decoration-element-positions",
+            "cod-image-types",
+            "*cod-decoration-type-hidden"
+          ]
+        },
+        "it.vedph.codicology.edits": {
+          "thesauriIds": [
+            "cod-edit-types",
+            "cod-edit-tags",
+            "asserted-id-scopes",
+            "asserted-id-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags",
+            "cod-edit-techniques",
+            "cod-edit-languages",
+            "cod-edit-colors",
+            "cod-edit-positions"
+          ]
+        },
+        "it.vedph.codicology.layouts": {
+          "thesauriIds": [
+            "physical-size-tags",
+            "physical-size-units",
+            "physical-size-dim-tags",
+            "cod-layout-ruling-techniques",
+            "cod-layout-derolez",
+            "cod-layout-prickings",
+            "cod-layout-counts",
+            "cod-layout-tags"
+          ]
+        },
+        "it.vedph.codicology.sheet-labels": {
+          "thesauriIds": [
+            "cod-endleaf-materials",
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags",
+            "cod-quire-features",
+            "cod-numbering-systems",
+            "cod-numbering-techniques",
+            "cod-numbering-positions",
+            "cod-catchwords-positions",
+            "cod-quiresig-systems",
+            "cod-quiresig-positions"
+          ]
+        },
+        "it.vedph.codicology.shelfmarks": {
+          "thesauriIds": [
+            "cod-shelfmark-tags",
+            "cod-shelfmark-cities",
+            "cod-shelfmark-libraries"
+          ]
+        },
+        "it.vedph.codicology.watermarks": {
+          "thesauriIds": [
+            "physical-size-tags",
+            "physical-size-units",
+            "physical-size-dim-tags",
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        }
+      }
+    }
+  }
+}

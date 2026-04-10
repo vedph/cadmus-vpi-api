@@ -1,0 +1,6 @@
+@CadmusVpiApi_HostAddress = http://localhost:5064
+
+GET {{CadmusVpiApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

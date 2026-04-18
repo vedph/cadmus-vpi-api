@@ -5,7 +5,6 @@
 The list of facets is given here with their conventional groupings used in the editor UI. The 3-letters abbreviation after each part type name refers to Cadmus model spaces different from the generic one. Here we have `COD`=codicology, `BOK`=books. Also, 🔗 means a potential _internal_ link; where there is a links part without this indication, the usual implication is that it contains _external_ links.
 
 - **print edition**: the abstract edition of a print work, which may have multiple print instances.
-
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
     - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 authors, editors
@@ -18,21 +17,21 @@ The list of facets is given here with their conventional groupings used in the e
     - [watermarks](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-watermarks.md) (COD)
     - [figurative plan](https://github.com/vedph/cadmus-ndp-books/blob/master/docs/figurative-plan-part.md) (BOK) 🔗 artist
 narrative
+    - [decorations](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md) (COD)
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`inc` 🚩 (incipit)
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`col` 🚩 (colophon)
-    - [text passages](https://github.com/vedph/cadmus-ndp/blob/master/docs/text-passages.md) (NDP)
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
   - _references_
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
 
 - **print instance**: a physical print copy of a print edition.
-
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
     - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 `print edition` (+group)
     - [shelfmarks](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)
   - _history_
-    - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`hist` 🚩 (history)
+    - [historical events](https://github.com/vedph/cadmus-general/blob/master/docs/historical-events.md)`pri` 🚩
+    - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`hist` 🚩
   - _material_
     - [bindings](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-bindings.md) (COD)
     - [sheet labels](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-sheet-labels.md) (COD)
@@ -42,6 +41,16 @@ narrative
     - [layouts](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-layouts.md):`prn` 🚩 (COD)
     - [figurative plan implementation](https://github.com/vedph/cadmus-ndp-books/blob/master/docs/figurative-plan-impl-part.md) (BOK)
     - [edits](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md) (COD)
+  - _content_
+    - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
+  - _references_
+    - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
+
+- **person**: authority entity for figures.
+  - _identity_
+    - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
+    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) (VIAF, Wikidata, IMA)
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`fig` 🚩: figure type.
   - _content_
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
   - _references_
@@ -60,7 +69,6 @@ narrative
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
 
 - **woodcut block**: a woodcut block used for printing.
-
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
     - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md)

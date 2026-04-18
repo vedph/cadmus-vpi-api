@@ -74,13 +74,21 @@
           "sortKey": "08"
         },
         {
+          "typeId": "it.vedph.codicology.decorations",
+          "name": "decorations",
+          "description": "Decorations.",
+          "colorKey": "FFB366",
+          "groupKey": "content",
+          "sortKey": "09"
+        },
+        {
           "typeId": "it.vedph.note",
           "roleId": "inc",
           "name": "incipit",
-          "description": "The incipit's text'.",
+          "description": "The incipit's text.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "09"
+          "sortKey": "10"
         },
         {
           "typeId": "it.vedph.note",
@@ -88,14 +96,6 @@
           "name": "colophon",
           "description": "The colophon's text'.",
           "colorKey": "B0A0F8",
-          "groupKey": "content",
-          "sortKey": "10"
-        },
-        {
-          "typeId": "it.vedph.ndp.text-passages",
-          "name": "text passages",
-          "description": "List of notable text passages.",
-          "colorKey": "5DF94D",
           "groupKey": "content",
           "sortKey": "11"
         },
@@ -146,6 +146,15 @@
           "colorKey": "85C1FF",
           "groupKey": "identity",
           "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.historical-events",
+          "roleId": "pri",
+          "name": "events",
+          "description": "Historical events.",
+          "colorKey": "BE85FF",
+          "groupKey": "history",
+          "sortKey": "04"
         },
         {
           "typeId": "it.vedph.note",
@@ -212,7 +221,7 @@
           "description": "Supplementary edits on text.",
           "colorKey": "E72A8E",
           "groupKey": "history",
-          "sortKey": "13"
+          "sortKey": "12"
         },
         {
           "typeId": "it.vedph.note",
@@ -220,7 +229,7 @@
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "14"
+          "sortKey": "13"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -228,7 +237,56 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "15"
+          "sortKey": "14"
+        }
+      ]
+    },
+    {
+      "id": "person",
+      "label": "person",
+      "description": "Person in figure.",
+      "colorKey": "ECCBAD",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "B3D9FF",
+          "groupKey": "identity",
+          "sortKey": "01"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Inner/outer links.",
+          "colorKey": "5CA8FF",
+          "groupKey": "identity",
+          "sortKey": "02"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "roleId": "fig",
+          "name": "types",
+          "description": "Figure types.",
+          "colorKey": "0CC8F7",
+          "groupKey": "identity",
+          "sortKey": "03"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A generic text note.",
+          "colorKey": "B0A0F8",
+          "groupKey": "content",
+          "sortKey": "04"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "05"
         }
       ]
     },

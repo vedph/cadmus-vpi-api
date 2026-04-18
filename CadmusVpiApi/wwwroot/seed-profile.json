@@ -323,12 +323,21 @@
         },
         {
           "typeId": "it.vedph.categories",
+          "roleId": "reuse",
+          "name": "reuse types",
+          "description": "Reuse types.",
+          "colorKey": "0C80F5",
+          "groupKey": "content",
+          "sortKey": "04"
+        },
+        {
+          "typeId": "it.vedph.categories",
           "roleId": "ico",
           "name": "iconographies",
           "description": "Iconographies.",
           "colorKey": "0BC8F7",
           "groupKey": "content",
-          "sortKey": "04"
+          "sortKey": "05"
         },
         {
           "typeId": "it.vedph.categories",
@@ -337,7 +346,7 @@
           "description": "Narrative themes.",
           "colorKey": "0AC8F7",
           "groupKey": "content",
-          "sortKey": "05"
+          "sortKey": "06"
         },
         {
           "typeId": "it.vedph.note",
@@ -345,7 +354,7 @@
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "06"
+          "sortKey": "07"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -353,7 +362,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "07"
+          "sortKey": "08"
         }
       ]
     },
@@ -398,12 +407,21 @@
           "sortKey": "04"
         },
         {
+          "typeId": "it.vedph.categories",
+          "roleId": "narr",
+          "name": "narrative types",
+          "description": "Narrative types.",
+          "colorKey": "0540F5",
+          "groupKey": "content",
+          "sortKey": "05"
+        },
+        {
           "typeId": "it.vedph.note",
           "name": "note",
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "05"
+          "sortKey": "06"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -411,7 +429,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "06"
+          "sortKey": "07"
         }
       ]
     }
@@ -469,12 +487,24 @@
           "value": "categories"
         },
         {
+          "id": "it.vedph.categories:fig",
+          "value": "figure types"
+        },
+        {
           "id": "it.vedph.categories:ico",
           "value": "iconographies"
         },
         {
           "id": "it.vedph.categories:ill",
           "value": "illustration types"
+        },
+        {
+          "id": "it.vedph.categories:narr",
+          "value": "narrative types"
+        },
+        {
+          "id": "it.vedph.categories:reuse",
+          "value": "reuse types"
         },
         {
           "id": "it.vedph.categories:thm",
@@ -573,12 +603,41 @@
           "value": "incipit"
         },
         {
+          "id": "it.vedph.note:txt",
+          "value": "text"
+        },
+        {
           "id": "it.vedph.physical-measurements:wblk",
           "value": "measurements"
         },
         {
           "id": "it.vedph.pin-links",
           "value": "links"
+        }
+      ]
+    },
+    {
+      "id": "categories_fig@en",
+      "entries": [
+        {
+          "id": "desert-father",
+          "value": "desert father"
+        },
+        {
+          "id": "desert-mother",
+          "value": "desert mother"
+        },
+        {
+          "id": "saint-other",
+          "value": "saint other"
+        },
+        {
+          "id": "biblical",
+          "value": "biblical"
+        },
+        {
+          "id": "other",
+          "value": "other"
         }
       ]
     },
@@ -599,12 +658,134 @@
       "id": "categories_ill@en",
       "entries": [
         {
-          "id": "a",
-          "value": "alpha"
+          "id": "imp",
+          "value": "impression condition"
         },
         {
-          "id": "b",
-          "value": "beta"
+          "id": "imp.good",
+          "value": "good"
+        },
+        {
+          "id": "imp.damaged",
+          "value": "damaged"
+        },
+        {
+          "id": "imp.broken",
+          "value": "broken"
+        },
+        {
+          "id": "imp.other",
+          "value": "other"
+        },
+        {
+          "id": "imp.unknown",
+          "value": "unknown"
+        },
+        {
+          "id": "tir",
+          "value": "text-image relation"
+        },
+        {
+          "id": "tir.text-specific",
+          "value": "text-specific"
+        },
+        {
+          "id": "tir.typological-adaptation",
+          "value": "typological adaptation"
+        },
+        {
+          "id": "tir.repertorial",
+          "value": "repertorial"
+        },
+        {
+          "id": "tir.indeterminate",
+          "value": "indeterminate"
+        }
+      ]
+    },
+    {
+      "id": "categories_narr@en",
+      "entries": [
+        {
+          "id": "unit",
+          "value": "narrative unit type"
+        },
+        {
+          "id": "unit.hagiography-df",
+          "value": "hagiography DF"
+        },
+        {
+          "id": "unit.hagiography-other",
+          "value": "hagiography other"
+        },
+        {
+          "id": "unit.exemplum",
+          "value": "exemplum"
+        },
+        {
+          "id": "unit.apophthegma",
+          "value": "apophthegma"
+        },
+        {
+          "id": "unit.dialogue",
+          "value": "dialogue"
+        },
+        {
+          "id": "visual",
+          "value": "visual narrative"
+        },
+        {
+          "id": "visual.single-scene",
+          "value": "single scene"
+        },
+        {
+          "id": "visual.continuous-narrative",
+          "value": "continuous narrative"
+        }
+      ]
+    },
+    {
+      "id": "categories_reuse@en",
+      "entries": [
+        {
+          "id": "type",
+          "value": "reuse type"
+        },
+        {
+          "id": "type.block",
+          "value": "block"
+        },
+        {
+          "id": "type.block.same-new-context",
+          "value": "same block, new context"
+        },
+        {
+          "id": "type.image",
+          "value": "image"
+        },
+        {
+          "id": "type.image.derived-block",
+          "value": "derived block"
+        },
+        {
+          "id": "type.image.iconographic-dependency",
+          "value": "iconographic dependency"
+        },
+        {
+          "id": "type.image.other",
+          "value": "other"
+        },
+        {
+          "id": "context",
+          "value": "reuse context"
+        },
+        {
+          "id": "context.inter-cycle-reuse",
+          "value": "inter-cycle reuse"
+        },
+        {
+          "id": "context.cross-cycle-reuse",
+          "value": "cross-cycle reuse"
         }
       ]
     },
@@ -625,12 +806,84 @@
       "id": "categories_wblk@en",
       "entries": [
         {
-          "id": "a",
-          "value": "alpha"
+          "id": "ico",
+          "value": "iconographic category"
         },
         {
-          "id": "b",
-          "value": "beta"
+          "id": "ico.ascetic-life-practices",
+          "value": "Ascetic life and practices"
+        },
+        {
+          "id": "ico.animals",
+          "value": "Animals"
+        },
+        {
+          "id": "ico.demons-temptations",
+          "value": "Demons and temptations"
+        },
+        {
+          "id": "ico.miracles-divine-intervention",
+          "value": "Miracles and divine intervention"
+        },
+        {
+          "id": "ico.community-monastic-life",
+          "value": "Community and monastic life"
+        },
+        {
+          "id": "ico.death-vision-afterlife",
+          "value": "Death, vision, afterlife"
+        },
+        {
+          "id": "ico.teaching-preaching",
+          "value": "Teaching and preaching"
+        },
+        {
+          "id": "ico.exemplum",
+          "value": "Exemplum"
+        },
+        {
+          "id": "type",
+          "value": "illustrative object type"
+        },
+        {
+          "id": "type.vignette",
+          "value": "vignette"
+        },
+        {
+          "id": "type.historiated-initial",
+          "value": "historiated initial"
+        },
+        {
+          "id": "type.border",
+          "value": "border"
+        },
+        {
+          "id": "type.decorated-initial",
+          "value": "decorated initial"
+        },
+        {
+          "id": "type.architectural-border",
+          "value": "architectural border"
+        },
+        {
+          "id": "type.frontispiece",
+          "value": "frontispiece"
+        },
+        {
+          "id": "type.architectural-frontispiece",
+          "value": "architectural frontispiece"
+        },
+        {
+          "id": "style",
+          "value": "artistic style"
+        },
+        {
+          "id": "style.venetian",
+          "value": "venetian"
+        },
+        {
+          "id": "style.milanese",
+          "value": "milanese"
         }
       ]
     },

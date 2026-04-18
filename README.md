@@ -24,10 +24,10 @@ narrative
   - _references_
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
 
-- **print instance**: a physical print copy of a print edition.
+- **print instance**: a physical print copy of a print edition. Its group ID is the EID of the print edition.
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 `print edition` (+group)
+    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 print edition (+group)
     - [shelfmarks](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)
   - _history_
     - [historical events](https://github.com/vedph/cadmus-general/blob/master/docs/historical-events.md)`pri` 🚩
@@ -59,9 +59,10 @@ narrative
 - **illustration**: an illustration in a print instance. Its group ID is the EID of the print instance.
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md)
+    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 woodcut block
   - _content_
-    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ill` 🚩: illustration type.
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ill` 🚩: illustration types.
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`reuse` 🚩: reuse types.
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ico` 🚩: iconographic categories.
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`thm` 🚩: narrative themes.
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
@@ -71,11 +72,13 @@ narrative
 - **woodcut block**: a woodcut block used for printing.
   - _identity_
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md)
-    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`wblk` 🚩: types and styles. Given that we have only a couple of styles, it is probably best to have a more compact taxonomy with 2 branches, one for types and another for styles.
+    - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 illustration, person
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`wblk` 🚩 block types
   - _material_
     - [measurements](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md):`wblk` 🚩
   - _content_
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`narr` 🚩 narrative types
+    - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`txt` 🚩
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
   - _references_
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
@@ -91,6 +94,11 @@ With reference to the original schema:
 
 Part types list (from GEN, COD, NDP):
 
+- it.vedph.categories:fig
+- it.vedph.categories:ico
+- it.vedph.categories:ill
+- it.vedph.categories:narr
+- it.vedph.categories:reuse
 - it.vedph.categories:wblk
 - it.vedph.chronotopes:prn
 - it.vedph.chronotopes:pub
@@ -108,7 +116,9 @@ Part types list (from GEN, COD, NDP):
 - it.vedph.ndp.print-fonts
 - it.vedph.ndp.text-passages
 - it.vedph.note
-- it.vedph.note:inc
 - it.vedph.note:col
-- it.vedph.physical-measurements:pri
+- it.vedph.note:hist
+- it.vedph.note:inc
+- it.vedph.note:txt
+- it.vedph.physical-measurements:wblk
 - it.vedph.pin-links

@@ -331,30 +331,12 @@
           "sortKey": "04"
         },
         {
-          "typeId": "it.vedph.categories",
-          "roleId": "ico",
-          "name": "iconographies",
-          "description": "Iconographies.",
-          "colorKey": "0BC8F7",
-          "groupKey": "content",
-          "sortKey": "05"
-        },
-        {
-          "typeId": "it.vedph.categories",
-          "roleId": "thm",
-          "name": "themes",
-          "description": "Narrative themes.",
-          "colorKey": "0AC8F7",
-          "groupKey": "content",
-          "sortKey": "06"
-        },
-        {
           "typeId": "it.vedph.note",
           "name": "note",
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "07"
+          "sortKey": "05"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -362,7 +344,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "08"
+          "sortKey": "06"
         }
       ]
     },

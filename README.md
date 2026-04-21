@@ -63,8 +63,6 @@ narrative
   - _content_
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ill` 🚩: illustration types.
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`reuse` 🚩: reuse types.
-    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ico` 🚩: iconographic categories.
-    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`thm` 🚩: narrative themes.
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
   - _references_
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
@@ -95,7 +93,6 @@ With reference to the original schema:
 Part types list (from GEN, COD, NDP):
 
 - it.vedph.categories:fig
-- it.vedph.categories:ico
 - it.vedph.categories:ill
 - it.vedph.categories:narr
 - it.vedph.categories:reuse

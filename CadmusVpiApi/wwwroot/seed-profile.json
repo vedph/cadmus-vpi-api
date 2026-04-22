@@ -549,6 +549,14 @@
           "value": "references"
         },
         {
+          "id": "it.vedph.historical-events",
+          "value": "events"
+        },
+        {
+          "id": "it.vedph.historical-events:pri",
+          "value": "events"
+        },
+        {
           "id": "it.vedph.metadata",
           "value": "metadata"
         },
@@ -589,8 +597,20 @@
           "value": "text"
         },
         {
+          "id": "it.vedph.physical-measurements",
+          "value": "measurements"
+        },
+        {
+          "id": "it.vedph.physical-measurements:pri",
+          "value": "measurements"
+        },
+        {
           "id": "it.vedph.physical-measurements:wblk",
           "value": "measurements"
+        },
+        {
+          "id": "it.vedph.physical-states",
+          "value": "states"
         },
         {
           "id": "it.vedph.pin-links",

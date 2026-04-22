@@ -1,5 +1,15 @@
 # Cadmus VPI
 
+🐋 Quick Docker image build:
+
+```sh
+docker buildx create --use
+
+docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2020/cadmus-vpi-api:0.0.1 -t vedph2020/cadmus-vpi-api:latest --push
+```
+
+(replace with the current version).
+
 ## Facets
 
 The list of facets is given here with their conventional groupings used in the editor UI. The 3-letters abbreviation after each part type name refers to Cadmus model spaces different from the generic one. Here we have `COD`=codicology, `BOK`=books. Also, 🔗 means a potential _internal_ link; where there is a links part without this indication, the usual implication is that it contains _external_ links.
@@ -89,33 +99,3 @@ With reference to the original schema:
 - narrative type is a taxonomy for text passages part.
 - illustration instance is a decoration in the decorations part inside the print edition item. It is linked to subject, figure, narrative via links from each decoration.
 - woodcut block is the woodcut block item. Its reuse (and its metadata) is implicit in the links from the decoration to the block.
-
-Part types list (from GEN, COD, NDP):
-
-- it.vedph.categories:fig
-- it.vedph.categories:ill
-- it.vedph.categories:narr
-- it.vedph.categories:reuse
-- it.vedph.categories:wblk
-- it.vedph.chronotopes:prn
-- it.vedph.chronotopes:pub
-- it.vedph.codicology.bindings
-- it.vedph.codicology.decorations
-- it.vedph.codicology.edits
-- it.vedph.codicology.layouts:prn
-- it.vedph.codicology.sheet-labels
-- it.vedph.codicology.shelfmarks
-- it.vedph.codicology.watermarks
-- it.vedph.doc-references
-- it.vedph.metadata
-- it.vedph.ndp.print-fig-plan
-- it.vedph.ndp.print-fig-plan-impl
-- it.vedph.ndp.print-fonts
-- it.vedph.ndp.text-passages
-- it.vedph.note
-- it.vedph.note:col
-- it.vedph.note:hist
-- it.vedph.note:inc
-- it.vedph.note:txt
-- it.vedph.physical-measurements:wblk
-- it.vedph.pin-links

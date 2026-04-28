@@ -381,7 +381,6 @@
         },
         {
           "typeId": "it.vedph.physical-measurements",
-          "roleId": "wblk",
           "name": "measurements",
           "description": "Physical measurements.",
           "colorKey": "FF9933",
@@ -399,11 +398,20 @@
         },
         {
           "typeId": "it.vedph.note",
+          "roleId": "txt",
+          "name": "note",
+          "description": "Text.",
+          "colorKey": "0650F0",
+          "groupKey": "content",
+          "sortKey": "06"
+        },
+        {
+          "typeId": "it.vedph.note",
           "name": "note",
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "06"
+          "sortKey": "07"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -411,7 +419,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "07"
+          "sortKey": "08"
         }
       ]
     }
@@ -702,7 +710,43 @@
         {
           "id": "tir.indeterminate",
           "value": "indeterminate"
-        }
+        },
+        {
+          "id": "unit",
+          "value": "narrative unit type"
+        },
+        {
+          "id": "unit.hagiography-df",
+          "value": "hagiography DF"
+        },
+        {
+          "id": "unit.hagiography-other",
+          "value": "hagiography other"
+        },
+        {
+          "id": "unit.exemplum",
+          "value": "exemplum"
+        },
+        {
+          "id": "unit.apophthegma",
+          "value": "apophthegma"
+        },
+        {
+          "id": "unit.dialogue",
+          "value": "dialogue"
+        },
+        {
+          "id": "visual",
+          "value": "visual narrative"
+        },
+        {
+          "id": "visual.single-scene",
+          "value": "single scene"
+        },
+        {
+          "id": "visual.continuous-narrative",
+          "value": "continuous narrative"
+        }        
       ]
     },
     {

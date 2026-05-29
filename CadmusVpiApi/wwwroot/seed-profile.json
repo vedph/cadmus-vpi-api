@@ -746,7 +746,7 @@
         {
           "id": "visual.continuous-narrative",
           "value": "continuous narrative"
-        }        
+        }
       ]
     },
     {
@@ -3269,6 +3269,10 @@
           "value": "mt"
         }
       ]
+    },
+    {
+      "id": "physical-size-units_pri@en",
+      "targetId": "physical-size-units"
     },
     {
       "id": "print-font-families@en",

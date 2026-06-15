@@ -380,12 +380,22 @@
           "sortKey": "03"
         },
         {
+          "typeId": "it.vedph.categories",
+          "roleId": "ico",
+          "name": "iconographies",
+          "description": "Iconographic categories.",
+          "colorKey": "0CC8F7",
+          "groupKey": "identity",
+          "sortKey": "04"
+        },
+        {
           "typeId": "it.vedph.physical-measurements",
+          "roleId": "wblk",
           "name": "measurements",
           "description": "Physical measurements.",
           "colorKey": "FF9933",
           "groupKey": "material",
-          "sortKey": "04"
+          "sortKey": "05"
         },
         {
           "typeId": "it.vedph.categories",
@@ -394,7 +404,7 @@
           "description": "Narrative types.",
           "colorKey": "0540F5",
           "groupKey": "content",
-          "sortKey": "05"
+          "sortKey": "06"
         },
         {
           "typeId": "it.vedph.note",
@@ -403,7 +413,7 @@
           "description": "Text.",
           "colorKey": "0650F0",
           "groupKey": "content",
-          "sortKey": "06"
+          "sortKey": "07"
         },
         {
           "typeId": "it.vedph.note",
@@ -411,7 +421,22 @@
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "07"
+          "sortKey": "08"
+        },
+        {
+          "typeId": "it.vedph.index-keywords",
+          "name": "index keywords",
+          "description": "Item's index keywords.",
+          "colorKey": "588BBF",
+          "groupKey": "content",
+          "sortKey": "09"
+        },
+        {
+          "typeId": "it.vedph.ndp.text-passages",
+          "name": "text passages",
+          "description": "Text passages.",
+          "colorKey": "589BBF",
+          "sortKey": "10"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -419,7 +444,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "08"
+          "sortKey": "11"
         }
       ]
     }
@@ -565,6 +590,10 @@
           "value": "events"
         },
         {
+          "id": "it.vedph.index-keywords",
+          "value": "keywords"
+        },
+        {
           "id": "it.vedph.metadata",
           "value": "metadata"
         },
@@ -655,12 +684,56 @@
       "id": "categories_ico@en",
       "entries": [
         {
-          "id": "a",
-          "value": "alpha"
+          "id": "ico",
+          "value": "iconographic category"
         },
         {
-          "id": "b",
-          "value": "beta"
+          "id": "ico.ascetic-life-practices",
+          "value": "ascetic life and practices"
+        },
+        {
+          "id": "ico.animal-communion",
+          "value": "animal communion"
+        },
+        {
+          "id": "ico.persecutions",
+          "value": "persecutions"
+        },
+        {
+          "id": "ico.death-afterlife",
+          "value": "death and afterlife"
+        },
+        {
+          "id": "ico.visions",
+          "value": "visions"
+        },
+        {
+          "id": "ico.charitable-care-healing",
+          "value": "charitable care and healing"
+        },
+        {
+          "id": "ico.miraculous-intervention",
+          "value": "miraculous intervention"
+        },
+        {
+          "id": "ico.community-monastic-life",
+          "value": "community and monastic life"
+        },
+        {
+          "id": "ico.teaching",
+          "value": "teaching"
+        },
+        {
+          "id": "ico.temptations",
+          "value": "temptations"
+        },
+        {
+          "id": "ico.demons",
+          "value": "demons"
+        },
+        {
+          "id": "ico.other",
+          "value": "other"
         }
       ]
     },
@@ -753,40 +826,20 @@
       "id": "categories_narr@en",
       "entries": [
         {
-          "id": "unit",
-          "value": "narrative unit type"
-        },
-        {
-          "id": "unit.hagiography-df",
-          "value": "hagiography DF"
-        },
-        {
-          "id": "unit.hagiography-other",
-          "value": "hagiography other"
-        },
-        {
-          "id": "unit.exemplum",
-          "value": "exemplum"
-        },
-        {
-          "id": "unit.apophthegma",
-          "value": "apophthegma"
-        },
-        {
-          "id": "unit.dialogue",
-          "value": "dialogue"
-        },
-        {
           "id": "visual",
           "value": "visual narrative"
         },
         {
-          "id": "visual.single-scene",
-          "value": "single scene"
+          "id": "visual.monoscenic-narrative",
+          "value": "Monoscenic Narrative"
+        },
+        {
+          "id": "visual.polyscenic-narrative",
+          "value": "Polyscenic Narrative"
         },
         {
           "id": "visual.continuous-narrative",
-          "value": "continuous narrative"
+          "value": "Continuous Narrative"
         }
       ]
     },
@@ -3237,6 +3290,22 @@
         {
           "id": "eid",
           "value": "EID"
+        },
+        {
+          "id": "inscription-text",
+          "value": "inscription text"
+        },
+        {
+          "id": "monogram",
+          "value": "monogram"
+        },
+        {
+          "id": "monogram-type",
+          "value": "monogram type"
+        },
+        {
+          "id": "hand-coloured",
+          "value": "hand coloured"
         }
       ]
     },
@@ -3272,6 +3341,10 @@
     },
     {
       "id": "physical-size-units_pri@en",
+      "targetId": "physical-size-units"
+    },
+    {
+      "id": "physical-size-units_wblk@en",
       "targetId": "physical-size-units"
     },
     {
@@ -3832,6 +3905,13 @@
       },
       {
         "id": "seed.it.vedph.doc-references"
+      },
+      {
+        "id": "seed.it.vedph.index-keywords",
+        "options": {
+          "indexIds": ["persons", "places"],
+          "languages": ["en", "fr", "de", "grc", "la"]
+        }
       },
       {
         "id": "seed.it.vedph.metadata"

@@ -81,12 +81,15 @@ The list of facets is given here with their conventional groupings used in the e
     - [metadata](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
     - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 illustration, person
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`wblk` 🚩 block types
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ico` 🚩 iconographies
   - _material_
     - [measurements](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md):`wblk` 🚩
   - _content_
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`narr` 🚩 narrative types
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`txt` 🚩
     - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
+    - [keywords](https://github.com/vedph/cadmus-general/blob/master/docs/it.vedph.index-keywords.md)
+    - [text passages](https://github.com/vedph/cadmus-ndp/blob/master/docs/text-passages.md)
   - _references_
     - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md)
 
@@ -101,24 +104,26 @@ With reference to the original schema:
 
 ## Parts Matrix
 
-| part          | print-ed  | print-inst | person | illustration | woodblock |
-| ------------- | --------- | ---------- | ------ | ------------ | --------- |
-| bindings      |           | X          |        |              |           |
-| categories    |           |            | fig    | ill reuse    | wblk narr |
-| chronotopes   | prn pub   |            |        |              |           |
-| decorations   | X         |            |        |              |           |
-| edits         |           | X          |        |              |           |
-| events        |           | pri        |        |              |           |
-| links         | X         | X          | X      | X            | X         |
-| measurements  |           | X          |        |              | X         |
-| metadata      | X         | X          | X      | X            | X         |
-| fig plan      | X         |            |        |              |           |
-| fig plan impl |           | X          |        |              |           |
-| fonts         | X         |            |        |              |           |
-| layouts       | prn       | prn        |        |              |           |
-| note          | X inc col | X hist     | X      | X            | X txt     |
-| references    | X         | X          | X      | X            | X         |
-| sheet labels  |           | X          |        |              |           |
-| shelfmarks    |           | X          |        |              |           |
-| states        |           | X          |        |              |           |
-| watermarks    | X         |            |        |              |           |
+| part          | print-ed  | print-inst | person | illustration | woodblock     |
+| ------------- | --------- | ---------- | ------ | ------------ | ------------- |
+| bindings      |           | X          |        |              |               |
+| categories    |           |            | fig    | ill reuse    | wblk ico narr |
+| chronotopes   | prn pub   |            |        |              |               |
+| decorations   | X         |            |        |              |               |
+| edits         |           | X          |        |              |               |
+| events        |           | pri        |        |              |               |
+| keywords      |           |            |        |              | X             |
+| links         | X         | X          | X      | X            | X             |
+| measurements  |           | X          |        |              | X             |
+| metadata      | X         | X          | X      | X            | X             |
+| fig plan      | X         |            |        |              |               |
+| fig plan impl |           | X          |        |              |               |
+| fonts         | X         |            |        |              |               |
+| layouts       | prn       | prn        |        |              |               |
+| note          | X inc col | X hist     | X      | X            | X txt         |
+| references    | X         | X          | X      | X            | X             |
+| sheet labels  |           | X          |        |              |               |
+| shelfmarks    |           | X          |        |              |               |
+| states        |           | X          |        |              |               |
+| text passages |           |            |        |              | X             |
+| watermarks    | X         |            |        |              |               |

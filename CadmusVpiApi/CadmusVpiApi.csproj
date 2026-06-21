@@ -10,12 +10,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Api.Config" Version="11.0.9" />
-		<PackageReference Include="Cadmus.Api.Controllers" Version="13.0.8" />
-		<PackageReference Include="Cadmus.Api.Controllers.Export" Version="1.0.5" />
-		<PackageReference Include="Cadmus.Api.Controllers.Import" Version="12.0.7" />
-		<PackageReference Include="Cadmus.Api.Models" Version="11.0.6" />
-		<PackageReference Include="Cadmus.Api.Services" Version="13.0.8" />
+		<PackageReference Include="Cadmus.Api.Config" Version="11.0.10" />
+		<PackageReference Include="Cadmus.Api.Controllers" Version="13.0.9" />
+		<PackageReference Include="Cadmus.Api.Controllers.Export" Version="1.0.6" />
+		<PackageReference Include="Cadmus.Api.Controllers.Import" Version="12.0.8" />
+		<PackageReference Include="Cadmus.Api.Models" Version="11.0.7" />
+		<PackageReference Include="Cadmus.Api.Services" Version="13.0.9" />
 		<PackageReference Include="Cadmus.Graph" Version="10.0.7" />
 		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.7" />
 		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.7" />

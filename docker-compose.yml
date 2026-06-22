@@ -43,7 +43,7 @@ services:
 
   # Cadmus VPI API
   cadmus-vpi-api:
-    image: vedph2020/cadmus-vpi-api:0.0.1
+    image: vedph2020/cadmus-vpi-api:0.0.2
     container_name: cadmus-vpi-api
     ports:
       - 5172:8080

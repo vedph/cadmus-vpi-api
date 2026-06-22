@@ -5,7 +5,7 @@
 ```sh
 docker buildx create --use
 
-docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2020/cadmus-vpi-api:0.0.1 -t vedph2020/cadmus-vpi-api:latest --push
+docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2020/cadmus-vpi-api:0.0.2 -t vedph2020/cadmus-vpi-api:latest --push
 ```
 
 (replace with the current version).

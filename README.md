@@ -138,10 +138,10 @@ Mapping for woodblocks import from an Excel file.
 - **B** (`folio`) (string): location 🎯 `MetadataPart`: `location`=value ⚙️ [ColLocEntryRegionParser](Cadmus.Vpi.Import/ColLocEntryRegionParser.cs)
 - **C** (`Object measures (h x w)`): size with format `NxN` for height and width, mm. 🎯 `PhysicalMeasurementsPart` ⚙️ [ColMeasuresEntryRegionParser](Cadmus.Vpi.Import/ColMeasuresEntryRegionParser.cs)
 - **P** (`Text`) (string): inscription's text 🎯 `MetadataPart`: `inscription`=value (when it is not present, no inscription is present, so the boolean flag is redundant) ⚙️ [ColTextEntryRegionParser](Cadmus.Vpi.Import/ColTextEntryRegionParser.cs)
-- **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️
-- **R** (`Image tags (Iconclass)`): IconClass tags (separated by `;`) 🎯 `PinLinksPart` ⚙️
-- **S** (`Ico-Category`) category IDs (separated by `|`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️
-- **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️
+- **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️ [ColKeywordsEntryRegionParser](Cadmus.Vpi.Import/ColKeywordsEntryRegionParser.cs)
+- **R** (`Image tags (Iconclass)`): IconClass tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
+- **S** (`Ico-Category`) category IDs (separated by `|`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
+- **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
 - **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
 - **AR** (`Bibliography`) (string): ?? 🎯 `DocReferencesPart` ⚙️
 

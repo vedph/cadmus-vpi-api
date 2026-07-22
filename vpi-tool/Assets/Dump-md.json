@@ -74,7 +74,12 @@
   ],
   "entrySetExporters": [
     {
-      "id": "it.vedph.entry-set-exporter.cadmus.mongo"
+      "id": "it.vedph.entry-set-exporter.cadmus.md-dump",
+      "options": {
+        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi-dump\\",
+        "noEntries": true,
+        "jsonParts": true
+      }
     }
   ]
 }

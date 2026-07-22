@@ -74,7 +74,11 @@
   ],
   "entrySetExporters": [
     {
-      "id": "it.vedph.entry-set-exporter.cadmus.mongo"
+      "id": "entry-set-exporter.excel-dump",
+      "options": {
+        "maxEntriesPerDumpFile": 10000,
+        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi-dump"
+      }
     }
   ]
 }

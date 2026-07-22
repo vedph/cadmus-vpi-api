@@ -1,0 +1,59 @@
+[
+  {
+    "id": "categories_ico@en",
+    "entries": [
+      {
+        "id": "ico",
+        "value": "iconographic category"
+      },
+      {
+        "id": "ico.ascetic-life-practices",
+        "value": "ascetic life and practices"
+      },
+      {
+        "id": "ico.animal-communion",
+        "value": "animal communion"
+      },
+      {
+        "id": "ico.persecutions",
+        "value": "persecutions"
+      },
+      {
+        "id": "ico.death-afterlife",
+        "value": "death and afterlife"
+      },
+      {
+        "id": "ico.visions",
+        "value": "visions"
+      },
+      {
+        "id": "ico.charitable-care-healing",
+        "value": "charitable care and healing"
+      },
+      {
+        "id": "ico.miraculous-intervention",
+        "value": "miraculous intervention"
+      },
+      {
+        "id": "ico.community-monastic-life",
+        "value": "community and monastic life"
+      },
+      {
+        "id": "ico.teaching",
+        "value": "teaching"
+      },
+      {
+        "id": "ico.temptations",
+        "value": "temptations"
+      },
+      {
+        "id": "ico.demons",
+        "value": "demons"
+      },
+      {
+        "id": "ico.other",
+        "value": "other"
+      }
+    ]
+  }
+]

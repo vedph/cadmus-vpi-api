@@ -10,18 +10,18 @@ using System.Collections.Generic;
 namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// VPI column ID entry region parser. This adds a metadata part with an
-/// <c>eid</c> metadatum.
+/// VPI column text entry region parser. This adds a metadata part with an
+/// <c>text</c> metadatum.
 /// </summary>
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
 /// <remarks>
-/// Initializes a new instance of the <see cref="ColIdEntryRegionParser"/>
+/// Initializes a new instance of the <see cref="ColTextEntryRegionParser"/>
 /// class.
 /// </remarks>
 /// <param name="logger">The logger.</param>
-[Tag("entry-region-parser.vpi.col-id")]
-public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
+[Tag("entry-region-parser.vpi.col-text")]
+public sealed class ColTextEntryRegionParser(ILogger? logger = null) :
     EntryRegionParser(logger), IEntryRegionParser
 {
     /// <summary>
@@ -42,7 +42,7 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
         ArgumentNullException.ThrowIfNull(set);
         ArgumentNullException.ThrowIfNull(regions);
 
-        return regions[regionIndex].Tag == "col-object_name";
+        return regions[regionIndex].Tag == "col-text";
     }
 
     /// <summary>
@@ -67,27 +67,25 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
 
         if (ctx.CurrentItem == null)
         {
-            Logger?.LogError("ID column without any item at region {Region}",
+            Logger?.LogError("Text column without any item at region {Region}",
                 region);
             throw new InvalidOperationException(
-                "ID column without any item at region " + region);
+                "Text column without any item at region " + region);
         }
 
         DecodedTextEntry txt = (DecodedTextEntry)
             set.Entries[region.Range.Start.Entry + 1];
         string id = VpiHelper.FilterValue(txt.Value, false) ??
-            throw new InvalidOperationException("no ID column at region " + region);
+            throw new InvalidOperationException("no text column at region " + region);
 
         // metadata
         MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
         part.Metadata.Add(new Metadatum
         {
             Type = "string",
-            Name = "eid",
+            Name = "inscription",
             Value = id
         });
-
-        Logger?.LogInformation("-- ID: {Id}", id);
 
         return regionIndex + 1;
     }

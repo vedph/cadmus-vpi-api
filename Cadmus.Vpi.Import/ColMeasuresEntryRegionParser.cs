@@ -1,29 +1,27 @@
-﻿using Cadmus.General.Parts;
-using Cadmus.Import.Proteus;
+﻿using Cadmus.Import.Proteus;
+using Cadmus.General.Parts;
 using Fusi.Tools.Configuration;
 using Microsoft.Extensions.Logging;
 using Proteus.Core.Entries;
 using Proteus.Core.Regions;
 using System;
 using System.Collections.Generic;
+using Cadmus.Mat.Bricks;
 
 namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// VPI column ID entry region parser. This adds a metadata part with an
-/// <c>eid</c> metadatum.
+/// VPI column measures entry region parser. This targets
+/// <see cref="PhysicalMeasurementsPart"/>.
 /// </summary>
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
-/// <remarks>
-/// Initializes a new instance of the <see cref="ColIdEntryRegionParser"/>
-/// class.
-/// </remarks>
-/// <param name="logger">The logger.</param>
-[Tag("entry-region-parser.vpi.col-id")]
-public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
+[Tag("entry-region-parser.vpi.col-measures")]
+public sealed class ColMeasuresEntryRegionParser(ILogger? logger = null) :
     EntryRegionParser(logger), IEntryRegionParser
 {
+    private const string COL_MEASURES = "col-object_measures_(h_x_w)";
+
     /// <summary>
     /// Determines whether this parser is applicable to the specified
     /// region. Typically, the applicability is determined via a configurable
@@ -42,7 +40,24 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
         ArgumentNullException.ThrowIfNull(set);
         ArgumentNullException.ThrowIfNull(regions);
 
-        return regions[regionIndex].Tag == "col-object_name";
+        return regions[regionIndex].Tag == COL_MEASURES;
+    }
+
+    private (float w, float h) ParseMeasures(string value)
+    {
+        string[] parts = value.Split('x', StringSplitOptions.RemoveEmptyEntries);
+
+        if (parts.Length != 2)
+            Logger?.LogError("Invalid measures format, expected HxW: {Value}",
+                value);
+
+        if (!float.TryParse(parts[0], out float h))
+            Logger?.LogError("Invalid height in measures: {Value}", value);
+
+        if (!float.TryParse(parts[1], out float w))
+            Logger?.LogError("Invalid width in measures: {Value}", value);
+        
+        return (w, h);
     }
 
     /// <summary>
@@ -67,28 +82,36 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
 
         if (ctx.CurrentItem == null)
         {
-            Logger?.LogError("ID column without any item at region {Region}",
+            Logger?.LogError("Measures column without any item at region {Region}",
                 region);
             throw new InvalidOperationException(
-                "ID column without any item at region " + region);
+                "Measures column without any item at region " + region);
         }
 
         DecodedTextEntry txt = (DecodedTextEntry)
             set.Entries[region.Range.Start.Entry + 1];
-        string id = VpiHelper.FilterValue(txt.Value, false) ??
-            throw new InvalidOperationException("no ID column at region " + region);
+        string? value = VpiHelper.FilterValue(txt.Value, false);
 
-        // metadata
-        MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
-        part.Metadata.Add(new Metadatum
+        // parse HxW, e.g. 0.5x0.3
+        (float w, float h) = ParseMeasures(value ?? "");
+        if (w != 0.0 && h != 0.0)
         {
-            Type = "string",
-            Name = "eid",
-            Value = id
-        });
-
-        Logger?.LogInformation("-- ID: {Id}", id);
-
+            PhysicalMeasurementsPart part = ctx.EnsurePartForCurrentItem
+                <PhysicalMeasurementsPart>();
+            part.Measurements.Add(new PhysicalMeasurement
+            {
+                Name = "width",
+                Value = w,
+                Unit = "mm"
+            });
+            part.Measurements.Add(new PhysicalMeasurement
+            {
+                Name = "height",
+                Value = h,
+                Unit = "mm"
+            });
+        }
+        
         return regionIndex + 1;
     }
 }

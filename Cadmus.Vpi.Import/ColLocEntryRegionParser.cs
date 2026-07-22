@@ -10,18 +10,18 @@ using System.Collections.Generic;
 namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// VPI column ID entry region parser. This adds a metadata part with an
-/// <c>eid</c> metadatum.
+/// VPI column location entry region parser. This adds a metadata part with a
+/// <c>location</c> metadatum.
 /// </summary>
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
 /// <remarks>
-/// Initializes a new instance of the <see cref="ColIdEntryRegionParser"/>
+/// Initializes a new instance of the <see cref="ColLocEntryRegionParser"/>
 /// class.
 /// </remarks>
 /// <param name="logger">The logger.</param>
-[Tag("entry-region-parser.vpi.col-id")]
-public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
+[Tag("entry-region-parser.vpi.col-loc")]
+public sealed class ColLocEntryRegionParser(ILogger? logger = null) :
     EntryRegionParser(logger), IEntryRegionParser
 {
     /// <summary>
@@ -42,7 +42,7 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
         ArgumentNullException.ThrowIfNull(set);
         ArgumentNullException.ThrowIfNull(regions);
 
-        return regions[regionIndex].Tag == "col-object_name";
+        return regions[regionIndex].Tag == "col-folio";
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
 
         DecodedTextEntry txt = (DecodedTextEntry)
             set.Entries[region.Range.Start.Entry + 1];
-        string id = VpiHelper.FilterValue(txt.Value, false) ??
+        string location = VpiHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no ID column at region " + region);
 
         // metadata
@@ -83,11 +83,9 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
         part.Metadata.Add(new Metadatum
         {
             Type = "string",
-            Name = "eid",
-            Value = id
+            Name = "location",
+            Value = location
         });
-
-        Logger?.LogInformation("-- ID: {Id}", id);
 
         return regionIndex + 1;
     }

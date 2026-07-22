@@ -1,6 +1,5 @@
-﻿using Cadmus.Import.Proteus;
-using Cadmus.Refs.Bricks;
-using Cadmus.General.Parts;
+﻿using Cadmus.General.Parts;
+using Cadmus.Import.Proteus;
 using Fusi.Tools.Configuration;
 using Microsoft.Extensions.Logging;
 using Proteus.Core.Entries;
@@ -11,7 +10,7 @@ using System.Collections.Generic;
 namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// VPI column Cut entry region parser. This targets TODO.
+/// VPI column cut entry region parser. This targets title and MetadataPart.
 /// </summary>
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
@@ -74,7 +73,17 @@ public sealed class ColCutEntryRegionParser(ILogger? logger = null) :
             set.Entries[region.Range.Start.Entry + 1];
         string? value = VpiHelper.FilterValue(txt.Value, false);
 
+        // title
         ctx.CurrentItem.Title = $"RGT_{value}";
+
+        // metadata
+        MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
+        part.Metadata.Add(new Metadatum
+        {
+            Type = "number",
+            Name = "cut-number",
+            Value = value,
+        });
 
         return regionIndex + 1;
     }

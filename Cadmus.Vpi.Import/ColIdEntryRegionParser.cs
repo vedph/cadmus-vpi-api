@@ -82,9 +82,9 @@ public sealed class ColIdEntryRegionParser(ILogger? logger = null) :
         MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
         part.Metadata.Add(new Metadatum
         {
-            // ID is always lowercase as it is used in search
+            Type = "string",
             Name = "eid",
-            Value = id.ToLowerInvariant()
+            Value = id
         });
 
         Logger?.LogInformation("-- ID: {Id}", id);

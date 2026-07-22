@@ -74,7 +74,7 @@ public sealed class ColCutEntryRegionParser(ILogger? logger = null) :
         string? value = VpiHelper.FilterValue(txt.Value, false);
 
         // title
-        ctx.CurrentItem.Title = $"RGT_{value}";
+        ctx.CurrentItem.Title = $"RGT_{value:000}";
 
         // metadata
         MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();

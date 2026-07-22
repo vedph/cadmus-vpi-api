@@ -17,31 +17,13 @@ namespace Cadmus.Vpi.Import;
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
 [Tag("entry-region-parser.vpi.col-measures")]
-public sealed class ColMeasuresEntryRegionParser(ILogger? logger = null) :
-    EntryRegionParser(logger), IEntryRegionParser
+public sealed class ColMeasuresEntryRegionParser:
+    EntryRegionParser, IEntryRegionParser
 {
-    private const string COL_MEASURES = "col-object_measures_(h_x_w)";
-
     /// <summary>
-    /// Determines whether this parser is applicable to the specified
-    /// region. Typically, the applicability is determined via a configurable
-    /// nested object, having parameters like region tag(s) and paths.
+    /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    /// <param name="set">The entries set.</param>
-    /// <param name="regions">The regions.</param>
-    /// <param name="regionIndex">Index of the region.</param>
-    /// <returns>
-    ///   <c>true</c> if applicable; otherwise, <c>false</c>.
-    /// </returns>
-    /// <exception cref="ArgumentNullException"></exception>
-    public bool IsApplicable(EntrySet set, IReadOnlyList<EntryRegion> regions,
-        int regionIndex)
-    {
-        ArgumentNullException.ThrowIfNull(set);
-        ArgumentNullException.ThrowIfNull(regions);
-
-        return regions[regionIndex].Tag == COL_MEASURES;
-    }
+    public string[] RegionTags => ["col-object_measures_(h_x_w)"];
 
     private (float w, float h) ParseMeasures(string value)
     {
@@ -61,24 +43,24 @@ public sealed class ColMeasuresEntryRegionParser(ILogger? logger = null) :
     }
 
     /// <summary>
-    /// Parses the region of entries at <paramref name="regionIndex" />
-    /// in the specified <paramref name="regions" />.
+    /// Parses the region of entries at <paramref name="entryRegionIndex" />
+    /// in the specified <paramref name="entryRegions" />.
     /// </summary>
-    /// <param name="set">The entries set.</param>
-    /// <param name="regions">The regions.</param>
-    /// <param name="regionIndex">Index of the region in the set.</param>
+    /// <param name="entrySet">The entries set.</param>
+    /// <param name="entryRegions">The regions.</param>
+    /// <param name="entryRegionIndex">Index of the region in the set.</param>
     /// <returns>
     /// The index to the next region to be parsed.
     /// </returns>
     /// <exception cref="ArgumentNullException">set or regions</exception>
-    public int Parse(EntrySet set, IReadOnlyList<EntryRegion> regions,
-        int regionIndex)
+    protected override int DoParse(EntrySet entrySet, int entryIndex,
+        IReadOnlyList<EntryRegion> entryRegions, int entryRegionIndex)
     {
-        ArgumentNullException.ThrowIfNull(set);
-        ArgumentNullException.ThrowIfNull(regions);
+        ArgumentNullException.ThrowIfNull(entrySet);
+        ArgumentNullException.ThrowIfNull(entryRegions);
 
-        CadmusEntrySetContext ctx = (CadmusEntrySetContext)set.Context;
-        EntryRegion region = regions[regionIndex];
+        CadmusEntrySetContext ctx = (CadmusEntrySetContext)entrySet.Context;
+        EntryRegion region = entryRegions[entryRegionIndex];
 
         if (ctx.CurrentItem == null)
         {
@@ -89,7 +71,7 @@ public sealed class ColMeasuresEntryRegionParser(ILogger? logger = null) :
         }
 
         DecodedTextEntry txt = (DecodedTextEntry)
-            set.Entries[region.Range.Start.Entry + 1];
+            entrySet.Entries[region.Range.Start.Entry + 1];
         string? value = VpiHelper.FilterValue(txt.Value, false);
 
         // parse HxW, e.g. 0.5x0.3
@@ -112,6 +94,6 @@ public sealed class ColMeasuresEntryRegionParser(ILogger? logger = null) :
             });
         }
         
-        return regionIndex + 1;
+        return entryRegionIndex + 1;
     }
 }

@@ -16,33 +16,15 @@ namespace Cadmus.Vpi.Import;
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
 [Tag("entry-region-parser.vpi.col-links")]
-public sealed class ColLinksEntryRegionParser(ILogger? logger = null) :
-    EntryRegionParser(logger), IEntryRegionParser
+public sealed class ColLinksEntryRegionParser :
+    EntryRegionParser, IEntryRegionParser
 {
-    private const string COL_LINKS_IC = "col-image_tags_(iconclass)";
-    private const string COL_LINKS_IMA = "col-image_tags_(index_of_medieval_art)";
-
     /// <summary>
-    /// Determines whether this parser is applicable to the specified
-    /// region. Typically, the applicability is determined via a configurable
-    /// nested object, having parameters like region id(s) and paths.
+    /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    /// <param name="set">The entries set.</param>
-    /// <param name="regions">The regions.</param>
-    /// <param name="regionIndex">Index of the region.</param>
-    /// <returns>
-    ///   <c>true</c> if applicable; otherwise, <c>false</c>.
-    /// </returns>
-    /// <exception cref="ArgumentNullException"></exception>
-    public bool IsApplicable(EntrySet set, IReadOnlyList<EntryRegion> regions,
-        int regionIndex)
-    {
-        ArgumentNullException.ThrowIfNull(set);
-        ArgumentNullException.ThrowIfNull(regions);
-
-        return regions[regionIndex].Tag == COL_LINKS_IC ||
-               regions[regionIndex].Tag == COL_LINKS_IMA;
-    }
+    public string[] RegionTags => [
+        "col-image_tags_(iconclass)",
+        "col-image_tags_(index_of_medieval_art)" ];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />
@@ -55,14 +37,14 @@ public sealed class ColLinksEntryRegionParser(ILogger? logger = null) :
     /// The index to the next region to be parsed.
     /// </returns>
     /// <exception cref="ArgumentNullException">set or regions</exception>
-    public int Parse(EntrySet set, IReadOnlyList<EntryRegion> regions,
-        int regionIndex)
+    protected override int DoParse(EntrySet entrySet, int entryIndex,
+        IReadOnlyList<EntryRegion> entryRegions, int entryRegionIndex)
     {
-        ArgumentNullException.ThrowIfNull(set);
-        ArgumentNullException.ThrowIfNull(regions);
+        ArgumentNullException.ThrowIfNull(entrySet);
+        ArgumentNullException.ThrowIfNull(entryRegions);
 
-        CadmusEntrySetContext ctx = (CadmusEntrySetContext)set.Context;
-        EntryRegion region = regions[regionIndex];
+        CadmusEntrySetContext ctx = (CadmusEntrySetContext)entrySet.Context;
+        EntryRegion region = entryRegions[entryRegionIndex];
 
         if (ctx.CurrentItem == null)
         {
@@ -73,7 +55,7 @@ public sealed class ColLinksEntryRegionParser(ILogger? logger = null) :
         }
 
         DecodedTextEntry txt = (DecodedTextEntry)
-            set.Entries[region.Range.Start.Entry + 1];
+            entrySet.Entries[region.Range.Start.Entry + 1];
         string? value = VpiHelper.FilterValue(txt.Value, false);
 
         PinLinksPart part = ctx.EnsurePartForCurrentItem<PinLinksPart>();
@@ -90,6 +72,6 @@ public sealed class ColLinksEntryRegionParser(ILogger? logger = null) :
             });
         }
 
-        return regionIndex + 1;
+        return entryRegionIndex + 1;
     }
 }

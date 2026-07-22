@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Cadmus.General.Parts" Version="7.0.4" />
+		<PackageReference Include="Cadmus.Import.Proteus" Version="6.0.2" />
+		<PackageReference Include="Cadmus.Philology.Parts" Version="9.0.3" />
+	</ItemGroup>
+
+</Project>

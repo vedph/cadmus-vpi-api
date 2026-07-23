@@ -54,7 +54,7 @@ public sealed class ColKeywordsEntryRegionParser :
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
         string? value = VpiHelper.FilterValue(txt.Value, false);
-        if (string.IsNullOrEmpty(value)) return entryRegionIndex + 1;
+        if (string.IsNullOrEmpty(value)) return entryIndex + 1;
 
         IndexKeywordsPart part = ctx.EnsurePartForCurrentItem<IndexKeywordsPart>();
         foreach (string s in VpiHelper.GetValueList(value, false, [';']))
@@ -66,6 +66,6 @@ public sealed class ColKeywordsEntryRegionParser :
             });
         }
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

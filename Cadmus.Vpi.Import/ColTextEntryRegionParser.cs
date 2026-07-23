@@ -71,6 +71,6 @@ public sealed class ColTextEntryRegionParser:
             Value = id
         });
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

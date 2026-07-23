@@ -67,6 +67,6 @@ public sealed class ColCutEntryRegionParser() :
             Value = value,
         });
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

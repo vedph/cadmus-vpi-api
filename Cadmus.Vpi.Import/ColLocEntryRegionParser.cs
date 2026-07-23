@@ -71,6 +71,6 @@ public sealed class ColLocEntryRegionParser :
             Value = location
         });
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

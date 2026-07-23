@@ -94,6 +94,6 @@ public sealed class ColMeasuresEntryRegionParser:
             });
         }
         
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

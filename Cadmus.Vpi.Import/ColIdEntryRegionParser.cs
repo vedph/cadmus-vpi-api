@@ -72,6 +72,6 @@ public sealed class ColIdEntryRegionParser : EntryRegionParser, IEntryRegionPars
 
         Logger?.LogInformation("-- ID: {Id}", id);
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

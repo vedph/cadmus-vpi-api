@@ -72,6 +72,6 @@ public sealed class ColLinksEntryRegionParser :
             });
         }
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }
 }

@@ -69,6 +69,6 @@ public sealed class ColCategoriesEntryRegionParser :
             part.Categories.Add(id);
         }
 
-        return entryRegionIndex + 1;
+        return entryIndex + 1;
     }   
 }

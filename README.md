@@ -159,7 +159,7 @@ public sealed class Col__NAME__EntryRegionParser :
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => [ "col___TAG__" ];
+    public string[] RegionTags => [ "col-__TAG__" ];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="entryRegionIndex" />

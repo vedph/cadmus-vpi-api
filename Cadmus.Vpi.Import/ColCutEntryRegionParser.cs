@@ -21,7 +21,7 @@ public sealed class ColCutEntryRegionParser() :
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => ["col_no._of_cut"];
+    public string[] RegionTags => ["col-no._of_cut"];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />

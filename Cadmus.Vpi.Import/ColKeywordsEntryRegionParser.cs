@@ -21,7 +21,7 @@ public sealed class ColKeywordsEntryRegionParser :
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => ["col_controlled_keywords"];
+    public string[] RegionTags => ["col-controlled_keywords"];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />

@@ -27,7 +27,7 @@ public sealed class ColTextEntryRegionParser:
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => ["col_text"];
+    public string[] RegionTags => ["col-text"];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="entryRegionIndex" />

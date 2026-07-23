@@ -142,8 +142,7 @@ Mapping for woodblocks import from an Excel file.
 - **R** (`Image tags (Iconclass)`): IconClass tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
 - **S** (`Ico-Category`) category IDs (separated by `|`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
 - **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
-- **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
-- **AR** (`Bibliography`) (string): ?? 🎯 `DocReferencesPart` ⚙️
+- **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
 
 ### Code Template
 

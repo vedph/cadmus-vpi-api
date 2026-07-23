@@ -24,8 +24,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Assets\Import.json" />
-	  <EmbeddedResource Include="Assets\Thesauri.json" />
+	  <Content Include="Assets\Import.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Assets\Thesauri.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>

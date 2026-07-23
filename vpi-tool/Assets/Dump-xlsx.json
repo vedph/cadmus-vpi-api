@@ -8,7 +8,7 @@
       "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi.xlsx",
       "hasHeaderRow": true,
       "columnNameFiltering": true,
-      "eofCheckColumn": 1
+      "eofCheckColumn": 23
     }
   },
   "entrySetBoundaryDetector": {

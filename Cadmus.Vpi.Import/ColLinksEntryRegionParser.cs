@@ -56,11 +56,11 @@ public sealed class ColLinksEntryRegionParser :
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false);
 
         PinLinksPart part = ctx.EnsurePartForCurrentItem<PinLinksPart>();
 
-        foreach (string id in VpiHelper.GetValueList(value, false, [';']))
+        foreach (string id in ImportHelper.GetValueList(value, false, [';']))
         {
             part.Links.Add(new AssertedCompositeId
             {

@@ -53,7 +53,7 @@ public sealed class ColCutEntryRegionParser() :
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false);
 
         // title
         ctx.CurrentItem.Title = $"RGT_{value:000}";

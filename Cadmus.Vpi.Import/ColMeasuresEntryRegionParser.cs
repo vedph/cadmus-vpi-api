@@ -72,7 +72,7 @@ public sealed class ColMeasuresEntryRegionParser:
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false);
 
         // parse HxW, e.g. 0.5x0.3
         (float w, float h) = ParseMeasures(value ?? "");

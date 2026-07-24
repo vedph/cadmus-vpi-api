@@ -58,7 +58,7 @@ public sealed class ColIdEntryRegionParser : EntryRegionParser, IEntryRegionPars
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string id = VpiHelper.FilterValue(txt.Value, false) ??
+        string id = ImportHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no ID column at region " + region);
 
         // metadata

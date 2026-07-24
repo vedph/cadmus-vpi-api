@@ -53,12 +53,12 @@ public sealed class ColCategoriesEntryRegionParser :
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false);
 
         CategoriesPart part = ctx.EnsurePartForCurrentItem<CategoriesPart>("ico");
-        foreach (string label in VpiHelper.GetValueList(value, false, ['|']))
+        foreach (string label in ImportHelper.GetValueList(value, false, ['|']))
         {
-            string id = VpiHelper.GetThesaurusId(ctx, region, "categories_ico",
+            string id = ImportHelper.GetThesaurusId(ctx, region, "categories_ico",
                 label, Logger);
             if (id == null)
             {

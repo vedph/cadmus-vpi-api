@@ -26,10 +26,23 @@ namespace Cadmus.Vpi.Import;
 public sealed class RowEntryRegionParser :
     EntryRegionParser, IEntryRegionParser
 {
+    private bool _first = false;
+
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
     public string[] RegionTags => ["row"];
+
+    public override void RegionChanged(string tag, int index, bool entered,
+        IEntrySetContext context)
+    {
+        base.RegionChanged(tag, index, entered, context);
+
+        if (tag == "row" && entered)
+        {
+            _first = true;
+        }
+    }
 
     /// <summary>
     /// Parses the region of entries at <paramref name="entryRegionIndex" />
@@ -47,6 +60,9 @@ public sealed class RowEntryRegionParser :
     {
         ArgumentNullException.ThrowIfNull(entrySet);
         ArgumentNullException.ThrowIfNull(entryRegions);
+
+        // create the target item only for the first row
+        if (!_first) return entryIndex;
 
         entrySet.Context.Reset();
 
@@ -80,12 +96,13 @@ public sealed class RowEntryRegionParser :
             FacetId = "woodblock",
             CreatorId = "zeus",
             UserId = "zeus",
-            Flags = VpiHelper.F_DRAFT
+            Flags = ImportHelper.F_DRAFT
         };
         CadmusEntrySetContext ctx = (CadmusEntrySetContext)entrySet.Context;
         ctx.Items.Clear();
         ctx.Items.Add(item);
 
+        _first = false;
         return entryIndex + 1;
     }
 }

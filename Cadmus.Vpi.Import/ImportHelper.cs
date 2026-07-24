@@ -11,7 +11,7 @@ namespace Cadmus.Vpi.Import;
 /// <summary>
 /// Helper class for VPI importer.
 /// </summary>
-internal static partial class VpiHelper
+internal static partial class ImportHelper
 {
     private static readonly HashSet<string> _emptyValues = [
         "n\\d", "n/d", "N\\D", "N/D"

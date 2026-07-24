@@ -53,11 +53,11 @@ public sealed class ColKeywordsEntryRegionParser :
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false);
         if (string.IsNullOrEmpty(value)) return entryIndex + 1;
 
         IndexKeywordsPart part = ctx.EnsurePartForCurrentItem<IndexKeywordsPart>();
-        foreach (string s in VpiHelper.GetValueList(value, false, [';']))
+        foreach (string s in ImportHelper.GetValueList(value, false, [';']))
         {
             part.Keywords.Add(new IndexKeyword
             {

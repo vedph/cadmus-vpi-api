@@ -59,7 +59,7 @@ public sealed class ColTextEntryRegionParser:
 
         DecodedTextEntry txt = (DecodedTextEntry)
             entrySet.Entries[region.Range.Start.Entry + 1];
-        string id = VpiHelper.FilterValue(txt.Value, false) ??
+        string id = ImportHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no text column at region " + region);
 
         // metadata

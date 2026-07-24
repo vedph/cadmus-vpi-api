@@ -2,7 +2,7 @@
   "profiles": {
     "vpi-tool": {
       "commandName": "Project",
-      "commandLineArgs": "import c:\\users\\dfusi\\desktop\\vpi\\dump-xlsx.json"
+      "commandLineArgs": "import c:\\users\\dfusi\\desktop\\vpi\\dump-md.json"
     }
   }
 }

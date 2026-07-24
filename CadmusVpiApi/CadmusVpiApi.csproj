@@ -10,21 +10,21 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Api.Config" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Api.Controllers" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Api.Controllers.Export" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Api.Controllers.Import" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Api.Models" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Api.Services" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Graph" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Graph.Extras" Version="15.0.0" />
-		<PackageReference Include="Cadmus.Import.Proteus" Version="15.0.0" />
+		<PackageReference Include="Cadmus.Api.Config" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Api.Controllers" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Api.Controllers.Export" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Api.Controllers.Import" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Api.Models" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Api.Services" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Graph" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="15.0.1" />
+		<PackageReference Include="Cadmus.Import.Proteus" Version="15.0.1" />
 		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.5" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="15.0.0" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="15.0.1" />
 		<PackageReference Include="Cadmus.Seed.Ndp.Parts" Version="1.0.7" />
 		<PackageReference Include="Cadmus.Seed.NdpBooks.Parts" Version="2.0.5" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="15.0.0" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="15.0.1" />
 		<PackageReference Include="Fusi.Antiquity" Version="6.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.10" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />

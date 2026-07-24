@@ -61,16 +61,18 @@ public sealed class ColIdEntryRegionParser : EntryRegionParser, IEntryRegionPars
         string id = ImportHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no ID column at region " + region);
 
-        // metadata
-        MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
-        part.Metadata.Add(new Metadatum
+        if (!string.IsNullOrEmpty(id))
         {
-            Type = "string",
-            Name = "eid",
-            Value = id
-        });
-
-        Logger?.LogInformation("-- ID: {Id}", id);
+            // metadata
+            MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
+            part.Metadata.Add(new Metadatum
+            {
+                Type = "string",
+                Name = "eid",
+                Value = id
+            });
+            Logger?.LogInformation("-- ID: {Id}", id);
+        }
 
         return entryIndex + 3;
     }

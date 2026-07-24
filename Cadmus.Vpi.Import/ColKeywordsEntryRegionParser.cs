@@ -51,21 +51,21 @@ public sealed class ColKeywordsEntryRegionParser :
                 "Keywords column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
-        if (string.IsNullOrEmpty(value)) return entryIndex + 1;
-
-        IndexKeywordsPart part = ctx.EnsurePartForCurrentItem<IndexKeywordsPart>();
-        foreach (string s in ImportHelper.GetValueList(value, false, [';']))
+        if (!string.IsNullOrEmpty(value))
         {
-            part.Keywords.Add(new IndexKeyword
+            IndexKeywordsPart part = ctx.EnsurePartForCurrentItem<IndexKeywordsPart>();
+            foreach (string s in ImportHelper.GetValueList(value, false, [';']))
             {
-                Language = "en",
-                Value = s,
-            });
+                part.Keywords.Add(new IndexKeyword
+                {
+                    Language = "en",
+                    Value = s,
+                });
+            }
         }
-
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

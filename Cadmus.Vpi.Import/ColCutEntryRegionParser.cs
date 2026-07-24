@@ -51,12 +51,13 @@ public sealed class ColCutEntryRegionParser() :
                 "Cut column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = ImportHelper.FilterValue(txt.Value, false);
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
+        string? value = ImportHelper.FilterValue(txt.Value, false)?
+            .PadLeft(3, '0');
 
         // title
-        ctx.CurrentItem.Title = $"RGT_{value:000}";
+        ctx.CurrentItem.Title = $"RGT_{value}";
 
         // metadata
         MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
@@ -67,6 +68,6 @@ public sealed class ColCutEntryRegionParser() :
             Value = value,
         });
 
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

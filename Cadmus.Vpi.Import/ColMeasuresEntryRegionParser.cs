@@ -70,8 +70,8 @@ public sealed class ColMeasuresEntryRegionParser:
                 "Measures column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
         // parse HxW, e.g. 0.5x0.3
@@ -94,6 +94,6 @@ public sealed class ColMeasuresEntryRegionParser:
             });
         }
         
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

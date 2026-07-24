@@ -51,16 +51,17 @@ public sealed class ColLocEntryRegionParser :
 
         if (ctx.CurrentItem == null)
         {
-            Logger?.LogError("ID column without any item at region {Region}",
+            Logger?.LogError("Location column without any item at region {Region}",
                 region);
             throw new InvalidOperationException(
-                "ID column without any item at region " + region);
+                "Location column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string location = ImportHelper.FilterValue(txt.Value, false) ??
-            throw new InvalidOperationException("no ID column at region " + region);
+            throw new InvalidOperationException("no location column at region "
+            + region);
 
         // metadata
         MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
@@ -71,6 +72,6 @@ public sealed class ColLocEntryRegionParser :
             Value = location
         });
 
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

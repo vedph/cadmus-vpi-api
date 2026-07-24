@@ -57,8 +57,8 @@ public sealed class ColTextEntryRegionParser:
                 "Text column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string id = ImportHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no text column at region " + region);
 
@@ -71,6 +71,6 @@ public sealed class ColTextEntryRegionParser:
             Value = id
         });
 
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

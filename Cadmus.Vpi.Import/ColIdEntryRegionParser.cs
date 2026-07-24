@@ -56,8 +56,8 @@ public sealed class ColIdEntryRegionParser : EntryRegionParser, IEntryRegionPars
                 "ID column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string id = ImportHelper.FilterValue(txt.Value, false) ??
             throw new InvalidOperationException("no ID column at region " + region);
 
@@ -72,6 +72,6 @@ public sealed class ColIdEntryRegionParser : EntryRegionParser, IEntryRegionPars
 
         Logger?.LogInformation("-- ID: {Id}", id);
 
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

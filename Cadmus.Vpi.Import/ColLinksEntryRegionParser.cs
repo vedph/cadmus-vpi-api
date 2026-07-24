@@ -54,8 +54,8 @@ public sealed class ColLinksEntryRegionParser :
                 "Links column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
         PinLinksPart part = ctx.EnsurePartForCurrentItem<PinLinksPart>();
@@ -72,6 +72,6 @@ public sealed class ColLinksEntryRegionParser :
             });
         }
 
-        return entryIndex + 1;
+        return entryIndex + 3;
     }
 }

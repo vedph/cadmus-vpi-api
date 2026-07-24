@@ -59,18 +59,19 @@ public sealed class ColLocEntryRegionParser :
 
         DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
             entryIndex + 1)!;
-        string location = ImportHelper.FilterValue(txt.Value, false) ??
-            throw new InvalidOperationException("no location column at region "
-            + region);
+        string? location = ImportHelper.FilterValue(txt.Value, false);
 
-        // metadata
-        MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
-        part.Metadata.Add(new Metadatum
+        if (!string.IsNullOrEmpty(location))
         {
-            Type = "string",
-            Name = "location",
-            Value = location
-        });
+            // metadata
+            MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
+            part.Metadata.Add(new Metadatum
+            {
+                Type = "string",
+                Name = "location",
+                Value = location
+            });
+        }
 
         return entryIndex + 3;
     }

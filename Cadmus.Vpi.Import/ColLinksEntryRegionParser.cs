@@ -58,11 +58,10 @@ public sealed class ColLinksEntryRegionParser :
             entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
-        PinLinksPart part = ctx.EnsurePartForCurrentItem<PinLinksPart>();
-
+        List<AssertedCompositeId> ids = [];
         foreach (string id in ImportHelper.GetValueList(value, false, [';']))
         {
-            part.Links.Add(new AssertedCompositeId
+            ids.Add(new AssertedCompositeId
             {
                 Target = new PinTarget
                 {
@@ -70,6 +69,11 @@ public sealed class ColLinksEntryRegionParser :
                     Label = id,
                 }
             });
+        }
+        if (ids.Count > 0)
+        {
+            PinLinksPart part = ctx.EnsurePartForCurrentItem<PinLinksPart>();
+            foreach (AssertedCompositeId id in ids) part.Links.Add(id);
         }
 
         return entryIndex + 3;

@@ -55,7 +55,7 @@ public sealed class ColCategoriesEntryRegionParser :
             entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
-        CategoriesPart part = ctx.EnsurePartForCurrentItem<CategoriesPart>("ico");
+        HashSet<string> ids = [];
         foreach (string label in ImportHelper.GetValueList(value, false, ['|']))
         {
             string id = ImportHelper.GetThesaurusId(ctx, region, "categories_ico",
@@ -66,7 +66,14 @@ public sealed class ColCategoriesEntryRegionParser :
                     "at region {Region}", region.Tag, label, region);
                 continue;
             }
-            part.Categories.Add(id);
+            ids.Add(id);
+        }
+
+        if (ids.Count > 0)
+        {
+            CategoriesPart part = ctx.EnsurePartForCurrentItem<CategoriesPart>(
+                "ico");
+            foreach (string id in ids) part.Categories.Add(id);
         }
 
         return entryIndex + 3;

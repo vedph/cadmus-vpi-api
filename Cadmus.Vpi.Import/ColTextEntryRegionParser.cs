@@ -59,17 +59,19 @@ public sealed class ColTextEntryRegionParser:
 
         DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
             entryIndex + 1)!;
-        string id = ImportHelper.FilterValue(txt.Value, false) ??
-            throw new InvalidOperationException("no text column at region " + region);
+        string? text = ImportHelper.FilterValue(txt.Value, false);
 
-        // metadata
-        MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
-        part.Metadata.Add(new Metadatum
+        if (!string.IsNullOrEmpty(text))
         {
-            Type = "string",
-            Name = "inscription",
-            Value = id
-        });
+            // metadata
+            MetadataPart part = ctx.EnsurePartForCurrentItem<MetadataPart>();
+            part.Metadata.Add(new Metadatum
+            {
+                Type = "string",
+                Name = "inscription",
+                Value = text
+            });
+        }
 
         return entryIndex + 3;
     }

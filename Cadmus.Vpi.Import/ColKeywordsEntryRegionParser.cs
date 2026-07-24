@@ -54,16 +54,23 @@ public sealed class ColKeywordsEntryRegionParser :
         DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
             entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
+
         if (!string.IsNullOrEmpty(value))
         {
-            IndexKeywordsPart part = ctx.EnsurePartForCurrentItem<IndexKeywordsPart>();
+            List<IndexKeyword> keys = [];
             foreach (string s in ImportHelper.GetValueList(value, false, [';']))
             {
-                part.Keywords.Add(new IndexKeyword
+                keys.Add(new IndexKeyword
                 {
                     Language = "en",
                     Value = s,
                 });
+            }
+            if (keys.Count > 0)
+            {
+                IndexKeywordsPart part = ctx.EnsurePartForCurrentItem
+                    <IndexKeywordsPart>();
+                foreach (IndexKeyword key in keys) part.Keywords.Add(key);
             }
         }
         return entryIndex + 3;

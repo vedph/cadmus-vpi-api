@@ -139,9 +139,9 @@ Mapping for woodblocks import from an Excel file.
 - **C** (`Object measures (h x w)`): size with format `NxN` for height and width, mm. 🎯 `PhysicalMeasurementsPart` ⚙️ [ColMeasuresEntryRegionParser](Cadmus.Vpi.Import/ColMeasuresEntryRegionParser.cs)
 - **P** (`Text`) (string): inscription's text 🎯 `MetadataPart`: `inscription`=value (when it is not present, no inscription is present, so the boolean flag is redundant) ⚙️ [ColTextEntryRegionParser](Cadmus.Vpi.Import/ColTextEntryRegionParser.cs)
 - **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️ [ColKeywordsEntryRegionParser](Cadmus.Vpi.Import/ColKeywordsEntryRegionParser.cs)
-- **R** (`Image tags (Iconclass)`): IconClass tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
+- **R** (`Image tags (Iconclass)`): IconClass tags (separated by unbracketed `;`): each link is separated by an unbracketed semicolon, and each link is composed of an ID and a label, separated by the first unbracketed space. 🎯 `PinLinksPart` ⚙️ [ColIccLinksEntryRegionParser](Cadmus.Vpi.Import/ColIccLinksEntryRegionParser.cs)
 - **S** (`Ico-Category`) category IDs (separated by `|`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
-- **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColLinksEntryRegionParser](Cadmus.Vpi.Import/ColLinksEntryRegionParser.cs)
+- **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
 - **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
 
 ### Code Template
@@ -149,19 +149,35 @@ Mapping for woodblocks import from an Excel file.
 Template for region parser:
 
 - `__TAG__`: the region tag.
-- `__NAME__` the class name.
 
 ```cs
-public sealed class Col__NAME__EntryRegionParser :
+using Cadmus.Import.Proteus;
+using Cadmus.General.Parts;
+using Fusi.Tools.Configuration;
+using Microsoft.Extensions.Logging;
+using Proteus.Core.Entries;
+using Proteus.Core.Regions;
+using System;
+using System.Collections.Generic;
+
+namespace Cadmus.Vpi.Import;
+
+/// <summary>
+/// VPI column categories entry region parser. This targets TODO.
+/// </summary>
+/// <seealso cref="EntryRegionParser" />
+/// <seealso cref="IEntryRegionParser" />
+[Tag("entry-region-parser.vpi.col-__TAG__")]
+public sealed class Col__TAG__EntryRegionParser :
     EntryRegionParser, IEntryRegionParser
 {
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => [ "col-__TAG__" ];
+    public string[] RegionTags => ["col-__TAG__"];
 
     /// <summary>
-    /// Parses the region of entries at <paramref name="entryRegionIndex" />
+    /// Parses the region of entries at <paramref name="regionIndex" />
     /// in the specified <paramref name="entryRegions" />.
     /// </summary>
     /// <param name="entrySet">The entries set.</param>
@@ -188,13 +204,13 @@ public sealed class Col__NAME__EntryRegionParser :
                 "__TAG__ column without any item at region " + region);
         }
 
-        DecodedTextEntry txt = (DecodedTextEntry)
-            entrySet.Entries[region.Range.Start.Entry + 1];
-        string? value = VpiHelper.FilterValue(txt.Value, false);
+        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
+            entryIndex + 1)!;
+        string? value = ImportHelper.FilterValue(txt.Value, false);
 
         // TODO
 
-        return entryRegionIndex + 1;
+        return entryIndex + 3;
     }   
 }
 ```

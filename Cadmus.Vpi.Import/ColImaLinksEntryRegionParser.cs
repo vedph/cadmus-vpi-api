@@ -1,6 +1,6 @@
-﻿using Cadmus.Import.Proteus;
+﻿using Cadmus.General.Parts;
+using Cadmus.Import.Proteus;
 using Cadmus.Refs.Bricks;
-using Cadmus.General.Parts;
 using Fusi.Tools.Configuration;
 using Microsoft.Extensions.Logging;
 using Proteus.Core.Entries;
@@ -11,28 +11,26 @@ using System.Collections.Generic;
 namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// VPI column links entry region parser. This targets PinLinksPart.
+/// VPI column categories entry region parser. This targets links.
 /// </summary>
 /// <seealso cref="EntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
-[Tag("entry-region-parser.vpi.col-links")]
-public sealed class ColLinksEntryRegionParser :
+[Tag("entry-region-parser.vpi.col-ima-links")]
+public sealed class ColImaLinksEntryRegionParser :
     EntryRegionParser, IEntryRegionParser
 {
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => [
-        "col-image_tags_(iconclass)",
-        "col-image_tags_(index_of_medieval_art)" ];
+    public string[] RegionTags => ["col-image_tags_(index_of_medieval_art)"];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />
-    /// in the specified <paramref name="regions" />.
+    /// in the specified <paramref name="entryRegions" />.
     /// </summary>
-    /// <param name="set">The entries set.</param>
-    /// <param name="regions">The regions.</param>
-    /// <param name="regionIndex">Index of the region in the set.</param>
+    /// <param name="entrySet">The entries set.</param>
+    /// <param name="entryRegions">The regions.</param>
+    /// <param name="entryRegionIndex">Index of the region in the set.</param>
     /// <returns>
     /// The index to the next region to be parsed.
     /// </returns>
@@ -48,10 +46,10 @@ public sealed class ColLinksEntryRegionParser :
 
         if (ctx.CurrentItem == null)
         {
-            Logger?.LogError("Links column without any item at region {Region}",
+            Logger?.LogError("IMA column without any item at region {Region}",
                 region);
             throw new InvalidOperationException(
-                "Links column without any item at region " + region);
+                "IMA column without any item at region " + region);
         }
 
         DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(

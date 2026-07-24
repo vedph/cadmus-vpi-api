@@ -55,7 +55,10 @@
       "id": "entry-region-parser.vpi.col-keywords"
     },
     {
-      "id": "entry-region-parser.vpi.col-links"
+      "id": "entry-region-parser.vpi.col-icc-links"
+    },
+    {
+      "id": "entry-region-parser.vpi.col-ima-links"
     },
     {
       "id": "entry-region-parser.vpi.col-loc"

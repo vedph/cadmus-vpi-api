@@ -56,7 +56,7 @@ public sealed class ColCategoriesEntryRegionParser :
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
         HashSet<string> ids = [];
-        foreach (string label in ImportHelper.GetValueList(value, false, ['|']))
+        foreach (string label in ImportHelper.GetValueList(value, false, [';']))
         {
             string id = ImportHelper.GetThesaurusId(ctx, region, "categories_ico",
                 label, Logger);

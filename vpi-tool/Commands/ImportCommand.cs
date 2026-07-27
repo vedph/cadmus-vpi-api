@@ -122,7 +122,7 @@ internal sealed class ImportCommand : AsyncCommand<ImportCommandSettings>
         }
         catch (Exception ex)
         {
-            AnsiConsole.MarkupLine($"[red]Error: {ex.Message}[/]");
+            AnsiConsole.MarkupLine($"[red]Error: {ex}[/]");
             return 1;
         }
     }

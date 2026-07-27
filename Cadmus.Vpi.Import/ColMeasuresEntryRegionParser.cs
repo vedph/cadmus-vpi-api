@@ -30,8 +30,11 @@ public sealed class ColMeasuresEntryRegionParser:
         string[] parts = value.Split('x', StringSplitOptions.RemoveEmptyEntries);
 
         if (parts.Length != 2)
+        {
             Logger?.LogError("Invalid measures format, expected HxW: {Value}",
                 value);
+            return (0.0f, 0.0f);
+        }
 
         if (!float.TryParse(parts[0], out float h))
             Logger?.LogError("Invalid height in measures: {Value}", value);

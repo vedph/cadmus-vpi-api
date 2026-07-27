@@ -7,6 +7,7 @@ using Proteus.Core.Entries;
 using Proteus.Core.Regions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Cadmus.Vpi.Import;
 
@@ -119,10 +120,12 @@ public sealed class ColIccLinksEntryRegionParser :
             List<string> texts = SplitTextAtUnbracketedSemicolon(value);
             List<AssertedCompositeId> ids = [];
             
-            foreach (string text in texts)
+            foreach (string text in texts.Where(s => s.Length > 0
+                && char.IsDigit(s[0])))
             {
                 // split text at first unbracketed space: left is ID,
-                // right is label
+                // right is label, but just discard if does not start with digit
+                // (some annotations are interspersed in the text)
                 string id = text;
                 string label = text;
 

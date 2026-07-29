@@ -61,6 +61,7 @@ public sealed class ColImaLinksEntryRegionParser :
         {
             ids.Add(new AssertedCompositeId
             {
+                Scope = "ima",
                 Target = new PinTarget
                 {
                     Gid = id,

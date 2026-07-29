@@ -138,6 +138,7 @@ public sealed class ColIccLinksEntryRegionParser :
 
                 ids.Add(new AssertedCompositeId
                 {
+                    Scope = "iconclass",
                     Target = new PinTarget
                     {
                         Gid = id,

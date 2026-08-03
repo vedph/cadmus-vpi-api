@@ -140,9 +140,32 @@ Mapping for woodblocks import from an Excel file.
 - **P** (`Text`) (string): inscription's text 🎯 `MetadataPart`: `inscription`=value (when it is not present, no inscription is present, so the boolean flag is redundant) ⚙️ [ColTextEntryRegionParser](Cadmus.Vpi.Import/ColTextEntryRegionParser.cs)
 - **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️ [ColKeywordsEntryRegionParser](Cadmus.Vpi.Import/ColKeywordsEntryRegionParser.cs)
 - **R** (`Image tags (Iconclass)`): IconClass tags (separated by unbracketed `;`): each link is separated by an unbracketed semicolon, and each link is composed of an ID and a label, separated by the first unbracketed space. 🎯 `PinLinksPart` ⚙️ [ColIccLinksEntryRegionParser](Cadmus.Vpi.Import/ColIccLinksEntryRegionParser.cs)
-- **S** (`Ico-Category`) category IDs (separated by `;`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
+- **S** (`Ico-Category`) category IDs (separated by `;`, mapped) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
 - **T** (`Index of medieval art`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
 - **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
+
+Mapping for `S`:
+
+| value                       | ID                                   |
+| --------------------------- | ------------------------------------ |
+| persecutions                | `ico.persecutions`                   |
+| Ascetic life and practices  | `ico.ascetic-life-practices`         |
+| ascetic-life-and-practices  | `ico.ascetic-life-practices`         |
+| Death and afterlife         | `ico.death-afterlife`                |
+| Death, vision, afterlife    | `ico.death-afterlife`, `ico.visions` |
+| Vision                      | `ico.visions`                        |
+| Visions                     | `ico.visions`                        |
+| Charitable care and healing | `ico.charitable-care-healing`        |
+| Miracles                    | `ico.miraculous-intervention`        |
+| Miraculous intervention     | `ico.miraculous-intervention`        |
+| Community and monastic life | `ico.community-monastic-life`        |
+| Teaching                    | `ico.teaching`                       |
+| Teaching and preaching      | `ico.teaching`                       |
+| Demons and temptations      | `ico.demons`, `ico.temptations`      |
+| Temptations                 | `ico.temptations`                    |
+| Animals                     | `ico.animal-communion`               |
+
+Any other value is just removed.
 
 ### Code Template
 
@@ -211,6 +234,6 @@ public sealed class Col__TAG__EntryRegionParser :
         // TODO
 
         return entryIndex + 3;
-    }   
+    }
 }
 ```

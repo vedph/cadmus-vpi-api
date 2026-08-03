@@ -23,6 +23,30 @@ public sealed class ColCategoriesEntryRegionParser :
     /// </summary>
     public string[] RegionTags => ["col-ico-category"];
 
+    private static string[] MapCategory(string text)
+    {
+        return text.ToLowerInvariant() switch
+        {
+            "persecutions" => ["ico.persecutions"],
+            "ascetic life and practices" => ["ico.ascetic-life-practices"],
+            "ascetic-life-and-practices" => ["ico.ascetic-life-practices"],
+            "death and afterlife" => ["ico.death-afterlife"],
+            "death, vision, afterlife" => ["ico.death-afterlife", "ico.visions"],
+            "vision" => ["ico.visions"],
+            "visions" => ["ico.visions"],
+            "charitable care and healing" => ["ico.charitable-care-healing"],
+            "miracles" => ["ico.miraculous-intervention"],
+            "miraculous intervention" => ["ico.miraculous-intervention"],
+            "community and monastic life" => ["ico.community-monastic-life"],
+            "teaching" => ["ico.teaching"],
+            "teaching and preaching" => ["ico.teaching"],
+            "demons and temptations" => ["ico.demons", "ico.temptations"],
+            "temptations" => ["ico.temptations"],
+            "animals" => ["ico.animal-communion"],
+            _ => []
+        };
+    }
+
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />
     /// in the specified <paramref name="entryRegions" />.
@@ -55,25 +79,40 @@ public sealed class ColCategoriesEntryRegionParser :
             entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
-        HashSet<string> ids = [];
-        foreach (string label in ImportHelper.GetValueList(value, false, [';']))
+        if (!string.IsNullOrEmpty(value))
         {
-            string id = ImportHelper.GetThesaurusId(ctx, region, "categories_ico@en",
-                label, Logger);
-            if (id == null)
+            HashSet<string> ids = [];
+            foreach (string label in ImportHelper.GetValueList(value, false, [';']))
             {
-                Logger?.LogError("Unknown category label for {Tag}: \"{Label}\" " +
-                    "at region {Region}", region.Tag, label, region);
-                continue;
-            }
-            ids.Add(id);
-        }
+                string[] mapped = MapCategory(label);
+                if (mapped.Length == 0)
+                {
+                    Logger?.LogWarning("Unmapped category label for {Tag}: \"{Label}\" " +
+                        "at region {Region}", region.Tag, label, region);
+                    continue;
+                }
 
-        if (ids.Count > 0)
-        {
-            CategoriesPart part = ctx.EnsurePartForCurrentItem<CategoriesPart>(
-                "ico");
-            foreach (string id in ids) part.Categories.Add(id);
+                foreach (string m in mapped)
+                {
+                    string id = ImportHelper.GetThesaurusId(
+                        ctx, region, "categories_ico@en", m, Logger);
+                    if (id == null)
+                    {
+                        Logger?.LogError(
+                            "Unknown category label for {Tag}: \"{Label}\" " +
+                            "at region {Region}", region.Tag, m, region);
+                        continue;
+                    }
+                    ids.Add(id);
+                }
+            }
+
+            if (ids.Count > 0)
+            {
+                CategoriesPart part = ctx.EnsurePartForCurrentItem<CategoriesPart>(
+                    "ico");
+                foreach (string id in ids) part.Categories.Add(id);
+            }
         }
 
         return entryIndex + 3;

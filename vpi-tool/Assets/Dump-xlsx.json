@@ -80,6 +80,9 @@
     },
     {
       "id": "entry-region-parser.vpi.col-passages"
+    },
+    {
+      "id": "entry-region-parser.vpi.col-notes"
     }
   ],
   "entrySetContextPatchers": [

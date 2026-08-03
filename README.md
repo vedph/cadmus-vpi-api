@@ -144,7 +144,7 @@ Mapping for woodblocks import from an Excel file.
 - **T** (`Index of medieval art`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
 - **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
 - **AH** (`Artistic style`): 🎯 `CategoriesPart:wblk` 📚 `categories_wblk`: there are already IDs, but you must lowercase and prefix with `style.` ⚙️ [ColStyleEntryRegionParser](Cadmus.Vpi.Import/ColStyleEntryRegionParser.cs)
-- **AS** (`Notes`): string: if text contains `monogram`: 🎯 `MetadataPart` `monogram`=true and the letter in `()` which follows is `monogram-type`.
+- **AS** (`Notes`): string: if text contains `monogram`: 🎯 `MetadataPart` `monogram`=true and the letter in `()` which follows is `monogram-type` ⚙️ [ColNotesEntryRegionParser](Cadmus.Vpi.Import/ColNotesEntryRegionParser.cs)
 - **AT** (`Illustrative object type`): 🎯 `CategoriesPart:wblk` 📚 `categories_wblk`: there are already IDs, but you must lowercase and prefix with `type.` ⚙️ [ColObjectTypeEntryRegionParser](Cadmus.Vpi.Import/ColObjectTypeEntryRegionParser.cs)
 - **AU** (`Visual narrative`): 🎯 `CategoriesPart:narr` 📚 `categories_narr`: there are already IDs, but you must lowercase and prefix with `visual.` ⚙️ [ColNarrativeEntryRegionParser](Cadmus.Vpi.Import/ColNarrativeEntryRegionParser.cs)
 - **AV** (`Text passage VSP`): 🎯 `TextPassagesPart`.`text` ⚙️ [ColPassagesEntryRegionParser](Cadmus.Vpi.Import/ColPassagesEntryRegionParser.cs)

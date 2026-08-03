@@ -77,24 +77,27 @@ public sealed class ColMeasuresEntryRegionParser:
             entryIndex + 1)!;
         string? value = ImportHelper.FilterValue(txt.Value, false);
 
-        // parse HxW, e.g. 0.5x0.3
-        (float w, float h) = ParseMeasures(value ?? "");
-        if (w != 0.0 && h != 0.0)
+        if (!string.IsNullOrEmpty(value))
         {
-            PhysicalMeasurementsPart part = ctx.EnsurePartForCurrentItem
-                <PhysicalMeasurementsPart>();
-            part.Measurements.Add(new PhysicalMeasurement
+            // parse HxW, e.g. 0.5x0.3
+            (float w, float h) = ParseMeasures(value ?? "");
+            if (w != 0.0 && h != 0.0)
             {
-                Name = "width",
-                Value = w,
-                Unit = "mm"
-            });
-            part.Measurements.Add(new PhysicalMeasurement
-            {
-                Name = "height",
-                Value = h,
-                Unit = "mm"
-            });
+                PhysicalMeasurementsPart part = ctx.EnsurePartForCurrentItem
+                    <PhysicalMeasurementsPart>();
+                part.Measurements.Add(new PhysicalMeasurement
+                {
+                    Name = "width",
+                    Value = w,
+                    Unit = "mm"
+                });
+                part.Measurements.Add(new PhysicalMeasurement
+                {
+                    Name = "height",
+                    Value = h,
+                    Unit = "mm"
+                });
+            }
         }
         
         return entryIndex + 3;

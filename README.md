@@ -141,7 +141,7 @@ Mapping for woodblocks import from an Excel file.
 - **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️ [ColKeywordsEntryRegionParser](Cadmus.Vpi.Import/ColKeywordsEntryRegionParser.cs)
 - **R** (`Image tags (Iconclass)`): IconClass tags (separated by unbracketed `;`): each link is separated by an unbracketed semicolon, and each link is composed of an ID and a label, separated by the first unbracketed space. 🎯 `PinLinksPart` ⚙️ [ColIccLinksEntryRegionParser](Cadmus.Vpi.Import/ColIccLinksEntryRegionParser.cs)
 - **S** (`Ico-Category`) category IDs (separated by `;`) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
-- **T** (`Image tags (Index of medieval art)`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
+- **T** (`Index of medieval art`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
 - **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
 
 ### Code Template

@@ -22,7 +22,7 @@ public sealed class ColImaLinksEntryRegionParser :
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
     /// </summary>
-    public string[] RegionTags => ["col-image_tags_(index_of_medieval_art)"];
+    public string[] RegionTags => ["col-index_of_medieval_art"];
 
     /// <summary>
     /// Parses the region of entries at <paramref name="regionIndex" />

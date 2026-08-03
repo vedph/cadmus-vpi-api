@@ -1,5 +1,7 @@
 # History
 
+- 2026-08-03: fixed missing `@en` in thesaurus import.
+
 ## 0.0.2
 
 - 2026-06-21: updated packages.

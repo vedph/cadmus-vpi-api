@@ -147,8 +147,8 @@ Mapping for woodblocks import from an Excel file.
 - **AS** (`Notes`): string: if text contains `monogram`: 🎯 `MetadataPart` `monogram`=true and the letter in `()` which follows is `monogram-type`.
 - **AT** (`Illustrative object type`): 🎯 `CategoriesPart:wblk` 📚 `categories_wblk`: there are already IDs, but you must lowercase and prefix with `type.` ⚙️ [ColObjectTypeEntryRegionParser](Cadmus.Vpi.Import/ColObjectTypeEntryRegionParser.cs)
 - **AU** (`Visual narrative`): 🎯 `CategoriesPart:narr` 📚 `categories_narr`: there are already IDs, but you must lowercase and prefix with `visual.` ⚙️ [ColNarrativeEntryRegionParser](Cadmus.Vpi.Import/ColNarrativeEntryRegionParser.cs)
-- **AV** (`Text passage VSP`): 🎯 `TextPassagesPart`.`text`.
-- **AW** (`Text passage title`): 🎯 `TextPassagesPart`.`citation`.
+- **AV** (`Text passage VSP`): 🎯 `TextPassagesPart`.`text` ⚙️ [ColPassagesEntryRegionParser](Cadmus.Vpi.Import/ColPassagesEntryRegionParser.cs)
+- **AW** (`Text passage title`): 🎯 `TextPassagesPart`.`citation` ⚙️ [ColPassagesEntryRegionParser](Cadmus.Vpi.Import/ColPassagesEntryRegionParser.cs)
 
 Mapping for `S`:
 

@@ -72,11 +72,11 @@ public sealed class ColIccLinksEntryRegionParser :
         string reduced = text;
         foreach (int index in indexes)
         {
-            results.Add(reduced[(index + 1)..]);
+            results.Insert(0, reduced[(index + 1)..].Trim());
             reduced = reduced[..index];
         }
         // add the remaining part
-        if (reduced.Length > 0) results.Add(reduced);
+        if (reduced.Length > 0) results.Insert(0, reduced.Trim());
 
         // remove empty entries
         results.RemoveAll(s => s.Length == 0);

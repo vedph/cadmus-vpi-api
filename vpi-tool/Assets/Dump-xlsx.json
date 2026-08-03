@@ -68,6 +68,15 @@
     },
     {
       "id": "entry-region-parser.vpi.col-text"
+    },
+    {
+      "id": "entry-region-parser.vpi.col-style"
+    },
+    {
+      "id": "entry-region-parser.vpi.col-object-type"
+    },
+    {
+      "id": "entry-region-parser.vpi.col-narrative"
     }
   ],
   "entrySetContextPatchers": [

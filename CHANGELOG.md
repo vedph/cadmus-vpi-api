@@ -1,5 +1,6 @@
 # History
 
+- 2026-08-11: added missing thesaurus in tool assets.
 - 2026-08-03: fixed missing `@en` in thesaurus import.
 
 ## 0.0.2

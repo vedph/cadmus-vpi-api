@@ -55,5 +55,90 @@
         "value": "other"
       }
     ]
+  },
+  {
+    "id": "categories_wblk@en",
+    "entries": [
+      {
+        "id": "ico",
+        "value": "iconographic category"
+      },
+      {
+        "id": "ico.ascetic-life-practices",
+        "value": "Ascetic life and practices"
+      },
+      {
+        "id": "ico.animals",
+        "value": "Animals"
+      },
+      {
+        "id": "ico.demons-temptations",
+        "value": "Demons and temptations"
+      },
+      {
+        "id": "ico.miracles-divine-intervention",
+        "value": "Miracles and divine intervention"
+      },
+      {
+        "id": "ico.community-monastic-life",
+        "value": "Community and monastic life"
+      },
+      {
+        "id": "ico.death-vision-afterlife",
+        "value": "Death, vision, afterlife"
+      },
+      {
+        "id": "ico.teaching-preaching",
+        "value": "Teaching and preaching"
+      },
+      {
+        "id": "ico.exemplum",
+        "value": "Exemplum"
+      },
+      {
+        "id": "type",
+        "value": "illustrative object type"
+      },
+      {
+        "id": "type.vignette",
+        "value": "vignette"
+      },
+      {
+        "id": "type.historiated-initial",
+        "value": "historiated initial"
+      },
+      {
+        "id": "type.border",
+        "value": "border"
+      },
+      {
+        "id": "type.decorated-initial",
+        "value": "decorated initial"
+      },
+      {
+        "id": "type.architectural-border",
+        "value": "architectural border"
+      },
+      {
+        "id": "type.frontispiece",
+        "value": "frontispiece"
+      },
+      {
+        "id": "type.architectural-frontispiece",
+        "value": "architectural frontispiece"
+      },
+      {
+        "id": "style",
+        "value": "artistic style"
+      },
+      {
+        "id": "style.venetian",
+        "value": "venetian"
+      },
+      {
+        "id": "style.milanese",
+        "value": "milanese"
+      }
+    ]
   }
 ]

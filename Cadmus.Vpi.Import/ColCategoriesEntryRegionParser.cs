@@ -43,6 +43,8 @@ public sealed class ColCategoriesEntryRegionParser :
             "demons and temptations" => ["ico.demons", "ico.temptations"],
             "temptations" => ["ico.temptations"],
             "animals" => ["ico.animal-communion"],
+            "demons" => ["ico.demons"],
+            "other" => ["ico.other"],
             _ => []
         };
     }

@@ -57,6 +57,27 @@
     ]
   },
   {
+    "id": "categories_narr@en",
+    "entries": [
+      {
+        "id": "visual",
+        "value": "visual narrative"
+      },
+      {
+        "id": "visual.monoscenic-narrative",
+        "value": "Monoscenic Narrative"
+      },
+      {
+        "id": "visual.polyscenic-narrative",
+        "value": "Polyscenic Narrative"
+      },
+      {
+        "id": "visual.continuous-narrative",
+        "value": "Continuous Narrative"
+      }
+    ]
+  },
+  {
     "id": "categories_wblk@en",
     "entries": [
       {

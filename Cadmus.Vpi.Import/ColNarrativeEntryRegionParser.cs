@@ -17,7 +17,7 @@ namespace Cadmus.Vpi.Import;
 /// <seealso cref="IEntryRegionParser" />
 [Tag("entry-region-parser.vpi.col-narrative")]
 public sealed class ColNarrativeEntryRegionParser :
-EntryRegionParser, IEntryRegionParser
+    EntryRegionParser, IEntryRegionParser
 {
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.

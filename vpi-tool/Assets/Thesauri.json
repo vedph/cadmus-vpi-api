@@ -64,6 +64,10 @@
         "value": "visual narrative"
       },
       {
+        "id": "visual.non-narrative",
+        "value": "non-narrative"
+      },
+      {
         "id": "visual.monoscenic-narrative",
         "value": "Monoscenic Narrative"
       },

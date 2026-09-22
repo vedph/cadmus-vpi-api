@@ -7,6 +7,7 @@ using Proteus.Core.Regions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace Cadmus.Vpi.Import;
 
@@ -33,10 +34,10 @@ public sealed class RowEntryRegionParser :
     /// </summary>
     public string[] RegionTags => ["row"];
 
-    public override void RegionChanged(string tag, int index, bool entered,
+    public override async Task RegionChangedAsync(string tag, int index, bool entered,
         IEntrySetContext context)
     {
-        base.RegionChanged(tag, index, entered, context);
+        await base.RegionChangedAsync(tag, index, entered, context);
 
         if (tag == "row" && entered)
         {
@@ -55,7 +56,7 @@ public sealed class RowEntryRegionParser :
     /// The index to the next region to be parsed.
     /// </returns>
     /// <exception cref="ArgumentNullException">set or regions</exception>
-    protected override int DoParse(EntrySet entrySet, int entryIndex,
+    protected override async Task<int> DoParseAsync(EntrySet entrySet, int entryIndex,
         IReadOnlyList<EntryRegion> entryRegions, int entryRegionIndex)
     {
         ArgumentNullException.ThrowIfNull(entrySet);

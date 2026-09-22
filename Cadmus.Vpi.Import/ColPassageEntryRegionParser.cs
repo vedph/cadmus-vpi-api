@@ -1,11 +1,12 @@
 ﻿using Cadmus.Import.Proteus;
+using Cadmus.Ndp.Parts;
 using Fusi.Tools.Configuration;
 using Microsoft.Extensions.Logging;
 using Proteus.Core.Entries;
 using Proteus.Core.Regions;
 using System;
 using System.Collections.Generic;
-using Cadmus.Ndp.Parts;
+using System.Threading.Tasks;
 
 namespace Cadmus.Vpi.Import;
 
@@ -38,7 +39,7 @@ public sealed class ColPassagesEntryRegionParser :
     /// The index to the next region to be parsed.
     /// </returns>
     /// <exception cref="ArgumentNullException">set or regions</exception>
-    protected override int DoParse(EntrySet entrySet, int entryIndex,
+    protected override async Task<int> DoParseAsync(EntrySet entrySet, int entryIndex,
         IReadOnlyList<EntryRegion> entryRegions, int entryRegionIndex)
     {
         ArgumentNullException.ThrowIfNull(entrySet);

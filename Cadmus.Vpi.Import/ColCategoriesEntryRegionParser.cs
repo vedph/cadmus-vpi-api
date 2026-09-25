@@ -95,19 +95,7 @@ public sealed class ColCategoriesEntryRegionParser :
                     continue;
                 }
 
-                foreach (string m in mapped)
-                {
-                    string id = ImportHelper.GetThesaurusId(
-                        ctx, region, "categories_ico@en", m, Logger);
-                    if (id == null)
-                    {
-                        Logger?.LogError(
-                            "Unknown category label for {Tag}: \"{Label}\" " +
-                            "at region {Region}", region.Tag, m, region);
-                        continue;
-                    }
-                    ids.Add(id);
-                }
+                foreach (string id in mapped) ids.Add(id);
             }
 
             if (ids.Count > 0)

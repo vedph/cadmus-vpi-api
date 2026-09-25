@@ -8,51 +8,51 @@
       },
       {
         "id": "ico.ascetic-life-practices",
-        "value": "ascetic life and practices"
+        "value": "Ascetic life and practices"
       },
       {
         "id": "ico.animal-communion",
-        "value": "animal communion"
+        "value": "Animal communion"
       },
       {
         "id": "ico.persecutions",
-        "value": "persecutions"
+        "value": "Persecutions"
       },
       {
         "id": "ico.death-afterlife",
-        "value": "death and afterlife"
+        "value": "Death and afterlife"
       },
       {
         "id": "ico.visions",
-        "value": "visions"
+        "value": "Visions"
       },
       {
         "id": "ico.charitable-care-healing",
-        "value": "charitable care and healing"
+        "value": "Charitable care and healing"
       },
       {
         "id": "ico.miraculous-intervention",
-        "value": "miraculous intervention"
+        "value": "Miraculous intervention"
       },
       {
         "id": "ico.community-monastic-life",
-        "value": "community and monastic life"
+        "value": "Community and monastic life"
       },
       {
         "id": "ico.teaching",
-        "value": "teaching"
+        "value": "Teaching"
       },
       {
         "id": "ico.temptations",
-        "value": "temptations"
+        "value": "Temptations"
       },
       {
         "id": "ico.demons",
-        "value": "demons"
+        "value": "Demons"
       },
       {
         "id": "ico.other",
-        "value": "other"
+        "value": "Other"
       }
     ]
   },
@@ -62,10 +62,6 @@
       {
         "id": "visual",
         "value": "visual narrative"
-      },
-      {
-        "id": "visual.non-narrative",
-        "value": "non-narrative"
       },
       {
         "id": "visual.monoscenic-narrative",
@@ -78,48 +74,16 @@
       {
         "id": "visual.continuous-narrative",
         "value": "Continuous Narrative"
+      },
+      {
+        "id": "visual.non-narrative",
+        "value": "Non-narrative"
       }
     ]
   },
   {
     "id": "categories_wblk@en",
     "entries": [
-      {
-        "id": "ico",
-        "value": "iconographic category"
-      },
-      {
-        "id": "ico.ascetic-life-practices",
-        "value": "Ascetic life and practices"
-      },
-      {
-        "id": "ico.animals",
-        "value": "Animals"
-      },
-      {
-        "id": "ico.demons-temptations",
-        "value": "Demons and temptations"
-      },
-      {
-        "id": "ico.miracles-divine-intervention",
-        "value": "Miracles and divine intervention"
-      },
-      {
-        "id": "ico.community-monastic-life",
-        "value": "Community and monastic life"
-      },
-      {
-        "id": "ico.death-vision-afterlife",
-        "value": "Death, vision, afterlife"
-      },
-      {
-        "id": "ico.teaching-preaching",
-        "value": "Teaching and preaching"
-      },
-      {
-        "id": "ico.exemplum",
-        "value": "Exemplum"
-      },
       {
         "id": "type",
         "value": "illustrative object type"
@@ -151,6 +115,10 @@
       {
         "id": "type.architectural-frontispiece",
         "value": "architectural frontispiece"
+      },
+      {
+        "id": "type.circular-woodcut",
+        "value": "circular woodcut"
       },
       {
         "id": "style",

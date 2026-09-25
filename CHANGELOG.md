@@ -1,5 +1,9 @@
 # History
 
+- 2026-09-25:
+  - read ID rather than value for categories column in import.
+  - updated thesauri.
+  - updated packages.
 - 2026-09-22: updated packages and adjusted parser code for async signatures.
 - 2026-08-17: updated packages.
 - 2026-08-11: added missing thesaurus in tool assets.

@@ -175,9 +175,6 @@ internal static partial class ImportHelper
         ArgumentNullException.ThrowIfNull(thesaurusId);
         ArgumentNullException.ThrowIfNull(value);
 
-        // adjust value: _ -> space, \ -> /
-        value = value.Replace('_', ' ').Replace('\\', '/');
-
         string? id = context.ThesaurusEntryMap!.GetEntryId(thesaurusId, value);
 
         if (id == null)

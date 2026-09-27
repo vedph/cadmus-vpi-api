@@ -1,5 +1,6 @@
 # History
 
+- 2026-09-27: changed import rule for iconcolass (split at `;` + optional whitespace + digit unless `;` is inside `()`).
 - 2026-09-25:
   - read ID rather than value for categories column in import.
   - updated thesauri.

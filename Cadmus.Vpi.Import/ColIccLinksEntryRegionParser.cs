@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Cadmus.Vpi.Import;
 
@@ -57,14 +58,21 @@ public sealed class ColIccLinksEntryRegionParser :
         return -1; // no matching target found
     }
 
-    private static List<string> SplitTextAtUnbracketedSemicolon(string text)
+    private static List<string> SplitTextAtUnbracketedSemicolonPlusDigit(string text)
     {
-        // collect indexes of all unbracketed semicolons (in reverse order)
+        // collect indexes of all unbracketed semicolons followed by optional
+        // whitespaces and a digit, except when the semicolon is inside brackets
+        // (in reverse order)
+        Regex semicolonDigit = new Regex(@";(?=\s*\d)");
+
         List<int> indexes = [];
         int i = FindFirstUnbracketedChar(text, ';');
         while (i > -1)
         {
-            indexes.Insert(0, i);
+            if (semicolonDigit.IsMatch(text, i))
+            {
+                indexes.Insert(0, i);
+            }
             i = FindFirstUnbracketedChar(text, ';', i + 1);
         }
 
@@ -118,11 +126,10 @@ public sealed class ColIccLinksEntryRegionParser :
         string? value = ImportHelper.FilterValue(txt.Value, false);
         if (!string.IsNullOrEmpty(value))
         {
-            List<string> texts = SplitTextAtUnbracketedSemicolon(value);
+            List<string> texts = SplitTextAtUnbracketedSemicolonPlusDigit(value);
             List<AssertedCompositeId> ids = [];
             
-            foreach (string text in texts.Where(s => s.Length > 0
-                && char.IsDigit(s[0])))
+            foreach (string text in texts.Where(s => s.Length > 0))
             {
                 // split text at first unbracketed space: left is ID,
                 // right is label, but just discard if does not start with digit

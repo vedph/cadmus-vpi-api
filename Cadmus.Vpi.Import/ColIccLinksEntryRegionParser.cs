@@ -63,13 +63,14 @@ public sealed class ColIccLinksEntryRegionParser :
         // collect indexes of all unbracketed semicolons followed by optional
         // whitespaces and a digit, except when the semicolon is inside brackets
         // (in reverse order)
-        Regex semicolonDigit = new Regex(@";(?=\s*\d)");
-
         List<int> indexes = [];
         int i = FindFirstUnbracketedChar(text, ';');
         while (i > -1)
         {
-            if (semicolonDigit.IsMatch(text, i))
+            // check if the semicolon is followed by a digit, possibly after whitespace
+            if (i + 1 < text.Length && char.IsDigit(text[i + 1]) ||
+                (char.IsWhiteSpace(text[i + 1]) && i + 2 < text.Length &&
+                 char.IsDigit(text[i + 2])))
             {
                 indexes.Insert(0, i);
             }
@@ -123,7 +124,8 @@ public sealed class ColIccLinksEntryRegionParser :
 
         DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
             entryIndex + 1)!;
-        string? value = ImportHelper.FilterValue(txt.Value, false);
+        string? value = ImportHelper.FilterValue(txt.Value, false)?.TrimEnd(' ', ';');
+
         if (!string.IsNullOrEmpty(value))
         {
             List<string> texts = SplitTextAtUnbracketedSemicolonPlusDigit(value);
@@ -153,6 +155,13 @@ public sealed class ColIccLinksEntryRegionParser :
                         Label = label,
                     }
                 });
+
+                // log a warning when id does not start with a digit
+                if (!char.IsDigit(id[0]))
+                {
+                    Logger?.LogWarning(
+                        "Iconclass link ID does not start with a digit: {Id}", id);
+                }
             }
 
             if (ids.Count > 0)

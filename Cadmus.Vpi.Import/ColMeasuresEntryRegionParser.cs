@@ -85,7 +85,7 @@ public sealed class ColMeasuresEntryRegionParser:
             if (w != 0.0 && h != 0.0)
             {
                 PhysicalMeasurementsPart part = ctx.EnsurePartForCurrentItem
-                    <PhysicalMeasurementsPart>();
+                    <PhysicalMeasurementsPart>("wblk");
                 part.Measurements.Add(new PhysicalMeasurement
                 {
                     Name = "width",

@@ -1,5 +1,9 @@
 # History
 
+- 2026-09-28: updated thesaurus `metadata-names`.
+
+## 0.0.3
+
 - 2026-09-28: fixed import rule for iconclass.
 - 2026-09-27: changed import rule for iconclass (split at `;` + optional whitespace + digit unless `;` is inside `()`).
 - 2026-09-25:

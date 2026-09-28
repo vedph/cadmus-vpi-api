@@ -3264,8 +3264,16 @@
           "value": "EID"
         },
         {
-          "id": "inscription-text",
-          "value": "inscription text"
+          "id": "location",
+          "value": "location"
+        },
+        {
+          "id": "cut-number",
+          "value": "cut number"
+        },
+        {
+          "id": "inscription",
+          "value": "inscription"
         },
         {
           "id": "monogram",

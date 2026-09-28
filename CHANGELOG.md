@@ -1,6 +1,8 @@
 # History
 
-- 2026-09-28: updated thesaurus `metadata-names`.
+- 2026-09-28:
+  - updated thesaurus `metadata-names`.
+  - added index database command to CLI tool.
 
 ## 0.0.3
 

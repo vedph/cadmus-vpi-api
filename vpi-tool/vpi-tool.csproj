@@ -41,6 +41,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Cadmus.Import.Proteus" Version="16.0.7" />
+		<PackageReference Include="Cadmus.Index" Version="16.0.7" />
+		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="16.0.7" />
 		<PackageReference Include="Cadmus.Seed" Version="16.0.7" />
 		<PackageReference Include="Fusi.Cli.Logging" Version="1.0.3" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="5.0.0" />
@@ -57,6 +59,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Cadmus.Vpi.Import\Cadmus.Vpi.Import.csproj" />
+	  <ProjectReference Include="..\Cadmus.Vpi.Services\Cadmus.Vpi.Services.csproj" />
 	</ItemGroup>
 
 </Project>

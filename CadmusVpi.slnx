@@ -6,6 +6,7 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="Cadmus.Vpi.Import/Cadmus.Vpi.Import.csproj" Id="fb489242-0170-4720-8cef-be62bd3abe50" />
+  <Project Path="Cadmus.Vpi.Services/Cadmus.Vpi.Services.csproj" Id="15371507-ca3a-4252-a077-d4a91fc53a2c" />
   <Project Path="CadmusVpiApi/CadmusVpiApi.csproj" Id="64ae91b2-3f41-407a-afd6-17507b3d6827" />
   <Project Path="vpi-tool/vpi-tool.csproj" Id="6f6806f7-db03-4c7f-9885-affaca62c75d" />
 </Solution>

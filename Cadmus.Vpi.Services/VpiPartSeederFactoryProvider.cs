@@ -10,14 +10,14 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Reflection;
 
-namespace CadmusVpiApi.Services;
+namespace Cadmus.Vpi.Services;
 
 /// <summary>
 /// Application's part seeders factory provider. Usually, this is implemented
 /// in your project's Services library. Here we have no specific project, so we
 /// just provide an API app service here.
 /// </summary>
-public sealed class AppPartSeederFactoryProvider : IPartSeederFactoryProvider
+public sealed class VpiPartSeederFactoryProvider : IPartSeederFactoryProvider
 {
     private static IHost GetHost(string config)
     {

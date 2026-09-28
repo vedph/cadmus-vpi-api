@@ -173,6 +173,21 @@ Mapping for `S`:
 
 Any other value is just removed.
 
+To import:
+
+1. fire the API without seeding any items (set item seed count=0 in `appsettings.json`) to create an empty VPI MongoDB database.
+2. run the import command (change the path to your import file):
+
+```sh
+./vpi-tool import c:/users/dfusi/desktop/vpi/import.json
+```
+
+3. index the imported database:
+
+```sh
+./vpi-tool index cadmus-vpi D:/Projects/Cadmus/Vpi/CadmusVpi/CadmusVpiApi/wwwroot/seed-profile.json
+```
+
 ### Code Template
 
 Template for region parser:

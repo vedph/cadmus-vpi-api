@@ -1,8 +1,10 @@
 ﻿using Cadmus.Import.Proteus;
+using Fusi.Cli.Logging;
 using Microsoft.Extensions.Logging;
 using Proteus.Core.Regions;
 using Proteus.Entries.Config;
 using Proteus.Entries.Pipeline;
+using Serilog.Core;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using System;
@@ -122,7 +124,7 @@ internal sealed class ImportCommand : AsyncCommand<ImportCommandSettings>
         }
         catch (Exception ex)
         {
-            AnsiConsole.MarkupLine($"[red]Error: {ex}[/]");
+            CommandHelper.DisplayException(ex);
             return 1;
         }
     }

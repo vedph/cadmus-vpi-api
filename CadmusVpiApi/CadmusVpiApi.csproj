@@ -44,4 +44,12 @@
 		<PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.3.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Cadmus.Vpi.Services\Cadmus.Vpi.Services.csproj" />
+	</ItemGroup>
+
 </Project>

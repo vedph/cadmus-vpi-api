@@ -1,4 +1,6 @@
-﻿using Serilog;
+﻿using Fusi.Cli.Logging;
+using Serilog;
+using Serilog.Events;
 using Spectre.Console.Cli;
 using System;
 using System.Diagnostics;
@@ -38,12 +40,32 @@ public static class Program
     /// <param name="args">The arguments.</param>
     public static async Task<int> Main(string[] args)
     {
+        LogService? logService = null;
+
         try
         {
 #if DEBUG
             DeleteLogs();
 #endif
             Console.OutputEncoding = Encoding.UTF8;
+
+            // create and configure the LogService instance from the reusable library
+            LogServiceOptions options = new()
+            {
+                FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                    "vpi-log.txt"),
+                OutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+                    "[{Level:u3}] {SourceContext} - {Message:lj}{NewLine}{Exception}",
+                FileRollingInterval = RollingInterval.Day,
+                RetainedFileCountLimit = 7,
+#if DEBUG
+                MinimumLevel = LogEventLevel.Debug
+#else
+                MinimumLevel = LogEventLevel.Information
+#endif
+            };
+            logService = new LogService(options);
+
             Stopwatch stopwatch = new();
             stopwatch.Start();
 
@@ -52,6 +74,8 @@ public static class Program
             {
                 config.AddCommand<ImportCommand>("import")
                     .WithDescription("Import data from Excel via a Proteus pipeline");
+                config.AddCommand<IndexDatabaseCommand>("index")
+                    .WithDescription("Index a Cadmus VPI database");
             });
 
             int result = await app.RunAsync(args);
@@ -83,7 +107,15 @@ public static class Program
         }
         finally
         {
-            Log.CloseAndFlush();
+            // dispose the LogService (flushes Serilog and disables SelfLog if enabled)
+            try
+            {
+                logService?.Dispose();
+            }
+            catch
+            {
+                // swallow to avoid masking exceptions on shutdown
+            }
         }
     }
 }

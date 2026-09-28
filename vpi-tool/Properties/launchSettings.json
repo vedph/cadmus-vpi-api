@@ -2,7 +2,7 @@
   "profiles": {
     "vpi-tool": {
       "commandName": "Project",
-      "commandLineArgs": "import c:\\users\\dfusi\\desktop\\vpi\\import.json"
+      "commandLineArgs": "index cadmus-vpi D:/Projects/Cadmus/Vpi/CadmusVpi/CadmusVpiApi/wwwroot/seed-profile.json"
     }
   }
 }

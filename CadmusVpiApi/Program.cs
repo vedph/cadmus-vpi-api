@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Cadmus.Api.Config.Services;
 using Cadmus.Api.Config;
-using CadmusVpiApi.Services;
+using Cadmus.Vpi.Services;
 
 namespace CadmusVpiApi;
 
@@ -39,11 +39,11 @@ public static class Program
         config.GetConnectionString("Default")!,
             config.GetValue<string>("DatabaseNames:Data"));
         services.AddSingleton<IRepositoryProvider>(
-            _ => new AppRepositoryProvider { ConnectionString = dataCS });
+            _ => new VpiRepositoryProvider { ConnectionString = dataCS });
 
         // part seeder factory provider
         services.AddSingleton<IPartSeederFactoryProvider,
-            AppPartSeederFactoryProvider>();
+            VpiPartSeederFactoryProvider>();
 
         // item browser factory provider
         services.AddSingleton<IItemBrowserFactoryProvider>(_ =>

@@ -82,6 +82,7 @@ The list of facets is given here with their conventional groupings used in the e
     - [links](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md) 🔗 illustration, person
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`wblk` 🚩 block types
     - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`ico` 🚩 iconographies
+    - [categories](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):`reuse` 🚩: reuse types.
   - _material_
     - [measurements](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md):`wblk` 🚩
   - _content_

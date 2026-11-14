@@ -389,13 +389,22 @@
           "sortKey": "04"
         },
         {
+          "typeId": "it.vedph.categories",
+          "roleId": "reuse",
+          "name": "reuse types",
+          "description": "Reuse types.",
+          "colorKey": "0C80F5",
+          "groupKey": "content",
+          "sortKey": "05"
+        },
+        {
           "typeId": "it.vedph.physical-measurements",
           "roleId": "wblk",
           "name": "measurements",
           "description": "Physical measurements.",
           "colorKey": "FF9933",
           "groupKey": "material",
-          "sortKey": "05"
+          "sortKey": "06"
         },
         {
           "typeId": "it.vedph.categories",
@@ -404,7 +413,7 @@
           "description": "Narrative types.",
           "colorKey": "0540F5",
           "groupKey": "content",
-          "sortKey": "06"
+          "sortKey": "07"
         },
         {
           "typeId": "it.vedph.note",
@@ -413,7 +422,7 @@
           "description": "Text.",
           "colorKey": "0650F0",
           "groupKey": "content",
-          "sortKey": "07"
+          "sortKey": "08"
         },
         {
           "typeId": "it.vedph.note",
@@ -421,7 +430,7 @@
           "description": "A generic text note.",
           "colorKey": "B0A0F8",
           "groupKey": "content",
-          "sortKey": "08"
+          "sortKey": "09"
         },
         {
           "typeId": "it.vedph.index-keywords",
@@ -429,14 +438,14 @@
           "description": "Item's index keywords.",
           "colorKey": "588BBF",
           "groupKey": "content",
-          "sortKey": "09"
+          "sortKey": "10"
         },
         {
           "typeId": "it.vedph.ndp.text-passages",
           "name": "text passages",
           "description": "Text passages.",
           "colorKey": "589BBF",
-          "sortKey": "10"
+          "sortKey": "11"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -444,7 +453,7 @@
           "description": "Documental references.",
           "colorKey": "BEF0AA",
           "groupKey": "references",
-          "sortKey": "11"
+          "sortKey": "12"
         }
       ]
     }

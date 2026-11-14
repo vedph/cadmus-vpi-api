@@ -105,29 +105,29 @@ With reference to the original schema:
 
 ## Parts Matrix
 
-| part          | print-ed  | print-inst | person | illustration | woodblock     |
-| ------------- | --------- | ---------- | ------ | ------------ | ------------- |
-| bindings      |           | X          |        |              |               |
+| part          | print-ed  | print-inst | person | illustration | woodblock           |
+| ------------- | --------- | ---------- | ------ | ------------ | ------------------- |
+| bindings      |           | X          |        |              |                     |
 | categories    |           |            | fig    | ill reuse    | wblk ico narr reuse |
-| chronotopes   | prn pub   |            |        |              |               |
-| decorations   | X         |            |        |              |               |
-| edits         |           | X          |        |              |               |
-| events        |           | pri        |        |              |               |
-| keywords      |           |            |        |              | X             |
-| links         | X         | X          | X      | X            | X             |
-| measurements  |           | X          |        |              | X             |
-| metadata      | X         | X          | X      | X            | X             |
-| fig plan      | X         |            |        |              |               |
-| fig plan impl |           | X          |        |              |               |
-| fonts         | X         |            |        |              |               |
-| layouts       | prn       | prn        |        |              |               |
-| note          | X inc col | X hist     | X      | X            | X txt         |
-| references    | X         | X          | X      | X            | X             |
-| sheet labels  |           | X          |        |              |               |
-| shelfmarks    |           | X          |        |              |               |
-| states        |           | X          |        |              |               |
-| text passages |           |            |        |              | X             |
-| watermarks    | X         |            |        |              |               |
+| chronotopes   | prn pub   |            |        |              |                     |
+| decorations   | X         |            |        |              |                     |
+| edits         |           | X          |        |              |                     |
+| events        |           | pri        |        |              |                     |
+| keywords      |           |            |        |              | X                   |
+| links         | X         | X          | X      | X            | X                   |
+| measurements  |           | X          |        |              | X                   |
+| metadata      | X         | X          | X      | X            | X                   |
+| fig plan      | X         |            |        |              |                     |
+| fig plan impl |           | X          |        |              |                     |
+| fonts         | X         |            |        |              |                     |
+| layouts       | prn       | prn        |        |              |                     |
+| note          | X inc col | X hist     | X      | X            | X txt               |
+| references    | X         | X          | X      | X            | X                   |
+| sheet labels  |           | X          |        |              |                     |
+| shelfmarks    |           | X          |        |              |                     |
+| states        |           | X          |        |              |                     |
+| text passages |           |            |        |              | X                   |
+| watermarks    | X         |            |        |              |                     |
 
 ## VPI Import
 
@@ -293,30 +293,26 @@ Each row is one item of facet `illustration`.
 
 ### Code Template
 
-Template for region parser:
+Template for a column region parser. Prefer the generic configurable parsers listed above when possible; when a new parser is required, derive it from `ColEntryRegionParser`, which checks for the current item, gets the filtered cell value, and skips rows marked as skipped. Use `ImportHelper` for thesauri, ranks, coordinates, notes, and item IDs.
 
 - `__TAG__`: the region tag.
 
 ```cs
 using Cadmus.Import.Proteus;
-using Cadmus.General.Parts;
 using Fusi.Tools.Configuration;
-using Microsoft.Extensions.Logging;
-using Proteus.Core.Entries;
 using Proteus.Core.Regions;
-using System;
-using System.Collections.Generic;
 
-namespace Cadmus.Vpi.Import;
+namespace Cadmus.Tes.Import;
 
 /// <summary>
-/// VPI column categories entry region parser. This targets TODO.
+/// TES column __TAG__ entry region parser.
+/// <para>Tag: <c>entry-region-parser.tes.col-__TAG__</c>.</para>
 /// </summary>
-/// <seealso cref="EntryRegionParser" />
+/// <seealso cref="ColEntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
-[Tag("entry-region-parser.vpi.col-__TAG__")]
-public sealed class Col__TAG__EntryRegionParser :
-    EntryRegionParser, IEntryRegionParser
+[Tag("entry-region-parser.tes.col-__TAG__")]
+public sealed class Col__TAG__EntryRegionParser : ColEntryRegionParser,
+    IEntryRegionParser
 {
     /// <summary>
     /// Gets the tags of the regions that this parser can handle.
@@ -324,40 +320,18 @@ public sealed class Col__TAG__EntryRegionParser :
     public string[] RegionTags => ["col-__TAG__"];
 
     /// <summary>
-    /// Parses the region of entries at <paramref name="regionIndex" />
-    /// in the specified <paramref name="entryRegions" />.
+    /// Parses the specified column value.
     /// </summary>
-    /// <param name="entrySet">The entries set.</param>
-    /// <param name="entryRegions">The regions.</param>
-    /// <param name="entryRegionIndex">Index of the region in the set.</param>
-    /// <returns>
-    /// The index to the next region to be parsed.
-    /// </returns>
-    /// <exception cref="ArgumentNullException">set or regions</exception>
-    protected override int DoParse(EntrySet entrySet, int entryIndex,
-        IReadOnlyList<EntryRegion> entryRegions, int entryRegionIndex)
+    /// <param name="context">The context, having a current item.</param>
+    /// <param name="region">The column region.</param>
+    /// <param name="value">The filtered value, or null if empty.</param>
+    protected override void ParseValue(CadmusEntrySetContext context,
+        EntryRegion region, string? value)
     {
-        ArgumentNullException.ThrowIfNull(entrySet);
-        ArgumentNullException.ThrowIfNull(entryRegions);
-
-        CadmusEntrySetContext ctx = (CadmusEntrySetContext)entrySet.Context;
-        EntryRegion region = entryRegions[entryRegionIndex];
-
-        if (ctx.CurrentItem == null)
-        {
-            Logger?.LogError("__TAG__ column without any item at region {Region}",
-                region);
-            throw new InvalidOperationException(
-                "__TAG__ column without any item at region " + region);
-        }
-
-        DecodedTextEntry txt = entrySet.GetEntryAt<DecodedTextEntry>(
-            entryIndex + 1)!;
-        string? value = ImportHelper.FilterValue(txt.Value, false);
+        // use CheckRequired(region, value) for required columns
+        if (value == null) return;
 
         // TODO
-
-        return entryIndex + 3;
     }
 }
 ```

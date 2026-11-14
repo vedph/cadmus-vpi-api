@@ -792,42 +792,6 @@
         {
           "id": "tir.indeterminate",
           "value": "indeterminate"
-        },
-        {
-          "id": "unit",
-          "value": "narrative unit type"
-        },
-        {
-          "id": "unit.hagiography-df",
-          "value": "hagiography DF"
-        },
-        {
-          "id": "unit.hagiography-other",
-          "value": "hagiography other"
-        },
-        {
-          "id": "unit.exemplum",
-          "value": "exemplum"
-        },
-        {
-          "id": "unit.apophthegma",
-          "value": "apophthegma"
-        },
-        {
-          "id": "unit.dialogue",
-          "value": "dialogue"
-        },
-        {
-          "id": "visual",
-          "value": "visual narrative"
-        },
-        {
-          "id": "visual.single-scene",
-          "value": "single scene"
-        },
-        {
-          "id": "visual.continuous-narrative",
-          "value": "continuous narrative"
         }
       ]
     },
@@ -861,31 +825,35 @@
       "entries": [
         {
           "id": "type",
-          "value": "reuse type"
+          "value": "reuse and derivation type"
         },
         {
           "id": "type.block",
           "value": "block"
         },
         {
-          "id": "type.block.same-new-context",
-          "value": "same block, new context"
+          "id": "type.block.unmodified",
+          "value": "unmodified"
+        },
+        {
+          "id": "type.block.modified",
+          "value": "modified"
         },
         {
           "id": "type.image",
           "value": "image"
         },
         {
-          "id": "type.image.derived-block",
-          "value": "derived block"
+          "id": "type.image.copy-after",
+          "value": "copy after"
         },
         {
-          "id": "type.image.iconographic-dependency",
-          "value": "iconographic dependency"
+          "id": "type.image.derived-from",
+          "value": "derived from"
         },
         {
-          "id": "type.image.other",
-          "value": "other"
+          "id": "type.image.related-to",
+          "value": "related to"
         },
         {
           "id": "context",

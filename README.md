@@ -108,7 +108,7 @@ With reference to the original schema:
 | part          | print-ed  | print-inst | person | illustration | woodblock     |
 | ------------- | --------- | ---------- | ------ | ------------ | ------------- |
 | bindings      |           | X          |        |              |               |
-| categories    |           |            | fig    | ill reuse    | wblk ico narr |
+| categories    |           |            | fig    | ill reuse    | wblk ico narr reuse |
 | chronotopes   | prn pub   |            |        |              |               |
 | decorations   | X         |            |        |              |               |
 | edits         |           | X          |        |              |               |
@@ -129,65 +129,167 @@ With reference to the original schema:
 | text passages |           |            |        |              | X             |
 | watermarks    | X         |            |        |              |               |
 
-## Import
+## VPI Import
 
-Mapping for woodblocks import from an Excel file.
+### 🟢 Woodblock
 
-- for each row: ⚙️ [Row](Cadmus.Vpi.Import/RowEntryRegionParser.cs).
+Each row is one item of facet `woodblock`.
 
-- **A** (`Object name`) (string): ID 🎯 `MetadataPart`: `eid`=value ⚙️ [ColIdEntryRegionParser](Cadmus.Vpi.Import/ColIdEntryRegionParser.cs)
-- **B** (`folio`) (string): location 🎯 `MetadataPart`: `location`=value ⚙️ [ColLocEntryRegionParser](Cadmus.Vpi.Import/ColLocEntryRegionParser.cs)
-- **C** (`Object measures (h x w)`): size with format `NxN` for height and width, mm. 🎯 `PhysicalMeasurementsPart` ⚙️ [ColMeasuresEntryRegionParser](Cadmus.Vpi.Import/ColMeasuresEntryRegionParser.cs)
-- **P** (`Text`) (string): inscription's text 🎯 `MetadataPart`: `inscription`=value (when it is not present, no inscription is present, so the boolean flag is redundant) ⚙️ [ColTextEntryRegionParser](Cadmus.Vpi.Import/ColTextEntryRegionParser.cs)
-- **Q** (`Controlled Keywords`): keywords (separated by `;`) 🎯 `IndexKeywordsPart` ⚙️ [ColKeywordsEntryRegionParser](Cadmus.Vpi.Import/ColKeywordsEntryRegionParser.cs)
-- **R** (`Image tags (Iconclass)`): IconClass tags (separated by unbracketed `;`): each link is separated by an unbracketed semicolon, and each link is composed of an ID and a label, separated by the first unbracketed space. 🎯 `PinLinksPart` ⚙️ [ColIccLinksEntryRegionParser](Cadmus.Vpi.Import/ColIccLinksEntryRegionParser.cs)
-- **S** (`Ico-Category`) category IDs (separated by `;`, mapped) 🎯 `CategoriesPart:ico` 📚 `categories_ico@en` ⚙️ [ColCategoriesEntryRegionParser](Cadmus.Vpi.Import/ColCategoriesEntryRegionParser.cs)
-- **T** (`Index of medieval art`): IMA tags (separated by `;`) 🎯 `PinLinksPart` ⚙️ [ColImaLinksEntryRegionParser](Cadmus.Vpi.Import/ColImaLinksEntryRegionParser.cs)
-- **W** (`no. of cut`) (string): title suffix 🎯 `item.title`=`RGT_` + 3-digits number from W and `MetadataPart`: `cut-number`=value ⚙️ [ColCutEntryRegionParser](Cadmus.Vpi.Import/ColCutEntryRegionParser.cs).
-- **AH** (`Artistic style`): 🎯 `CategoriesPart:wblk` 📚 `categories_wblk`: there are already IDs, but you must lowercase and prefix with `style.` ⚙️ [ColStyleEntryRegionParser](Cadmus.Vpi.Import/ColStyleEntryRegionParser.cs)
-- **AS** (`Notes`): string: if text contains `monogram`: 🎯 `MetadataPart` `monogram`=true and the letter in `()` which follows is `monogram-type` ⚙️ [ColNotesEntryRegionParser](Cadmus.Vpi.Import/ColNotesEntryRegionParser.cs)
-- **AT** (`Illustrative object type`): 🎯 `CategoriesPart:wblk` 📚 `categories_wblk`: there are already IDs, but you must lowercase and prefix with `type.` ⚙️ [ColObjectTypeEntryRegionParser](Cadmus.Vpi.Import/ColObjectTypeEntryRegionParser.cs)
-- **AU** (`Visual narrative`): 🎯 `CategoriesPart:narr` 📚 `categories_narr`: there are already IDs, but you must lowercase and prefix with `visual.` ⚙️ [ColNarrativeEntryRegionParser](Cadmus.Vpi.Import/ColNarrativeEntryRegionParser.cs)
-- **AV** (`Text passage VSP`): 🎯 `TextPassagesPart`.`text` ⚙️ [ColPassagesEntryRegionParser](Cadmus.Vpi.Import/ColPassagesEntryRegionParser.cs)
-- **AW** (`Text passage title`): 🎯 `TextPassagesPart`.`citation` ⚙️ [ColPassagesEntryRegionParser](Cadmus.Vpi.Import/ColPassagesEntryRegionParser.cs)
+(1) **A** (`Object name`)\*: woodblock EID (e.g. `ih00232000_00200777_a2r_(1)`, `ih00234500_02122542_a2r_(1)`) ▶️ `MetadataPart.metadata`: `type="string"`, `name="eid"`, `value`=cell.
 
-Mapping for `S`:
+(2) **B** (`folio`)\*: folio (e.g. `a2r`) ▶️ `MetadataPart.metadata`: `type="string"`, `name="location"`, `value`=cell.
 
-| value                       | ID                                   |
-| --------------------------- | ------------------------------------ |
-| persecutions                | `ico.persecutions`                   |
-| Ascetic life and practices  | `ico.ascetic-life-practices`         |
-| ascetic-life-and-practices  | `ico.ascetic-life-practices`         |
-| Death and afterlife         | `ico.death-afterlife`                |
-| Death, vision, afterlife    | `ico.death-afterlife`, `ico.visions` |
-| Vision                      | `ico.visions`                        |
-| Visions                     | `ico.visions`                        |
-| Charitable care and healing | `ico.charitable-care-healing`        |
-| Miracles                    | `ico.miraculous-intervention`        |
-| Miraculous intervention     | `ico.miraculous-intervention`        |
-| Community and monastic life | `ico.community-monastic-life`        |
-| Teaching                    | `ico.teaching`                       |
-| Teaching and preaching      | `ico.teaching`                       |
-| Demons and temptations      | `ico.demons`, `ico.temptations`      |
-| Temptations                 | `ico.temptations`                    |
-| Animals                     | `ico.animal-communion`               |
+(3) **C** (`Object measures (h x w)`): size as `HxW`, height by width, integer millimetres between 46 and 310 (e.g. `48x75`) ▶️ `PhysicalMeasurementsPart:wblk.measurements`: two measurements, `name="height"` and `name="width"`, both with `unit="mm"`.
 
-Any other value is just removed.
+(4) **D** (`Cropped (binding)`): ❌
 
-To import:
+(5) **E** (`Position within the page - Titlepage`): ❌
 
-1. fire the API without seeding any items (set item seed count=0 in `appsettings.json`) to create an empty VPI MongoDB database.
-2. run the import command (change the path to your import file):
+(6) **F** (`Position within the page - In text woodcut`): ❌
 
-```sh
-./vpi-tool import c:/users/dfusi/desktop/vpi/import.json
-```
+(7) **G** (`Position within the page - Full page woodcut`): ❌
 
-3. index the imported database:
+(8) **H** (`Position within the page - Colophon`): ❌
 
-```sh
-./vpi-tool index cadmus-vpi D:/Projects/Cadmus/Vpi/CadmusVpi/CadmusVpiApi/wwwroot/seed-profile.json
-```
+(9) **I** (`Type of cut - Decorated initial`): ❌
+
+(10) **J** (`Type of cut - Border`): ❌
+
+(11) **K** (`Type of cut - Center`): ❌
+
+(12) **L** (`Type of cut - Bottom Border`): ❌
+
+(13) **M** (`Type of Cut - Top Border`): ❌
+
+(14) **N** (`Type of cut - Right Border`): ❌
+
+(15) **O** (`Type of cut - Left Border`): ❌
+
+(16) **P** (`Text`): inscription text; a cell may hold more than one text, separated by `;` (e.g. `S.ANTONIO;S.PAULO`) ▶️ `MetadataPart.metadata`: `type="string"`, `name="inscription"`, one metadatum per inscription.
+
+(17) **Q** (`Controlled Keywords`): keywords separated by `;` (e.g. `castity;assault;capture;captivity`) ▶️ `IndexKeywordsPart.keywords`: one keyword per value, `language="en"`, no `indexId`.
+
+(18) **R** (`Image tags (Iconclass)`): Iconclass notations with their labels (e.g. `42E23 burial;11Q331 anchorite, hermit;25K16 desert;11P31511 cell ~ monastery`) ▶️ `PinLinksPart.links`: `scope="iconclass"`, one link per value. Split on `;` at bracket depth zero, when followed by a digit, optionally after a single space; each resulting value is an ID and a label separated by the first space at bracket depth zero: ID → `target.gid`, label → `target.label`.
+
+(19) **S** (`Ico-Category`): iconographic category labels separated by `;` (e.g. `Demons;Visions`) ▶️ `CategoriesPart:ico.categories` via 📚 `categories_ico@en`: each label is mapped to one or two entry IDs according to this mapping (labels are matched after trimming, collapsing inner spaces and lowercasing -- both `Persecutions` and `persecutions` may occur).
+
+| label                       | entry ID                                        |
+| --------------------------- | ----------------------------------------------- |
+| Animals                     | `ico.animal-communion`                          |
+| Ascetic life and practices  | `ico.ascetic-life-practices`                    |
+| Charitable care and healing | `ico.charitable-care-healing`                   |
+| Community and monastic life | `ico.community-monastic-life`                   |
+| Death and afterlife         | `ico.death-afterlife`                           |
+| Demons                      | `ico.demons`                                    |
+| Demons and temptations      | `ico.demons`, `ico.temptations` (two entry IDs) |
+| Miraculous intervention     | `ico.miraculous-intervention`                   |
+| Other                       | `ico.other`                                     |
+| Persecutions                | `ico.persecutions`                              |
+| Teaching                    | `ico.teaching`                                  |
+| Teaching and preaching      | `ico.teaching`                                  |
+| Temptations                 | `ico.temptations`                               |
+| Vision                      | `ico.visions`                                   |
+| Visions                     | `ico.visions`                                   |
+
+(20) **T** (`Index of medieval art`): IMA subject headings separated by `;` (e.g. `Martyrdom, by Insects`) ▶️ `PinLinksPart.links`: `scope="ima"`, one link per value, `target.gid` and `target.label`=value.
+
+(21) **U** (`Image tags (Warburg)`): ❌
+
+(22) **V** (`Technique`): ❌
+
+(23) **W** (`no. of cut`)\*: progressive number of the woodblock, an integer (1-189 in RGT, 1-158 in SCZ) ▶️ `MetadataPart.metadata`: `type="number"`, `name="cut-number"`, `value`=cell as is (e.g. `5`).
+
+(24) **X** (`Place of printing`): ❌
+
+(25) **Y** (`Printer`): ❌
+
+(26) **Z** (`Year of printing`): ❌
+
+(27) **AA** (`Date of printing`): ❌
+
+(28) **AB** (`Essling no.`): ❌
+
+(29) **AC** (`Sander no. `): ❌
+
+(30) **AD** (`HPB`): ❌
+
+(31) **AE** (`Edit16`): ❌
+
+(32) **AF** (`Person (s): artists: designer (linked to CT)`): ❌
+
+(33) **AG** (`Person (s): artists: cutter (linked to CT)`): ❌
+
+(34) **AH** (`Artistic style`)\*: `Venetian` in every RGT row, `Milanese` in every SCZ row ▶️ `CategoriesPart:wblk.categories` via 📚 `categories_wblk@en`: the cell holds the last segment of the entry ID, capitalized; lowercase it and prefix with `style.` (`style.venetian`, `style.milanese`).
+
+(35) **AI** (`State of conservation`): ❌
+
+(36) **AJ** (`Copy examined`): ❌
+
+(37) **AK** (`Shelfmark`): ❌
+
+(38) **AL** (`Creator of the image and description (scholar) `): ❌
+
+(39) **AM** (`Creator of the image and description (owner institution) `): ❌
+
+(40) **AN** (`Date that the image was made`): ❌
+
+(41) **AO** (`Copyright`): ❌
+
+(42) **AP** (`Known cases of reuse`): ISTC IDs of the editions where the block is attested, separated by `;` (e.g. `ib00644000`) ▶️ `PinLinksPart.links`: `scope="istc"`, one link per ID, `target.gid` and `target.label`=ID.
+
+(43) **AQ** (`Copy specific notes`): ❌
+
+(44) **AR** (`Bibliography`): ❌
+
+(45) **AS** (`Notes`): monogram mark, as `monogram (x)` with a single letter; RGT only ▶️ `MetadataPart.metadata`: if the cell contains `monogram`, add `type="boolean"`, `name="monogram"`, `value="1"`, and `type="string"`, `name="monogram-type"`, `value`=the letter in parentheses. Any cell not containing `monogram` goes to `NotePart.text` instead.
+
+(46) **AT** (`Illustrative object type`)\*: `vignette` or `architectural-frontispiece` ▶️ `CategoriesPart:wblk.categories` via 📚 `categories_wblk@en`: the cell holds the last segment of the entry ID; lowercase it and prefix with `type.` (`type.vignette`, `type.architectural-frontispiece`).
+
+(47) **AU** (`Visual narrative `): note the trailing space in the label. `monoscenic-narrative`, `polyscenic-narrative`, `continuous-narrative` or `non-narrative` ▶️ `CategoriesPart:narr.categories` via 📚 `categories_narr@en`: the cell holds the last segment of the entry ID; lowercase it and prefix with `visual.` (e.g. `visual.non-narrative`).
+
+(48) **AV** (`Text passage VSP`): reference to the passage illustrated by the block: work, book and chapter (e.g. `Vite dei Santi Padri, I,1; paulo primo romito`, `PRATO SPIRITUALE, IV,81`; the `;` here is part of the citation, not a separator); free text; always together with AW ▶️ `TextPassagesPart.passages[0].citation`. This is imported together with AW as separate sections in the same text.
+
+(49) **AW** (`Text passage title`): rubric of that passage (e.g. `Come fu da Dio rivelato ad santo Antonio e come lo trovoe`) ▶️ `TextPassagesPart.passages[0].text`, in the same passage as AV.
+
+(50) **AX** (`Item title`)\*: `RGT_001`…`RGT_189`, `SCZ_001`…`SCZ_158` ▶️ `Item.title`.
+
+(51) **AY** (`Group ID`)\*: EID of the print edition, constant per file: `ih00232000` (RGT), `ih00234500` (SCZ) ▶️ `Item.groupId`.
+
+(52) **AZ** (`Derived from (woodblock eid)`): EID of the RGT woodblock the SCZ block derives from, the kind of derivation being given in BA (e.g. `ih00232000_00200777_a2r_(1)`); SCZ only ▶️ `PinLinksPart.links`: `scope="derivation"`, `target.gid` and `target.label`=cell.
+
+(53) **BA** (`Derivation type`): full entry ID, branch `type.image.*` (`type.image.copy-after`, `type.image.derived-from`, `type.image.related-to`); SCZ only, always together with AZ ▶️ `CategoriesPart:reuse.categories` via 📚 `categories_reuse@en` (entry ID, not label).
+
+(54) **BB** (`Image tags (ThEMA)`): ThEMA IDs separated by `;` (e.g. `TE001580`, or `TE001676; TE002642` for two); RGT only ▶️ `PinLinksPart.links`: `scope="thema"`, one link per ID, `target.gid` and `target.label`=ID.
+
+(55) **BC** (`Designer (person eid)`): EID of the `person` item of the designer, `cnp01415325` (CERL Thesaurus) in every filled row; RGT only ▶️ `PinLinksPart.links`: `scope="designer"`, `target.gid` and `target.label`=cell.
+
+---
+
+### 🟢 Illustration
+
+Each row is one item of facet `illustration`.
+
+(1) **A** (`Object name`)\*: impression EID: `ih00232000_00200777_ill_008` for the first impression of a block, `ih00232000_00200777_ill_008.1`, `ih00232000_00200777_ill_008.2` for its reuses ▶️ `MetadataPart.metadata`: `type="string"`, `name="eid"`, `value`=cell.
+
+(2) **B** (`Item title`)\*: block number and impression ordinal (`RGT_008_01`, `RGT_008_02`) ▶️ `Item.title`.
+
+(3) **C** (`Group ID`)\*: EID of the print instance, `ih00232000_00200777` in every row ▶️ `Item.groupId`.
+
+(4) **D** (`folio`)\*: folio of the impression (e.g. `a6r`) ▶️ `MetadataPart.metadata`: `type="string"`, `name="location"`, `value`=cell.
+
+(5) **E** (`Woodcut block eid`)\*: EID of the woodblock the impression is printed from (one of the 189 RGT woodblock EIDs) ▶️ `PinLinksPart.links`: `scope="woodblock"`, `target.gid` and `target.label`=cell.
+
+(6) **F** (`Impression condition`)\*: full entry ID, branch `imp.*` (`imp.good`, `imp.damaged`) ▶️ `CategoriesPart:ill.categories` via 📚 `categories_ill@en` (entry ID, not label).
+
+(7) **G** (`Text-image relation`): full entry ID, branch `tir.*` (`tir.text-specific`, `tir.typological-adaptation`, `tir.repertorial`, `tir.indeterminate`); empty only for `RGT_189_01` ▶️ `CategoriesPart:ill.categories` via 📚 `categories_ill@en` (entry ID, not label), in the same part as F.
+
+(8) **H** (`Reuse type`): full entry ID, branch `type.block.*` (`type.block.unmodified`, `type.block.modified`) ▶️ `CategoriesPart:reuse.categories` via 📚 `categories_reuse@en` (entry ID, not label).
+
+(9) **I** (`Reuse context`): full entry ID, branch `context.*` (`context.inter-cycle-reuse`, `context.cross-cycle-reuse`); empty in one row where H is filled ▶️ `CategoriesPart:reuse.categories` via 📚 `categories_reuse@en` (entry ID, not label), in the same part as H.
+
+(10) **J** (`Related edition ISTC ID`): ISTC ID of the edition the block comes from (`ib00644000` in every filled row), filled only when I is `context.cross-cycle-reuse` ▶️ `PinLinksPart.links`: `scope="istc"`, `target.gid` and `target.label`=cell.
+
+(11) **K** (`Occurrence note`): free text ▶️ `NotePart.text` unless empty/whitespace only.
 
 ### Code Template
 

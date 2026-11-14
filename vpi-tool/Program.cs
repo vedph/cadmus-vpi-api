@@ -35,6 +35,24 @@ public static class Program
 #endif
 
     /// <summary>
+    /// Shows the console cursor, if there is a console to show it in: this
+    /// throws when the output is redirected (e.g. to a file or a pipe), or
+    /// there is no console at all.
+    /// </summary>
+    private static void ShowCursor()
+    {
+        if (Console.IsOutputRedirected) return;
+        try
+        {
+            Console.CursorVisible = true;
+        }
+        catch (IOException ex)
+        {
+            Debug.WriteLine(ex.ToString());
+        }
+    }
+
+    /// <summary>
     /// Entry point.
     /// </summary>
     /// <param name="args">The arguments.</param>
@@ -49,13 +67,11 @@ public static class Program
 #endif
             Console.OutputEncoding = Encoding.UTF8;
 
-            // create and configure the LogService instance from the reusable library
+            // create and configure the LogService instance from the reusable library.
             LogServiceOptions options = new()
             {
                 FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                     "vpi-log.txt"),
-                OutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-                    "[{Level:u3}] {SourceContext} - {Message:lj}{NewLine}{Exception}",
                 FileRollingInterval = RollingInterval.Day,
                 RetainedFileCountLimit = 7,
 #if DEBUG
@@ -64,6 +80,7 @@ public static class Program
                 MinimumLevel = LogEventLevel.Information
 #endif
             };
+
             logService = new LogService(options);
 
             Stopwatch stopwatch = new();
@@ -73,7 +90,7 @@ public static class Program
             app.Configure(config =>
             {
                 config.AddCommand<ImportCommand>("import")
-                    .WithDescription("Import data from Excel via a Proteus pipeline");
+                      .WithDescription("Import entities from XLSX file(s).");
                 config.AddCommand<IndexDatabaseCommand>("index")
                     .WithDescription("Index a Cadmus VPI database");
             });
@@ -81,25 +98,22 @@ public static class Program
             int result = await app.RunAsync(args);
 
             Console.ResetColor();
-            Console.CursorVisible = true;
+            ShowCursor();
             Console.WriteLine();
             Console.WriteLine();
 
             stopwatch.Stop();
-            if (stopwatch.ElapsedMilliseconds > 1000)
-            {
-                Console.WriteLine("\nTime: {0}h{1}'{2}\"",
+            Console.WriteLine("\nTime: {0}h{1}'{2}\"",
                     stopwatch.Elapsed.Hours,
                     stopwatch.Elapsed.Minutes,
                     stopwatch.Elapsed.Seconds);
-            }
 
             return result;
         }
         catch (Exception ex)
         {
             Debug.WriteLine(ex.ToString());
-            Console.CursorVisible = true;
+            ShowCursor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(ex.ToString());
             Console.ResetColor();

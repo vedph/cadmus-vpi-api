@@ -1,10 +1,13 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="CHANGELOG.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
     <File Path="docker-compose.yml" />
     <File Path="Dockerfile" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="Cadmus.Vpi.Import.Test/Cadmus.Vpi.Import.Test.csproj" />
   <Project Path="Cadmus.Vpi.Import/Cadmus.Vpi.Import.csproj" Id="fb489242-0170-4720-8cef-be62bd3abe50" />
   <Project Path="Cadmus.Vpi.Services/Cadmus.Vpi.Services.csproj" Id="15371507-ca3a-4252-a077-d4a91fc53a2c" />
   <Project Path="CadmusVpiApi/CadmusVpiApi.csproj" Id="64ae91b2-3f41-407a-afd6-17507b3d6827" />

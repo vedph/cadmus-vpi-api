@@ -5,10 +5,11 @@
   "entryReader": {
     "id": "entry-reader.xlsx",
     "options": {
-      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi.xlsx",
+      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\woodblocks1.xlsx",
       "hasHeaderRow": true,
       "columnNameFiltering": true,
-      "eofCheckColumn": 23
+      "eofCheckColumn": 1,
+      "lastSheetIndex": 0
     }
   },
   "entrySetBoundaryDetector": {
@@ -40,49 +41,235 @@
   ],
   "entryRegionParsers": [
     {
-      "id": "entry-region-parser.vpi.row"
+      "id": "it.vedph.entry-region-parser.xlsx.row-item",
+      "options": {
+        "facetId": "woodblock"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-categories"
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-object_name",
+        "name": "eid",
+        "isRequired": true
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-cut"
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-folio",
+        "name": "location",
+        "isRequired": true
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-id"
+      "id": "it.vedph.entry-region-parser.xlsx.col-measures",
+      "options": {
+        "tag": "col-object_measures_(h_x_w)",
+        "unit": "mm",
+        "partRoleId": "wblk"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-keywords"
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-text",
+        "name": "inscription",
+        "separator": ";"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-icc-links"
+      "id": "it.vedph.entry-region-parser.xlsx.col-keywords",
+      "options": {
+        "tag": "col-controlled_keywords",
+        "language": "en",
+        "separator": ";"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-ima-links"
+      "id": "entry-region-parser.vpi.col-iconclass-links",
+      "options": {
+        "tag": "col-image_tags_(iconclass)",
+        "scope": "iconclass"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-loc"
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-ico-category",
+        "thesaurusId": "categories_ico@en",
+        "partRoleId": "ico",
+        "allowMultipleValues": true,
+        "separator": ";",
+        "mappings": {
+          "Animals": [
+            "ico.animal-communion"
+          ],
+          "Ascetic life and practices": [
+            "ico.ascetic-life-practices"
+          ],
+          "Charitable care and healing": [
+            "ico.charitable-care-healing"
+          ],
+          "Community and monastic life": [
+            "ico.community-monastic-life"
+          ],
+          "Death and afterlife": [
+            "ico.death-afterlife"
+          ],
+          "Demons": [
+            "ico.demons"
+          ],
+          "Demons and temptations": [
+            "ico.demons",
+            "ico.temptations"
+          ],
+          "Miraculous intervention": [
+            "ico.miraculous-intervention"
+          ],
+          "Other": [
+            "ico.other"
+          ],
+          "Persecutions": [
+            "ico.persecutions"
+          ],
+          "Teaching": [
+            "ico.teaching"
+          ],
+          "Teaching and preaching": [
+            "ico.teaching"
+          ],
+          "Temptations": [
+            "ico.temptations"
+          ],
+          "Vision": [
+            "ico.visions"
+          ],
+          "Visions": [
+            "ico.visions"
+          ]
+        }
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-measures"
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-index_of_medieval_art",
+        "scope": "ima",
+        "separator": ";"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-text"
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-no._of_cut",
+        "name": "cut-number",
+        "type": "number",
+        "isRequired": true
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-style"
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-artistic_style",
+        "thesaurusId": "categories_wblk@en",
+        "valueType": "Id",
+        "partRoleId": "wblk",
+        "idPrefix": "style.",
+        "lowercaseId": true,
+        "isRequired": true
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-object-type"
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-known_cases_of_reuse",
+        "scope": "istc",
+        "separator": ";"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-narrative"
+      "id": "entry-region-parser.vpi.col-monogram",
+      "options": {
+        "tag": "col-notes"
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-passages"
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-illustrative_object_type",
+        "thesaurusId": "categories_wblk@en",
+        "valueType": "Id",
+        "partRoleId": "wblk",
+        "idPrefix": "type.",
+        "lowercaseId": true,
+        "isRequired": true
+      }
     },
     {
-      "id": "entry-region-parser.vpi.col-notes"
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-visual_narrative",
+        "thesaurusId": "categories_narr@en",
+        "valueType": "Id",
+        "partRoleId": "narr",
+        "idPrefix": "visual.",
+        "lowercaseId": true
+      }
+    },
+    {
+      "id": "entry-region-parser.vpi.col-text-passage",
+      "options": {
+        "citationTag": "col-text_passage_vsp",
+        "textTag": "col-text_passage_title"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-item_title",
+        "setTitle": true,
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-group_id",
+        "setGroupId": true,
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-derived_from_(woodblock_eid)",
+        "scope": "derivation"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-derivation_type",
+        "thesaurusId": "categories_reuse@en",
+        "valueType": "Id",
+        "partRoleId": "reuse"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-image_tags_(thema)",
+        "scope": "thema",
+        "separator": ";"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-designer_(person_eid)",
+        "scope": "designer"
+      }
     }
   ],
   "entrySetContextPatchers": [
@@ -95,7 +282,7 @@
       "id": "entry-set-exporter.excel-dump",
       "options": {
         "maxEntriesPerDumpFile": 10000,
-        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi-dump"
+        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\u000bpi-dump-xlsx"
       }
     }
   ]

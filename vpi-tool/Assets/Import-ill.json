@@ -1,0 +1,150 @@
+{
+  "context": {
+    "id": "it.vedph.entry-set-context.cadmus"
+  },
+  "entryReader": {
+    "id": "entry-reader.xlsx",
+    "options": {
+      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\illustrations.xlsx",
+      "hasHeaderRow": true,
+      "columnNameFiltering": true,
+      "eofCheckColumn": 1,
+      "lastSheetIndex": 0
+    }
+  },
+  "entrySetBoundaryDetector": {
+    "id": "entry-set-detector.cmd",
+    "options": {
+      "type": 2,
+      "name": "row-end"
+    }
+  },
+  "entryRegionDetectors": [
+    {
+      "id": "region-detector.explicit",
+      "options": {
+        "unpairedCommandNames": [
+          "sheet",
+          "row",
+          "col"
+        ],
+        "tagSuffixArgName": "n",
+        "tagSuffixSeparator": "-"
+      }
+    },
+    {
+      "id": "region-detector.unmapped",
+      "options": {
+        "unmappedRegionTag": "x"
+      }
+    }
+  ],
+  "entryRegionParsers": [
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.row-item",
+      "options": {
+        "facetId": "illustration"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-object_name",
+        "name": "eid",
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-item_title",
+        "setTitle": true,
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-group_id",
+        "setGroupId": true,
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-metadata",
+      "options": {
+        "tag": "col-folio",
+        "name": "location",
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-woodcut_block_eid",
+        "scope": "woodblock",
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-impression_condition",
+        "thesaurusId": "categories_ill@en",
+        "valueType": "Id",
+        "partRoleId": "ill",
+        "isRequired": true
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-text-image_relation",
+        "thesaurusId": "categories_ill@en",
+        "valueType": "Id",
+        "partRoleId": "ill"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-reuse_type",
+        "thesaurusId": "categories_reuse@en",
+        "valueType": "Id",
+        "partRoleId": "reuse"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-categories",
+      "options": {
+        "tag": "col-reuse_context",
+        "thesaurusId": "categories_reuse@en",
+        "valueType": "Id",
+        "partRoleId": "reuse"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-ext-link",
+      "options": {
+        "tag": "col-related_edition_istc_id",
+        "scope": "istc"
+      }
+    },
+    {
+      "id": "it.vedph.entry-region-parser.xlsx.col-note",
+      "options": {
+        "tag": "col-occurrence_note"
+      }
+    }
+  ],
+  "entrySetContextPatchers": [
+    {
+      "id": "it.vedph.entry-set-context-patcher.cadmus"
+    }
+  ],
+  "entrySetExporters": [
+    {
+      "id": "it.vedph.entry-set-exporter.cadmus.mongo"
+    }
+  ]
+}

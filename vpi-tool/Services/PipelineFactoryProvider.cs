@@ -1,4 +1,5 @@
-﻿using Cadmus.Import.Proteus;
+﻿using Cadmus.Import.Excel;
+using Cadmus.Import.Proteus;
 using Cadmus.Vpi.Import;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Configuration;
@@ -6,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Proteus.Entries.Config;
-using Proteus.Entries.Regions;
+using Proteus.Entries.Pipeline;
 using Proteus.Extras;
 using Serilog;
 using System;
@@ -37,13 +38,15 @@ internal static class PipelineFactoryProvider
 
             EntryPipelineFactory.ConfigureServices(services, null,
                 // Proteus.Entries
-                typeof(PatternRegionDetector).Assembly,
+                typeof(CmdEntrySetBoundaryDetector).Assembly,
                 // Proteus.Extras
                 typeof(ExcelEntryReader).Assembly,
                 // Cadmus.Import.Proteus
                 typeof(CadmusEntrySetContext).Assembly,
+                // Cadmus.Import.Excel
+                typeof(ImportHelper).Assembly,
                 // Cadmus.Vpi.Import
-                typeof(RowEntryRegionParser).Assembly);
+                typeof(ColTextPassageEntryRegionParser).Assembly);
             })
             .ConfigureLogging(logging =>
             {

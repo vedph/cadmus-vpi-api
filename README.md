@@ -131,6 +131,77 @@ With reference to the original schema:
 
 ## VPI Import
 
+The CLI app `vpi-tool` in this solution is used to import items from Excel files via the Proteus framework, as done for [Cadmus TES](https://github.com/vedph/cadmus-tes). Source Excel files have the columns listed below for each facet; their mapping into Cadmus items and parts follows the same conventions used in TES:
+
+- ❌ = ignored.
+- ▶️ = target part type ID or target item property.
+- 📚 = ID of thesaurus.
+- **asterisk** \* marks a required column. If not specified, the cell can be null/empty and is just skipped. If a cell belonging to a required column has no value, an error is logged and no data stored for that cell.
+- **colon** after a part name specifies the part's role ID (e.g. `CategoriesPart:wblk`).
+
+To import:
+
+▶️ (1) fire the API without seeding any items (set item seed count=0 in `appsettings.json`) to create an empty VPI MongoDB database.
+
+▶️ (2) run the import command once per pipeline (change the path to your pipeline file), e.g. for the first woodblocks file:
+
+```sh
+./vpi-tool import c:/users/dfusi/desktop/import/Import-w1.json
+```
+
+Pipelines are in `vpi-tool/Assets`, named `Dump-X-md.json` (Markdown dump for diagnostics) and `Import-X.json` (MongoDB), where `X` is:
+
+| X     | source file          | target             |
+| ----- | -------------------- | ------------------ |
+| `w1`  | `woodblocks1.xlsx`   | woodblock items    |
+| `w2`  | `woodblocks2.xlsx`   | woodblock items    |
+| `ill` | `illustrations.xlsx` | illustration items |
+
+Source files are expected in the `import` folder of your desktop, and dumps are written in a `vpi-dump-X` subfolder of it. There is also a `Dump-xlsx.json` pipeline, dumping the entries read from `woodblocks1.xlsx` into Excel files, to diagnose the reading of the source.
+
+▶️ (3) finally, index the imported database:
+
+```sh
+./vpi-tool index cadmus-vpi D:/Projects/Cadmus/Vpi/CadmusVpi/CadmusVpiApi/wwwroot/seed-profile.json
+```
+
+### Import Overview
+
+The `ExcelEntryReader` reads each row of an Excel file as a sequence of decoded entries; each row is a region generating an item of the facet of its file, and each column is a region within that row, whose tag is `col-` + the column name lowercased, with whitespaces replaced by `_` (e.g. `Object measures (h x w)` becomes `col-object_measures_(h_x_w)`). Entry region parsers remodel each column into parts of the item. Finally, an exporter saves each item in a Markdown file for diagnostic purposes, or into the MongoDB database.
+
+Most columns are handled by the generic configurable parsers shared by all Cadmus projects, from the core library `Cadmus.Import.Excel` (prefix `it.vedph.entry-region-parser.xlsx.`):
+
+| parser ID        | purpose                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `row-item`       | create an item with the specified facet (`facetId`) for each row.                                                |
+| `col-metadata`   | add metadata (`name`, `type`, optionally multiple via `separator`), set the item's title or group ID.            |
+| `col-categories` | map labels or entry IDs (optionally with `idPrefix`, `lowercaseId`, or explicit `mappings`) to `CategoriesPart`. |
+| `col-ext-link`   | external links with a scope to `PinLinksPart`, with GID and label equal to the cell's value(s).                  |
+| `col-keywords`   | keywords with a language to `IndexKeywordsPart`.                                                                 |
+| `col-measures`   | measurements from `HxW` values to `PhysicalMeasurementsPart`.                                                    |
+| `col-note`       | append text to `NotePart`.                                                                                       |
+
+The VPI-specific parsers (namespace `Cadmus.Vpi.Import`, prefix `entry-region-parser.vpi.`) are:
+
+| parser ID             | purpose                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------- |
+| `col-iconclass-links` | Iconclass links from `Image tags (Iconclass)`, split as described below.                  |
+| `col-monogram`        | monogram metadata from `Notes`, or `NotePart` for other notes.                            |
+| `col-text-passage`    | `Text passage VSP` and `Text passage title` into the first passage of `TextPassagesPart`. |
+
+**Sample dump commands** assuming that the Excel files and the pipelines from `vpi-tool/Assets` are in your desktop `import` folder:
+
+```ps1
+./vpi-tool import c:/users/dfusi/desktop/import/Dump-w1-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-w1.txt"
+
+./vpi-tool import c:/users/dfusi/desktop/import/Dump-w2-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-w2.txt"
+
+./vpi-tool import c:/users/dfusi/desktop/import/Dump-ill-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-ill.txt"
+```
+
 ### 🟢 Woodblock
 
 Each row is one item of facet `woodblock`.
@@ -293,24 +364,25 @@ Each row is one item of facet `illustration`.
 
 ### Code Template
 
-Template for a column region parser. Prefer the generic configurable parsers listed above when possible; when a new parser is required, derive it from `ColEntryRegionParser`, which checks for the current item, gets the filtered cell value, and skips rows marked as skipped. Use `ImportHelper` for thesauri, ranks, coordinates, notes, and item IDs.
+Template for a column region parser. Prefer the generic configurable parsers listed above when possible; when a new parser is required, derive it from `ColEntryRegionParser` (in `Cadmus.Import.Excel`), which checks for the current item, gets the filtered cell value, and skips rows marked as skipped. Use `ImportHelper` (in `Cadmus.Import.Excel`) for thesauri, ranks, notes, and item IDs.
 
 - `__TAG__`: the region tag.
 
 ```cs
+using Cadmus.Import.Excel;
 using Cadmus.Import.Proteus;
 using Fusi.Tools.Configuration;
 using Proteus.Core.Regions;
 
-namespace Cadmus.Tes.Import;
+namespace Cadmus.Vpi.Import;
 
 /// <summary>
-/// TES column __TAG__ entry region parser.
-/// <para>Tag: <c>entry-region-parser.tes.col-__TAG__</c>.</para>
+/// VPI column __TAG__ entry region parser.
+/// <para>Tag: <c>entry-region-parser.vpi.col-__TAG__</c>.</para>
 /// </summary>
 /// <seealso cref="ColEntryRegionParser" />
 /// <seealso cref="IEntryRegionParser" />
-[Tag("entry-region-parser.tes.col-__TAG__")]
+[Tag("entry-region-parser.vpi.col-__TAG__")]
 public sealed class Col__TAG__EntryRegionParser : ColEntryRegionParser,
     IEntryRegionParser
 {

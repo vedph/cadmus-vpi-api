@@ -189,17 +189,17 @@ The VPI-specific parsers (namespace `Cadmus.Vpi.Import`, prefix `entry-region-pa
 | `col-monogram`        | monogram metadata from `Notes`, or `NotePart` for other notes.                            |
 | `col-text-passage`    | `Text passage VSP` and `Text passage title` into the first passage of `TextPassagesPart`. |
 
-**Sample dump commands** assuming that the Excel files and the pipelines from `vpi-tool/Assets` are in your desktop `import` folder:
+**Sample dump commands** assuming that the Excel files and the pipelines from `vpi-tool/Assets` are in your desktop `vpi` folder:
 
 ```ps1
-./vpi-tool import c:/users/dfusi/desktop/import/Dump-w1-md.json
-Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-w1.txt"
+./vpi-tool import c:/users/dfusi/desktop/vpi/Dump-w1-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\vpi\vpi-log-w1.txt"
 
-./vpi-tool import c:/users/dfusi/desktop/import/Dump-w2-md.json
-Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-w2.txt"
+./vpi-tool import c:/users/dfusi/desktop/vpi/Dump-w2-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\vpi\vpi-log-w2.txt"
 
-./vpi-tool import c:/users/dfusi/desktop/import/Dump-ill-md.json
-Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\import\vpi-log-ill.txt"
+./vpi-tool import c:/users/dfusi/desktop/vpi/Dump-ill-md.json
+Move-Item "D:\Projects\Cadmus\Vpi\CadmusVpi\vpi-tool\bin\Debug\net11.0\vpi-log*.txt" "C:\Users\dfusi\Desktop\vpi\vpi-log-ill.txt"
 ```
 
 ### 🟢 Woodblock

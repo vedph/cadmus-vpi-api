@@ -5,7 +5,7 @@
   "entryReader": {
     "id": "entry-reader.xlsx",
     "options": {
-      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\illustrations.xlsx",
+      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\illustrations.xlsx",
       "hasHeaderRow": true,
       "columnNameFiltering": true,
       "eofCheckColumn": 1,
@@ -146,7 +146,7 @@
     {
       "id": "it.vedph.entry-set-exporter.cadmus.md-dump",
       "options": {
-        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\vpi-dump-ill\\",
+        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi-dump-ill\\",
         "noEntries": true,
         "jsonParts": true
       }

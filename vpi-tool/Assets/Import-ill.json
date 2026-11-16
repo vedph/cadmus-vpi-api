@@ -5,7 +5,7 @@
   "entryReader": {
     "id": "entry-reader.xlsx",
     "options": {
-      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\illustrations.xlsx",
+      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\illustrations.xlsx",
       "hasHeaderRow": true,
       "columnNameFiltering": true,
       "eofCheckColumn": 1,

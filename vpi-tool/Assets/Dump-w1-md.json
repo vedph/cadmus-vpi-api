@@ -5,7 +5,7 @@
   "entryReader": {
     "id": "entry-reader.xlsx",
     "options": {
-      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\woodblocks1.xlsx",
+      "inputFile": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\woodblocks1.xlsx",
       "hasHeaderRow": true,
       "columnNameFiltering": true,
       "eofCheckColumn": 1,
@@ -281,7 +281,7 @@
     {
       "id": "it.vedph.entry-set-exporter.cadmus.md-dump",
       "options": {
-        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\import\\vpi-dump-w1\\",
+        "outputDirectory": "{{HOMEDRIVE}}{{HOMEPATH}}\\Desktop\\vpi\\vpi-dump-w1\\",
         "noEntries": true,
         "jsonParts": true
       }

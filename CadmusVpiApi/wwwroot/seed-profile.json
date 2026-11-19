@@ -445,6 +445,7 @@
           "name": "text passages",
           "description": "Text passages.",
           "colorKey": "589BBF",
+          "groupKey": "content",
           "sortKey": "11"
         },
         {
@@ -3303,6 +3304,39 @@
     {
       "id": "physical-size-units_wblk@en",
       "targetId": "physical-size-units"
+    },
+    {
+      "id": "pin-link-scopes@en",
+      "entries": [
+        {
+          "id": "iconclass",
+          "value": "Iconclass"
+        },
+        {
+          "id": "ima",
+          "value": "Index of Medieval Art"
+        },
+        {
+          "id": "istc",
+          "value": "ISTC"
+        },
+        {
+          "id": "thema",
+          "value": "ThEMA"
+        },
+        {
+          "id": "derivation",
+          "value": "derivation source (woodblock)"
+        },
+        {
+          "id": "designer",
+          "value": "designer (person)"
+        },
+        {
+          "id": "woodblock",
+          "value": "printed from (woodblock)"
+        }
+      ]
     },
     {
       "id": "print-font-families@en",

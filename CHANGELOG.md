@@ -2,6 +2,9 @@
 
 ## 1.0.0
 
+- 2026-11-19:
+  - updated packages.
+  - added thesaurus `pin-link-scopes` and fixed missing groupKey in facet's `it.vedph.ndp.text-passages`.
 - 2026-11-14:
   - ⚠️ upgraded to .NET 11 and Cadmus 18; moved to central package management (`Directory.Packages.props`), with `nuget.config` including the local feed.
   - ⚠️ reimplemented the import according to the specs in README: woodblocks and illustrations are imported with the generic parsers of `Cadmus.Import.Excel`, plus the VPI-specific parsers `col-iconclass-links`, `col-monogram` and `col-text-passage`. All the previous parsers were removed. Text passage citation and text were swapped in the previous implementation.

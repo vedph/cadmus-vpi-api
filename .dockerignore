@@ -23,3 +23,5 @@
 **/values.dev.yaml
 LICENSE
 README.md
+# Exclude local Windows NuGet source config from Docker build context
+nuget.config

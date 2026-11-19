@@ -42,12 +42,12 @@
     <PackageVersion Include="Polly" Version="8.9.1" />
     <PackageVersion Include="Proteus.Entries" Version="15.0.0" />
     <PackageVersion Include="Proteus.Extras" Version="15.0.0" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="3.0.0" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="3.0.2" />
     <PackageVersion Include="Serilog" Version="4.4.0" />
-    <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="11.0.0" />
     <PackageVersion Include="Serilog.Exceptions" Version="8.4.0" />
-    <PackageVersion Include="Serilog.Extensions.Hosting" Version="10.0.0" />
-    <PackageVersion Include="Serilog.Extensions.Logging" Version="10.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="11.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Logging" Version="11.0.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="Serilog.Sinks.MongoDB" Version="8.0.0" />

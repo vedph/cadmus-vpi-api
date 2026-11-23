@@ -3,33 +3,33 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Cadmus.Vpi.Import" Version="1.0.0" />
-    <PackageVersion Include="Cadmus.Vpi.Services" Version="1.0.0" />
-    <PackageVersion Include="Cadmus.Vpi.Api" Version="1.0.0" />
-    <PackageVersion Include="vpi-tool" Version="1.0.0" />
+    <PackageVersion Include="Cadmus.Vpi.Import" Version="1.0.1" />
+    <PackageVersion Include="Cadmus.Vpi.Services" Version="1.0.1" />
+    <PackageVersion Include="Cadmus.Vpi.Api" Version="1.0.1" />
+    <PackageVersion Include="vpi-tool" Version="1.0.1" />
     <!-- external packages -->
-    <PackageVersion Include="Cadmus.Api.Config" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Api.Controllers" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Api.Controllers.Export" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Api.Controllers.Import" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Api.Models" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Api.Services" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.General.Parts" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Graph" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Graph.Ef.PgSql" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Graph.Extras" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Import.Excel" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Import.Proteus" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Index" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Index.PgSql" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Mongo" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Ndp.Parts" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Seed" Version="18.0.0" />
+    <PackageVersion Include="Cadmus.Api.Config" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Api.Controllers" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Api.Controllers.Export" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Api.Controllers.Import" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Api.Models" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Api.Services" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.General.Parts" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Graph" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Graph.Ef.PgSql" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Graph.Extras" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Import.Excel" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Import.Proteus" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Index" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Index.PgSql" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Mongo" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Ndp.Parts" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Seed" Version="18.1.0" />
     <PackageVersion Include="Cadmus.Seed.Codicology.Parts" Version="10.0.0" />
-    <PackageVersion Include="Cadmus.Seed.General.Parts" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Seed.Ndp.Parts" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Seed.NdpBooks.Parts" Version="18.0.0" />
-    <PackageVersion Include="Cadmus.Seed.Philology.Parts" Version="18.0.0" />
+    <PackageVersion Include="Cadmus.Seed.General.Parts" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Seed.Ndp.Parts" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Seed.NdpBooks.Parts" Version="18.1.0" />
+    <PackageVersion Include="Cadmus.Seed.Philology.Parts" Version="18.1.0" />
     <PackageVersion Include="coverlet.collector" Version="10.1.1" />
     <PackageVersion Include="Fusi.Antiquity" Version="7.0.1" />
     <PackageVersion Include="Fusi.Cli.Logging" Version="2.0.0" />
@@ -40,9 +40,9 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="11.0.0" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="Polly" Version="8.9.1" />
-    <PackageVersion Include="Proteus.Entries" Version="15.0.0" />
-    <PackageVersion Include="Proteus.Extras" Version="15.0.0" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="3.0.2" />
+    <PackageVersion Include="Proteus.Entries" Version="15.0.1" />
+    <PackageVersion Include="Proteus.Extras" Version="15.0.1" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="3.2.0" />
     <PackageVersion Include="Serilog" Version="4.4.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="11.0.0" />
     <PackageVersion Include="Serilog.Exceptions" Version="8.4.0" />
